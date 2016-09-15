@@ -13,6 +13,7 @@ using VoiceRecorder.Properties;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Messaging;
+using System.Windows.Navigation;
 
 namespace VoiceRecorder
 {
@@ -65,6 +66,7 @@ namespace VoiceRecorder
         {
             Application.Current.Shutdown();
         }
+
 
         private void OnShuttingDown(ShuttingDownMessage message)
         {

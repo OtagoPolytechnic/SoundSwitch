@@ -105,14 +105,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VoiceRecorder.exe" size="47104">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VoiceRecorder.exe" size="47616">
       <assemblyIdentity name="VoiceRecorder" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>snhdfp1yDQqvjf3nxMB7POAM504=</dsig:DigestValue>
+        <dsig:DigestValue>P/1gmkyMu1SJKDap4nR9CzLJGD4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -124,7 +124,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>lxmCkekYy+6it8hP2IjhB4ehx1A=</dsig:DigestValue>
+        <dsig:DigestValue>sBuDt5qkBE0c6wMXsfkxkFd8bJw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -136,7 +136,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>2u/66vN+ARbg7jo2fr1i+1EXuU8=</dsig:DigestValue>
+        <dsig:DigestValue>Locnbe9w4YN1CJqCuOgRAqGyn8g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
