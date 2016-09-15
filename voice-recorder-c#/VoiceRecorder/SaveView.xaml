@@ -22,7 +22,6 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Button Margin="5" Width="100" Command="{Binding SaveCommand}">Save...</Button>
-            <Button Margin="5" Width="100" Command="{Binding AutoTuneCommand}">AutoTune</Button>
             <Button Margin="5" Width="100" Command="{Binding ExitCommand}">Exit</Button>
         </StackPanel>
     </StackPanel>

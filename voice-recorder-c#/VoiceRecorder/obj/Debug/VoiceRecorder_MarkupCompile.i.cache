@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder\obj\Debug\
+H:\My Documents\GitHub\SoundSwitch\voice-recorder-c#\VoiceRecorder\obj\Debug\
 VoiceRecorder
 none
 false
 DEBUG;TRACE
-C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder\App.xaml
+H:\My Documents\GitHub\SoundSwitch\voice-recorder-c#\VoiceRecorder\App.xaml
 51846012330
 
 19254079764
-17816503509
+17-2073147283
 AutoTuneView.xaml;RecorderView.xaml;SaveView.xaml;MainWindow.xaml;WelcomeView.xaml;
 
-False
+True
 

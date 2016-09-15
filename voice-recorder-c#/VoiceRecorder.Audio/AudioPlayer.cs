@@ -42,8 +42,11 @@ namespace VoiceRecorder.Audio
 
         public void Stop()
         {
-            waveOut.Stop();
-            inStream.Position = 0;
+            if (waveOut != null)
+            {
+                waveOut.Stop();
+                inStream.Position = 0;
+            }
         }
 
         public TimeSpan StartPosition 
