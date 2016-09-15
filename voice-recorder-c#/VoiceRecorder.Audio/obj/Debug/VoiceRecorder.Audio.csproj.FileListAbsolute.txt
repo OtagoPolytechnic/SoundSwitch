@@ -1,0 +1,6 @@
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Audio\bin\Debug\VoiceRecorder.Audio.dll
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Audio\bin\Debug\VoiceRecorder.Audio.pdb
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Audio\bin\Debug\NAudio.dll
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Audio\bin\Debug\NAudio.xml
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Audio\obj\Debug\VoiceRecorder.Audio.dll
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Audio\obj\Debug\VoiceRecorder.Audio.pdb

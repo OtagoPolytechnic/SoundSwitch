@@ -1,0 +1,13 @@
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Tests\bin\Debug\VoiceRecorder.Tests.dll
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Tests\bin\Debug\VoiceRecorder.Tests.pdb
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Tests\bin\Debug\NAudio.dll
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Tests\bin\Debug\nunit.framework.dll
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Tests\bin\Debug\nunit.mocks.dll
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Tests\bin\Debug\pnunit.framework.dll
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Tests\bin\Debug\VoiceRecorder.Audio.dll
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Tests\bin\Debug\VoiceRecorder.Audio.pdb
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Tests\bin\Debug\NAudio.xml
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Tests\bin\Debug\nunit.framework.xml
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Tests\obj\Debug\VoiceRecorder.Tests.csprojResolveAssemblyReference.cache
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Tests\obj\Debug\VoiceRecorder.Tests.dll
+C:\Users\simle1\Desktop\voicerecorder_a1516d288da1\VoiceRecorder.Tests\obj\Debug\VoiceRecorder.Tests.pdb
