@@ -1,0 +1,18 @@
+sound-match(1) -- A tool to find occurences of an audio clip in an audio file
+=============================================
+
+## SYNOPSIS
+
+sound-match <needle.wav> <haystack.wav>
+
+## DESCRIPTION
+
+The tools all make use of cross correlation, which can be computed through the fourier transform.
+
+Note that all the tools will need access to write to a file called <tool>.log where various information about a run will be stored.
+
+
+## RETURN VALUES
+sound-match returns 0 unless some error occured.
+## AUTHOR
+Jesper Sindahl Nielsen <jsn@statsbiblioteket.dk>

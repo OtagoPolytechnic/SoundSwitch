@@ -1,0 +1,24 @@
+overlap-analysis(1) -- A tool to identify overlap between two wav files
+=============================================
+
+## SYNOPSIS
+overlap-analysis file1.wav file2.wav [v<log level>]
+
+## DESCRIPTION
+overlap-analysis finds the overlap between the end of file1 and the beginning of file2. It produces an offset and a value, the closer to 1 the value is the more reliable the match is.
+
+Note that all the tools will need access to write to a file called <tool>.log where various information about a run will be stored.
+
+## OPTIONS
+
+ * v<log level>
+This describes how much should be logged in the overlap-analysis.log
+file. This is mainly for debugging, but might contain other useful
+information. The levels are: 1: fatal, 2: errors, 3: information 4:
+warning, 5: debug.
+
+## RETURN VALUES
+overlap-analysis returns 0.
+
+## AUTHOR
+Jesper Sindahl Nielsen <jsn@statsbiblioteket.dk>
