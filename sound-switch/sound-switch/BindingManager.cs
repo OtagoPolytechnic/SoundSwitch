@@ -49,9 +49,6 @@ namespace sound_switch
         //Method to compare the unprocessed.wav file against the current set of stored bindings
         public Binding compareUnprocessed()
         {
-            //The resultant best-matching binding we find for the unprocessed file.
-            Binding bestMatch;
-
             //Path to the unprocessed wav file
             string pathToUnprocessed = "unprocessed.wav";
 
@@ -70,7 +67,11 @@ namespace sound_switch
                 compareResults[i] = executor.ExecuteCommand(pathToScript + " " + pathToUnprocessed + " " + bindings[i].pathToWav);
             }
 
-            return bestMatch;
+            //Find the index which holds the highest value in the array
+            int bestMatchValue = Convert.ToInt32(compareResults.Max());
+            int bestMatchIndex = Array.IndexOf(compareResults, bestMatchValue);
+
+            return bindings[bestMatchIndex];
         }
     }
 }
