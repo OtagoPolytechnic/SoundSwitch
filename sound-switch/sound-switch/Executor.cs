@@ -58,7 +58,7 @@ namespace sound_switch
                 label.Text = result;
             }
             catch(Exception objException){
-
+                //NYI
             }
         }
 

@@ -45,5 +45,17 @@ namespace sound_switch
                 dgv.Rows.Add(row);
             }
         }
+
+        //Method to compare the unprocessed.wav file against the current set of stored bindings
+        public void compareUnprocessed()
+        {
+            
+            //get reference to unprocessed.wav
+
+            //begin loop over the stored bindings
+                //execute the xcorr script here and wait for it to return a value
+
+
+        }
     }
 }
