@@ -31,7 +31,7 @@ namespace sound_switch
         }
 
         //Methods
-        public void ExecuteCommand(string command, Label label)
+        public string ExecuteCommand(string command)
         {
             try
             {
@@ -53,12 +53,10 @@ namespace sound_switch
 
                 //Read output into a var
                 string result = process.StandardOutput.ReadToEnd();
-
-                //Write output to form
-                label.Text = result;
+                return result;
             }
             catch(Exception objException){
-                //NYI
+                return null;
             }
         }
 

@@ -47,15 +47,30 @@ namespace sound_switch
         }
 
         //Method to compare the unprocessed.wav file against the current set of stored bindings
-        public void compareUnprocessed()
+        public Binding compareUnprocessed()
         {
-            
-            //get reference to unprocessed.wav
+            //The resultant best-matching binding we find for the unprocessed file.
+            Binding bestMatch;
 
-            //begin loop over the stored bindings
-                //execute the xcorr script here and wait for it to return a value
+            //Path to the unprocessed wav file
+            string pathToUnprocessed = "unprocessed.wav";
 
+            //Name of the xcorr library script we want to execute
+            string pathToScript = "NYI.exe";
 
+            //Create an executor instance to pass commands to the cmd prompt
+            Executor executor = new Executor();
+
+            //String array that holds the script run results
+            string[] compareResults = new string[bindings.Count];
+
+            //Loop over each stored binding and execute the compare script on each of them.
+            for (int i = 0; i < bindings.Count; i ++)
+            {
+                compareResults[i] = executor.ExecuteCommand(pathToScript + " " + pathToUnprocessed + " " + bindings[i].pathToWav);
+            }
+
+            return bestMatch;
         }
     }
 }

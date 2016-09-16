@@ -26,7 +26,7 @@ namespace sound_switch
         private void btnDebug_Click(object sender, EventArgs e)
         {
             //Feed a command here
-            e1.ExecuteCommand("dir", lblDummy);
+            e1.ExecuteCommand("dir");
         }
     }
 }
