@@ -28,7 +28,6 @@ namespace sound_switch
             //Run the polling script once
             ex.runPollingScript();
 
-            
             //TODO: Seperate python script to record as soon as the button is hit rather than when sound is heard.
             //Just modify what we already have and make it a seperate script @leonardsim
 

@@ -7,14 +7,14 @@ FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
 RECORD_SECONDS = 3
-WAVE_OUTPUT_FILENAME = "unprocessed.wav"
+WAVE_OUTPUT_FILENAME = "unprocessed_.wav"
 
 p = pyaudio.PyAudio()
 
-s = p.open(format = FORMAT, 
+s = p.open(format = FORMAT,
        channels = CHANNELS,
        rate = RATE,
-       input = True, 
+       input = True,
        frames_per_buffer = chunk)
 
 print("---recording---")
@@ -28,19 +28,19 @@ print((RATE / chunk) * RECORD_SECONDS)
 while(rms < 2000):
 
     data = s.read(chunk)
-    
+
     #Root mean squre = amplitude of sound
     rms = audioop.rms(data, 2)  #width=2 for format=paInt16
-    
+
     print("---no sound detected--- Current sound val: ", rms)
-     
+
     if (rms > 2000):
-        for i in range(0, (RATE // chunk * RECORD_SECONDS)): 
+        for i in range(0, (RATE // chunk * RECORD_SECONDS)):
             currdata = s.read(chunk)
             currrms = audioop.rms(currdata, 2)
             print("---sound detected---  Current sound val: ", currrms)
             d.append(currdata)
-        
+
         break
 
 print("---done recording---")
