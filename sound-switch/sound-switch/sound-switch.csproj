@@ -54,12 +54,6 @@
       <DependentUpon>BindDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Binding.cs" />
-    <Compile Include="BindingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BindingForm.Designer.cs">
-      <DependentUpon>BindingForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="BindingManager.cs" />
     <Compile Include="Executor.cs" />
     <Compile Include="DebugForm.cs">

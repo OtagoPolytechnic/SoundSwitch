@@ -29,7 +29,7 @@ namespace sound_switch
             pathToWav = bindTarget + "_" + bindCode;
 
             //Check that we have an unprocessed file to work with
-            if (File.Exists("unprocessed.wav"))
+            if (File.Exists("unprocessed_.wav"))
             {
                 //Check if the binding we're trying to make already has a file.
                 if (File.Exists(pathToWav + ".wav"))

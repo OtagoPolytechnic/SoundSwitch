@@ -14,13 +14,36 @@ namespace sound_switch
 
         public BindingManager()
         {
-            //Empty so far
+            //When bindmanager is instantiated, trawl the specified dir for existing binds.
+            loadExistingBinds();
         }
 
         //Load existing binds NYI
         public void loadExistingBinds()
         {
+            //Create an array of paths holding all wav files in /debug
+            // !! LOCAL PATH !! NEEDS UPDATE ASAP
+            string[] dirs = System.IO.Directory.GetFiles("C:\\Users\\Decura\\Documents\\GitHub\\SoundSwitch\\sound-switch\\sound-switch\\bin\\Debug", "*.wav");
 
+            for (int i = 0; i < dirs.Length; i++)
+            {
+                //Get relevant path splits at certain characters
+                int posSlash = dirs[i].LastIndexOf("\\") + 1;
+                int posUnderscore = dirs[i].LastIndexOf("_");
+                int posLastPeriod = dirs[i].LastIndexOf(".") - 1;
+
+                //Create intermediaries that store the substrings of the split path.
+                string newBindName = dirs[i].Substring(posSlash, posUnderscore - posSlash);
+
+                //Filter out the 'unprocessed.wav' file to prevent it from being interpreted as a binding.
+                if (newBindName != "unprocessed")
+                {
+                    string newBindAction = dirs[i].Substring(posUnderscore + 1, posLastPeriod - posUnderscore);
+
+                    //Create a new binding from these intermediaries.
+                    bindings.Add(new Binding(newBindName, newBindAction));
+                }
+            }
         }
 
         //Adds a newly generated bind to the list of current bindings.

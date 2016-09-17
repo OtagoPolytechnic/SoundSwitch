@@ -34,6 +34,9 @@ namespace sound_switch
         {
             panelBindings.Show();
             panelMain.Hide();
+
+            //Update the display on the datagridview that holds the binding information.
+            bm.update(dgvBind);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
