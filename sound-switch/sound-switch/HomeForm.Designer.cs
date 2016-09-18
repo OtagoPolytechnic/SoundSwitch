@@ -35,6 +35,10 @@
             this.btnGit = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelBindings = new System.Windows.Forms.Panel();
+            this.dgvBind = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.path = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRemoveBind = new System.Windows.Forms.Button();
             this.btnNewBind = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,14 +49,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBackSet = new System.Windows.Forms.Button();
-            this.dgvBind = new System.Windows.Forms.DataGridView();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.path = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMain.SuspendLayout();
             this.panelBindings.SuspendLayout();
-            this.panelSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).BeginInit();
+            this.panelSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -131,6 +131,40 @@
             this.panelBindings.Size = new System.Drawing.Size(640, 320);
             this.panelBindings.TabIndex = 6;
             this.panelBindings.Visible = false;
+            // 
+            // dgvBind
+            // 
+            this.dgvBind.AllowUserToDeleteRows = false;
+            this.dgvBind.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvBind.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvBind.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBind.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
+            this.bindCode,
+            this.path});
+            this.dgvBind.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvBind.Location = new System.Drawing.Point(207, 59);
+            this.dgvBind.Name = "dgvBind";
+            this.dgvBind.Size = new System.Drawing.Size(400, 239);
+            this.dgvBind.TabIndex = 8;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            this.name.Width = 60;
+            // 
+            // bindCode
+            // 
+            this.bindCode.HeaderText = "Bind Code";
+            this.bindCode.Name = "bindCode";
+            this.bindCode.Width = 81;
+            // 
+            // path
+            // 
+            this.path.HeaderText = "Path";
+            this.path.Name = "path";
+            this.path.Width = 54;
             // 
             // btnRemoveBind
             // 
@@ -237,33 +271,6 @@
             this.btnBackSet.UseVisualStyleBackColor = true;
             this.btnBackSet.Click += new System.EventHandler(this.btnBackSet_Click);
             // 
-            // dgvBind
-            // 
-            this.dgvBind.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBind.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.name,
-            this.bindCode,
-            this.path});
-            this.dgvBind.Location = new System.Drawing.Point(207, 59);
-            this.dgvBind.Name = "dgvBind";
-            this.dgvBind.Size = new System.Drawing.Size(400, 239);
-            this.dgvBind.TabIndex = 8;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            // 
-            // bindCode
-            // 
-            this.bindCode.HeaderText = "Bind Code";
-            this.bindCode.Name = "bindCode";
-            // 
-            // path
-            // 
-            this.path.HeaderText = "Path";
-            this.path.Name = "path";
-            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,9 +287,9 @@
             this.panelMain.PerformLayout();
             this.panelBindings.ResumeLayout(false);
             this.panelBindings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).EndInit();
             this.panelSettings.ResumeLayout(false);
             this.panelSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).EndInit();
             this.ResumeLayout(false);
 
         }
