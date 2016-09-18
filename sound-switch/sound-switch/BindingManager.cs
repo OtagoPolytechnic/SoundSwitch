@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,21 +79,26 @@ namespace sound_switch
             string pathToUnprocessed = ProgramSettings.UnprocessedFileName;
 
             //Name of the xcorr library script we want to execute
-            string pathToScript = "NYI.exe";
+            string pathToScript = ProgramSettings.MatcherExecutable;
 
             //Create an executor instance to pass commands to the cmd prompt
             Executor executor = new Executor();
 
             //String array that holds the script run results
-            string[] compareResults = new string[bindings.Count];
+            double[] compareResults = new double[bindings.Count];
 
             //Loop over each stored binding and execute the compare script on each of them.
-            for (int i = 0; i < bindings.Count; i ++)
+            for (int i = 0; i < bindings.Count; i++)
             {
-                compareResults[i] = executor.ExecuteCommand(pathToScript + " " + pathToUnprocessed + " " + bindings[i].pathToWav);
+                //Execute the overlap analysis script, the output of this script creates a single-line txt file containing the scalar match value.
+                executor.ExecuteCommand(pathToScript + " " + pathToUnprocessed + " " + bindings[i].pathToWav);
+
+                //Read the first & only line of that file, converting it to a double and saving it into the results array.
+                compareResults[i] = Convert.ToDouble(File.ReadLines(ProgramSettings.MatcherResult).First());
             }
 
             //Find the index which holds the highest value in the array
+            //BUG: It is possible (although very unlikely) for matches to generate the exact same match value, this could cause the wrong binding to be returned.
             int bestMatchValue = Convert.ToInt32(compareResults.Max());
             int bestMatchIndex = Array.IndexOf(compareResults, bestMatchValue);
 
