@@ -10,5 +10,11 @@ namespace sound_switch
     {
         //Name for the currently unbound or unmatched file, default: 'unprocessed_.wav'
         public const string UnprocessedFileName = "unprocessed_.wav";
+
+        //Name of the exe that controls the matching of sound files. default: 'overlap-analysis.exe'
+        public const string MatcherExecutable = "overlap-analysis.exe";
+
+        //Name of the txt file that holds the intermediary results of the sound matcher exe. default: 'match-result.txt'
+        public const string MatcherResult = "match-result.txt";
     }
 }
