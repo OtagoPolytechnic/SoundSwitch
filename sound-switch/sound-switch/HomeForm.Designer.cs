@@ -135,8 +135,7 @@
             // dgvBind
             // 
             this.dgvBind.AllowUserToDeleteRows = false;
-            this.dgvBind.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgvBind.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvBind.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBind.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBind.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
@@ -145,6 +144,8 @@
             this.dgvBind.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvBind.Location = new System.Drawing.Point(207, 59);
             this.dgvBind.Name = "dgvBind";
+            this.dgvBind.RowHeadersVisible = false;
+            this.dgvBind.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBind.Size = new System.Drawing.Size(400, 239);
             this.dgvBind.TabIndex = 8;
             // 
@@ -152,19 +153,16 @@
             // 
             this.name.HeaderText = "Name";
             this.name.Name = "name";
-            this.name.Width = 60;
             // 
             // bindCode
             // 
             this.bindCode.HeaderText = "Bind Code";
             this.bindCode.Name = "bindCode";
-            this.bindCode.Width = 81;
             // 
             // path
             // 
             this.path.HeaderText = "Path";
             this.path.Name = "path";
-            this.path.Width = 54;
             // 
             // btnRemoveBind
             // 
@@ -174,6 +172,7 @@
             this.btnRemoveBind.TabIndex = 7;
             this.btnRemoveBind.Text = "Remove Bind";
             this.btnRemoveBind.UseVisualStyleBackColor = true;
+            this.btnRemoveBind.Click += new System.EventHandler(this.btnRemoveBind_Click);
             // 
             // btnNewBind
             // 

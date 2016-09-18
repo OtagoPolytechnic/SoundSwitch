@@ -97,5 +97,10 @@ namespace sound_switch
                 MessageBox.Show("Binding not created, dialog was exited prematurely.");
             }
         }
+
+        private void btnRemoveBind_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
