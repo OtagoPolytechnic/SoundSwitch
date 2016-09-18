@@ -20,7 +20,7 @@ namespace sound_switch
         public string pathToWav;
 
         //Ctor
-        public Binding(string bindTarget, string bindCode)
+        public Binding(string bindTarget, string bindCode, bool suppressWarns)
         {
             this.bindTarget = bindTarget;
             this.bindCode = bindCode;
@@ -29,7 +29,7 @@ namespace sound_switch
             pathToWav = bindTarget + "_" + bindCode;
 
             //Check that we have an unprocessed file to work with
-            if (File.Exists("unprocessed_.wav"))
+            if (File.Exists(ProgramSettings.UnprocessedFileName))
             {
                 //Check if the binding we're trying to make already has a file.
                 if (File.Exists(pathToWav + ".wav"))
@@ -39,10 +39,10 @@ namespace sound_switch
                 else
                 {
                     //Bind file successfully made
-                    File.Move("unprocessed.wav", pathToWav + ".wav");
+                    File.Move(ProgramSettings.UnprocessedFileName, pathToWav + ".wav");
                 }
             }
-            else
+            else if(!suppressWarns)
             {
                 MessageBox.Show("Unprocessed wav not found, maybe you didn't record a sound first?");
             }

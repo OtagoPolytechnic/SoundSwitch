@@ -86,7 +86,7 @@ namespace sound_switch
                 bBindTemp = dialog.txtBindCode.Text;
 
                 //Build the binding instance and add it to the binding list in the manager.
-                Binding newBinding = new Binding(bNameTemp, bBindTemp);
+                Binding newBinding = new Binding(bNameTemp, bBindTemp, false);
                 bm.addBinding(newBinding);
 
                 //Update the binding display

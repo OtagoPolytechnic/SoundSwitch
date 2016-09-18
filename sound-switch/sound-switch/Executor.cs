@@ -27,7 +27,7 @@ namespace sound_switch
             command = "";
 
             pythonLocation = "C:\\Python27\\python.exe";
-            scriptLocation = "H:\\Github\\sound-switch\\python-recorder\\Recorder.py";
+            scriptLocation = "H:\\Github\\SoundSwitch\\python-recorder\\Recorder.py";
         }
 
         //Methods

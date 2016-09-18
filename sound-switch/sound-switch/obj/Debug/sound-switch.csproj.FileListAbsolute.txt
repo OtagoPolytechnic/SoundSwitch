@@ -30,3 +30,14 @@ C:\Users\Decura\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug
 C:\Users\Decura\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.HomeForm.resources
 C:\Users\Decura\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.Properties.Resources.resources
 C:\Users\Decura\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound-switch.csproj.GenerateResource.Cache
+H:\Github\SoundSwitch\sound-switch\sound-switch\bin\Debug\sound-switch.exe.config
+H:\Github\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound-switch.exe
+H:\Github\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound-switch.pdb
+H:\Github\SoundSwitch\sound-switch\sound-switch\bin\Debug\sound-switch.exe
+H:\Github\SoundSwitch\sound-switch\sound-switch\bin\Debug\sound-switch.pdb
+H:\Github\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound-switch.csprojResolveAssemblyReference.cache
+H:\Github\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.BindDialog.resources
+H:\Github\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.DebugForm.resources
+H:\Github\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.HomeForm.resources
+H:\Github\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.Properties.Resources.resources
+H:\Github\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound-switch.csproj.GenerateResource.Cache

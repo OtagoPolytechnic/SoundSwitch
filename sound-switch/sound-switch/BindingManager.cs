@@ -21,9 +21,11 @@ namespace sound_switch
         //Load existing binds NYI
         public void loadExistingBinds()
         {
+            //Get this solutions debug directory dynamically.
+            string debugPath = System.AppDomain.CurrentDomain.BaseDirectory;
+
             //Create an array of paths holding all wav files in /debug
-            // !! LOCAL PATH !! NEEDS UPDATE ASAP
-            string[] dirs = System.IO.Directory.GetFiles("C:\\Users\\Decura\\Documents\\GitHub\\SoundSwitch\\sound-switch\\sound-switch\\bin\\Debug", "*.wav");
+            string[] dirs = System.IO.Directory.GetFiles(debugPath, "*.wav");
 
             for (int i = 0; i < dirs.Length; i++)
             {
@@ -35,13 +37,13 @@ namespace sound_switch
                 //Create intermediaries that store the substrings of the split path.
                 string newBindName = dirs[i].Substring(posSlash, posUnderscore - posSlash);
 
-                //Filter out the 'unprocessed.wav' file to prevent it from being interpreted as a binding.
+                //Filter out the unprocessed file from the newbind list.
                 if (newBindName != "unprocessed")
                 {
                     string newBindAction = dirs[i].Substring(posUnderscore + 1, posLastPeriod - posUnderscore);
 
                     //Create a new binding from these intermediaries.
-                    bindings.Add(new Binding(newBindName, newBindAction));
+                    bindings.Add(new Binding(newBindName, newBindAction, true));
                 }
             }
         }
@@ -73,7 +75,7 @@ namespace sound_switch
         public Binding compareUnprocessed()
         {
             //Path to the unprocessed wav file
-            string pathToUnprocessed = "unprocessed.wav";
+            string pathToUnprocessed = ProgramSettings.UnprocessedFileName;
 
             //Name of the xcorr library script we want to execute
             string pathToScript = "NYI.exe";
