@@ -104,5 +104,25 @@ namespace sound_switch
 
             return bindings[bestMatchIndex];
         }
+
+        public void removeBindingAtIndex(int index)
+        {
+            //Prompt the user to confirm if they wish to delete the file or not.
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this binding?", "Confirm Deletion", MessageBoxButtons.YesNo);
+
+            //If the user selects yes, delete the file as promised.
+            if (dialogResult == DialogResult.Yes)
+            {
+                //First, delete the file that accompanies this bind index.
+                File.Delete(bindings[index].pathToWav + ".wav");
+
+                //Remove binding from binding list at specified index.
+                bindings.RemoveAt(index);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //No action required.
+            }
+        }
     }
 }

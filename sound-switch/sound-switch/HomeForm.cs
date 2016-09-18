@@ -100,7 +100,11 @@ namespace sound_switch
 
         private void btnRemoveBind_Click(object sender, EventArgs e)
         {
+            int rowToDelete = dgvBind.CurrentCell.RowIndex;
 
+            bm.removeBindingAtIndex(rowToDelete);
+
+            bm.update(dgvBind);
         }
     }
 }
