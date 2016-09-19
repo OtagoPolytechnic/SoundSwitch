@@ -57,6 +57,7 @@ namespace RecorderTest
 
         private NAudio.Wave.WaveIn sourceStream = null;
         private NAudio.Wave.DirectSoundOut waveOut = null;
+        private NAudio.Wave.WaveFileWriter waveWriter = null;
 
         private void btnStart_Click(object sender, EventArgs e)
         {
@@ -109,12 +110,66 @@ namespace RecorderTest
                 sourceStream.Dispose();
                 sourceStream = null;
             }
+
+            if (waveWriter != null)
+            {
+                waveWriter.Dispose();
+                waveWriter = null;
+            }
+
+            MessageBox.Show("Recording stopped!");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             btnStop_Click(sender, e);
             this.Close();
+        }
+
+        private void btnWave_Click(object sender, EventArgs e)
+        {
+            // Checks to see if any device was selected
+            if (lvSource.SelectedItems.Count == 0) return;
+
+            // Prompt user a save file dialog
+            SaveFileDialog save = new SaveFileDialog();
+            // Provide filter to ensure user choose the wave file extension
+            save.Filter = "Wave File (*.wav)|*.wav;";
+            if (save.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
+
+            // Obtain device number from the index of the first selected item
+            int deviceNumber = lvSource.SelectedItems[0].Index;
+
+            // Inititalise the source stream
+            sourceStream = new NAudio.Wave.WaveIn();
+            // Set the device number to the source stream
+            sourceStream.DeviceNumber = deviceNumber;
+            // Assign a wave format with the standard 44.1kHz and the device number's channel
+            sourceStream.WaveFormat = new NAudio.Wave.WaveFormat(44100, NAudio.Wave.WaveIn.GetCapabilities(deviceNumber).Channels);
+
+            // source stream will want a new event when there is data available  
+            sourceStream.DataAvailable += new EventHandler<NAudio.Wave.WaveInEventArgs>(sourceStream_DataAvailable);
+            // Inititalise WaveWriter
+            // Enter file location and make sure the format saved is the same as the source stream
+            waveWriter = new NAudio.Wave.WaveFileWriter(save.FileName, sourceStream.WaveFormat);
+
+            sourceStream.StartRecording();
+        }
+
+        private void sourceStream_DataAvailable(object sender, NAudio.Wave.WaveInEventArgs e)
+        {
+            // Checks if wave writer exists 
+            if (waveWriter == null) return;
+
+            // Write data to the waveWriter
+            // Data is a byte array 
+            // Offset set to 0 to write the whole array of data
+            // Count is the bytes recorded
+            waveWriter.Write(e.Buffer, 0, e.BytesRecorded);
+
+            // Ensure wave file is written by flushing the data out with each write
+            // Prevent RAM from being held
+            waveWriter.Flush();
         }
     }
 }

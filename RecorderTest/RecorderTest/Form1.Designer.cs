@@ -36,6 +36,7 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnWave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -54,6 +55,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnWave);
             this.splitContainer1.Panel2.Controls.Add(this.btnExit);
             this.splitContainer1.Panel2.Controls.Add(this.btnStop);
             this.splitContainer1.Panel2.Controls.Add(this.btnStart);
@@ -127,6 +129,16 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnWave
+            // 
+            this.btnWave.Location = new System.Drawing.Point(2, 149);
+            this.btnWave.Name = "btnWave";
+            this.btnWave.Size = new System.Drawing.Size(161, 23);
+            this.btnWave.TabIndex = 4;
+            this.btnWave.Text = "To WAV";
+            this.btnWave.UseVisualStyleBackColor = true;
+            this.btnWave.Click += new System.EventHandler(this.btnWave_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +165,7 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnWave;
     }
 }
 
