@@ -178,7 +178,7 @@ namespace RecorderTest
         private void StartListening()
         {
             NAudio.Wave.WaveIn waveInStream = new NAudio.Wave.WaveIn();
-            waveInStream.BufferMilliseconds = 500;
+            waveInStream.BufferMilliseconds = 200;
             waveInStream.DataAvailable += new EventHandler<NAudio.Wave.WaveInEventArgs>(waveInStream_DataAvailable);
             waveInStream.StartRecording();
         }
@@ -193,7 +193,7 @@ namespace RecorderTest
                 sum += (sample * sample);
             }
 
-            double rms = Math.Sqrt(sum / (e.Buffer.Length / 2));
+            double rms = Math.Sqrt(sum / (e.Buffer.Length / 2)); // SOIMETHING AINT FUCKING RIGHT
 
             return rms;
         }
@@ -211,6 +211,13 @@ namespace RecorderTest
         private void tbListen_Click(object sender, EventArgs e)
         {
             StartListening();
+        }
+
+        // Causes rich text box to scroll to the bottom when new data is written
+        private void rbDecibel_TextChanged(object sender, EventArgs e)
+        {
+            rbDecibel.SelectionStart = rbDecibel.Text.Length;
+            rbDecibel.ScrollToCaret();
         }
     }
 }

@@ -150,6 +150,7 @@
             this.rbDecibel.Size = new System.Drawing.Size(280, 199);
             this.rbDecibel.TabIndex = 1;
             this.rbDecibel.Text = "";
+            this.rbDecibel.TextChanged += new System.EventHandler(this.rbDecibel_TextChanged);
             // 
             // tbListen
             // 
