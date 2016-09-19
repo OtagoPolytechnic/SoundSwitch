@@ -8,3 +8,4 @@ H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderT
 H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.csproj.GenerateResource.Cache
 H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.exe
 H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.pdb
+H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.csprojResolveAssemblyReference.cache

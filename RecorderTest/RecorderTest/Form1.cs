@@ -171,5 +171,46 @@ namespace RecorderTest
             // Prevent RAM from being held
             waveWriter.Flush();
         }
+
+        /***********************************************************************************/
+        /***********************************************************************************/
+        /***********************************************************************************/
+        private void StartListening()
+        {
+            NAudio.Wave.WaveIn waveInStream = new NAudio.Wave.WaveIn();
+            waveInStream.BufferMilliseconds = 500;
+            waveInStream.DataAvailable += new EventHandler<NAudio.Wave.WaveInEventArgs>(waveInStream_DataAvailable);
+            waveInStream.StartRecording();
+        }
+
+        private double calculateDBinRMS(NAudio.Wave.WaveInEventArgs e)
+        {
+            double sum = 0;
+
+            for (var i = 0; i < e.Buffer.Length; i = i + 2)
+            {
+                double sample = BitConverter.ToInt16(e.Buffer, i) / 32768.0;
+                sum += (sample * sample);
+            }
+
+            double rms = Math.Sqrt(sum / (e.Buffer.Length / 2));
+
+            return rms;
+        }
+
+        //Handler for the sound listener
+        private void waveInStream_DataAvailable(object sender, NAudio.Wave.WaveInEventArgs e)
+        {
+            double rms = calculateDBinRMS(e);
+
+            string display = rms.ToString();
+
+            rbDecibel.AppendText(display + "\n");
+        }
+
+        private void tbListen_Click(object sender, EventArgs e)
+        {
+            StartListening();
+        }
     }
 }
