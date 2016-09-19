@@ -1,1 +1,11 @@
 H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\bin\Debug\RecorderTest.exe.config
+H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\bin\Debug\RecorderTest.exe
+H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\bin\Debug\RecorderTest.pdb
+H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\bin\Debug\NAudio.dll
+H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\bin\Debug\NAudio.xml
+H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.csprojResolveAssemblyReference.cache
+H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.Form1.resources
+H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.Properties.Resources.resources
+H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.csproj.GenerateResource.Cache
+H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.exe
+H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.pdb
