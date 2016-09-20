@@ -109,6 +109,8 @@ namespace RecorderTest
                 sourceStream.StopRecording();
                 sourceStream.Dispose();
                 sourceStream = null;
+
+                MessageBox.Show("Recording stopped!");
             }
 
             if (waveWriter != null)
@@ -116,8 +118,6 @@ namespace RecorderTest
                 waveWriter.Dispose();
                 waveWriter = null;
             }
-
-            MessageBox.Show("Recording stopped!");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
