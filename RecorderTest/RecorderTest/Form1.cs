@@ -125,7 +125,8 @@ namespace RecorderTest
             btnStop_Click(sender, e);
             this.Close();
         }
-
+        
+        // USED TO WRITE TO WAVE FILE
         private void btnWave_Click(object sender, EventArgs e)
         {
             // Checks to see if any device was selected
@@ -161,15 +162,37 @@ namespace RecorderTest
             // Checks if wave writer exists 
             if (waveWriter == null) return;
 
+            int seconds = (int)(waveWriter.Length / waveWriter.WaveFormat.AverageBytesPerSecond);
+
             // Write data to the waveWriter
             // Data is a byte array 
             // Offset set to 0 to write the whole array of data
             // Count is the bytes recorded
-            waveWriter.Write(e.Buffer, 0, e.BytesRecorded);
+            //waveWriter.Write(e.Buffer, 0, e.BytesRecorded);
 
             // Ensure wave file is written by flushing the data out with each write
             // Prevent RAM from being held
-            waveWriter.Flush();
+            //waveWriter.Flush();
+
+            
+            if (seconds < 2)
+            {
+                // Write data to the waveWriter
+                // Data is a byte array 
+                // Offset set to 0 to write the whole array of data
+                // Count is the bytes recorded
+                waveWriter.Write(e.Buffer, 0, e.BytesRecorded);
+
+                // Ensure wave file is written by flushing the data out with each write
+                // Prevent RAM from being held
+                waveWriter.Flush();
+            }
+            else
+            {
+                waveWriter.Dispose();
+                waveWriter = null;
+            }
+
         }
 
         /***********************************************************************************/

@@ -9,3 +9,14 @@ H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderT
 H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.exe
 H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.pdb
 H:\My Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.csprojResolveAssemblyReference.cache
+C:\Users\Asus\Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\bin\Debug\RecorderTest.exe.config
+C:\Users\Asus\Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.exe
+C:\Users\Asus\Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.pdb
+C:\Users\Asus\Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\bin\Debug\RecorderTest.exe
+C:\Users\Asus\Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\bin\Debug\RecorderTest.pdb
+C:\Users\Asus\Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\bin\Debug\NAudio.dll
+C:\Users\Asus\Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\bin\Debug\NAudio.xml
+C:\Users\Asus\Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.csprojResolveAssemblyReference.cache
+C:\Users\Asus\Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.Form1.resources
+C:\Users\Asus\Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.Properties.Resources.resources
+C:\Users\Asus\Documents\GitHub\SoundSwitch\RecorderTest\RecorderTest\obj\Debug\RecorderTest.csproj.GenerateResource.Cache
