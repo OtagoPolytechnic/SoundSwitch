@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.rbSoundLevel = new System.Windows.Forms.RichTextBox();
             this.lvSource = new System.Windows.Forms.ListView();
             this.Device = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Channels = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tbListen = new System.Windows.Forms.Button();
             this.btnWave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.rbDecibel = new System.Windows.Forms.RichTextBox();
-            this.tbListen = new System.Windows.Forms.Button();
+            this.btnRecordEverything = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -53,11 +54,12 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.rbDecibel);
+            this.splitContainer1.Panel1.Controls.Add(this.rbSoundLevel);
             this.splitContainer1.Panel1.Controls.Add(this.lvSource);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnRecordEverything);
             this.splitContainer1.Panel2.Controls.Add(this.tbListen);
             this.splitContainer1.Panel2.Controls.Add(this.btnWave);
             this.splitContainer1.Panel2.Controls.Add(this.btnExit);
@@ -67,6 +69,15 @@
             this.splitContainer1.Size = new System.Drawing.Size(461, 322);
             this.splitContainer1.SplitterDistance = 287;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // rbSoundLevel
+            // 
+            this.rbSoundLevel.Location = new System.Drawing.Point(4, 120);
+            this.rbSoundLevel.Name = "rbSoundLevel";
+            this.rbSoundLevel.Size = new System.Drawing.Size(280, 199);
+            this.rbSoundLevel.TabIndex = 1;
+            this.rbSoundLevel.Text = "";
+            this.rbSoundLevel.TextChanged += new System.EventHandler(this.rbDecibel_TextChanged);
             // 
             // lvSource
             // 
@@ -91,6 +102,16 @@
             // 
             this.Channels.Text = "Channels";
             this.Channels.Width = 122;
+            // 
+            // tbListen
+            // 
+            this.tbListen.Location = new System.Drawing.Point(2, 178);
+            this.tbListen.Name = "tbListen";
+            this.tbListen.Size = new System.Drawing.Size(161, 23);
+            this.tbListen.TabIndex = 5;
+            this.tbListen.Text = "Listen";
+            this.tbListen.UseVisualStyleBackColor = true;
+            this.tbListen.Click += new System.EventHandler(this.tbListen_Click);
             // 
             // btnWave
             // 
@@ -143,24 +164,15 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // rbDecibel
+            // btnRecordEverything
             // 
-            this.rbDecibel.Location = new System.Drawing.Point(4, 120);
-            this.rbDecibel.Name = "rbDecibel";
-            this.rbDecibel.Size = new System.Drawing.Size(280, 199);
-            this.rbDecibel.TabIndex = 1;
-            this.rbDecibel.Text = "";
-            this.rbDecibel.TextChanged += new System.EventHandler(this.rbDecibel_TextChanged);
-            // 
-            // tbListen
-            // 
-            this.tbListen.Location = new System.Drawing.Point(2, 178);
-            this.tbListen.Name = "tbListen";
-            this.tbListen.Size = new System.Drawing.Size(161, 23);
-            this.tbListen.TabIndex = 5;
-            this.tbListen.Text = "Listen";
-            this.tbListen.UseVisualStyleBackColor = true;
-            this.tbListen.Click += new System.EventHandler(this.tbListen_Click);
+            this.btnRecordEverything.Location = new System.Drawing.Point(2, 207);
+            this.btnRecordEverything.Name = "btnRecordEverything";
+            this.btnRecordEverything.Size = new System.Drawing.Size(161, 23);
+            this.btnRecordEverything.TabIndex = 6;
+            this.btnRecordEverything.Text = "Record Everything";
+            this.btnRecordEverything.UseVisualStyleBackColor = true;
+            this.btnRecordEverything.Click += new System.EventHandler(this.btnRecordEverything_Click);
             // 
             // Form1
             // 
@@ -189,8 +201,9 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnWave;
-        private System.Windows.Forms.RichTextBox rbDecibel;
+        private System.Windows.Forms.RichTextBox rbSoundLevel;
         private System.Windows.Forms.Button tbListen;
+        private System.Windows.Forms.Button btnRecordEverything;
     }
 }
 
