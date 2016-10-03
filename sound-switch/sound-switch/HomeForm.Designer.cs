@@ -49,6 +49,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBackSet = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panelBindings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).BeginInit();
@@ -108,6 +109,7 @@
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.button1);
             this.panelMain.Controls.Add(this.label1);
             this.panelMain.Controls.Add(this.btnGit);
             this.panelMain.Controls.Add(this.btnToggleListen);
@@ -270,14 +272,24 @@
             this.btnBackSet.UseVisualStyleBackColor = true;
             this.btnBackSet.Click += new System.EventHandler(this.btnBackSet_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(246, 222);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "test matcher script";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(641, 321);
-            this.Controls.Add(this.panelBindings);
             this.Controls.Add(this.panelMain);
+            this.Controls.Add(this.panelBindings);
             this.Controls.Add(this.panelSettings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "HomeForm";
@@ -316,5 +328,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn bindCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn path;
+        private System.Windows.Forms.Button button1;
     }
 }

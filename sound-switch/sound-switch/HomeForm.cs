@@ -106,5 +106,12 @@ namespace sound_switch
 
             bm.update(dgvBind);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Binding outputDebug = bm.compareUnprocessed();
+
+            MessageBox.Show(outputDebug.bindCode + " was found as the best match.");
+        }
     }
 }

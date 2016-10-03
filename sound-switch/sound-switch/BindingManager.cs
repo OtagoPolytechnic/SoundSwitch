@@ -81,6 +81,9 @@ namespace sound_switch
             //Name of the xcorr library script we want to execute
             string pathToScript = ProgramSettings.MatcherExecutable;
 
+            //Name of the file we want to output our results to.
+            string outputFile = ProgramSettings.MatcherResult;
+
             //Create an executor instance to pass commands to the cmd prompt
             Executor executor = new Executor();
 
@@ -91,7 +94,8 @@ namespace sound_switch
             for (int i = 0; i < bindings.Count; i++)
             {
                 //Execute the overlap analysis script, the output of this script creates a single-line txt file containing the scalar match value.
-                executor.ExecuteCommand(pathToScript + " " + pathToUnprocessed + " " + bindings[i].pathToWav);
+                string commandToExecute = pathToScript + " \" " + pathToUnprocessed + "\" \" " + bindings[i].pathToWav + ".wav \" > " + outputFile;
+                executor.ExecuteCommand(commandToExecute);
 
                 //Read the first & only line of that file, converting it to a double and saving it into the results array.
                 compareResults[i] = Convert.ToDouble(File.ReadLines(ProgramSettings.MatcherResult).First());
