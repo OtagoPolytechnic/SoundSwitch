@@ -2127,3 +2127,103 @@ Subchunk2Size: 9576536
  --- INFORMATIONAL ---
 run finished at: Tue Oct 04 10:35:05 2016
 
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 04 10:45:58 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: RIFF`C
+ChunkSize: 17248
+Format: WAVERIFF`C
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: fmt 
+Subchunk1Size: 16
+AudioFormat: 1
+NumChannels: 1
+SampleRate: 11025
+ByteRate: 11025
+BlockAlign: 1
+BitsPerSample: 8
+Subchunk2ID: data;C
+Subchunk2Size: 17211
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: RIFF`C
+ChunkSize: 17248
+Format: WAVE(ý(
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: fmt 
+Subchunk1Size: 16
+AudioFormat: 1
+NumChannels: 1
+SampleRate: 11025
+ByteRate: 11025
+BlockAlign: 1
+BitsPerSample: 8
+Subchunk2ID: data;C
+Subchunk2Size: 17211
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 04 10:45:58 2016
+
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 04 10:47:28 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸EÅ
+ChunkSize: 12918872
+Format: 
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸EÅ
+Subchunk1Size: 12918872
+AudioFormat: 0
+NumChannels: 0
+SampleRate: 0
+ByteRate: 3254780098
+BlockAlign: 38137
+BitsPerSample: 0
+Subchunk2ID: ¸EÅ
+Subchunk2Size: 12918872
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸EÅ
+ChunkSize: 12918872
+Format: 06èv(ý(
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸EÅ
+Subchunk1Size: 12918872
+AudioFormat: 13872
+NumChannels: 30440
+SampleRate: 0
+ByteRate: 3170894013
+BlockAlign: 38137
+BitsPerSample: 0
+Subchunk2ID: ¸EÅ
+Subchunk2Size: 12918872
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 04 10:47:29 2016
+

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace sound_switch
 {
@@ -108,10 +109,27 @@ namespace sound_switch
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {  
+            //DEBUG, check the current unprocessed wav against the current bindings.
             Binding outputDebug = bm.compareUnprocessed();
 
             MessageBox.Show(outputDebug.bindCode + " was found as the best match.");
+        }
+
+        private void btnGit_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/OtagoPolytechnic/SoundSwitch");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //DEBUG, testing sendkeys method, this one simply hits the windows key.
+            SendKeys.Send("^(a)");
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

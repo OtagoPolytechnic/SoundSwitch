@@ -50,6 +50,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnBackSet = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panelBindings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).BeginInit();
@@ -61,18 +62,18 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Orange;
-            this.label1.Location = new System.Drawing.Point(61, 65);
+            this.label1.Location = new System.Drawing.Point(40, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 29);
+            this.label1.Size = new System.Drawing.Size(211, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Xcorr-Win";
+            this.label1.Text = "OP-SoundSwitch";
             // 
             // btnToggleListen
             // 
             this.btnToggleListen.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnToggleListen.Location = new System.Drawing.Point(48, 106);
+            this.btnToggleListen.Location = new System.Drawing.Point(58, 86);
             this.btnToggleListen.Name = "btnToggleListen";
-            this.btnToggleListen.Size = new System.Drawing.Size(155, 132);
+            this.btnToggleListen.Size = new System.Drawing.Size(169, 145);
             this.btnToggleListen.TabIndex = 1;
             this.btnToggleListen.Text = "Start Listening";
             this.btnToggleListen.UseVisualStyleBackColor = true;
@@ -106,9 +107,11 @@
             this.btnGit.TabIndex = 4;
             this.btnGit.Text = "Github";
             this.btnGit.UseVisualStyleBackColor = true;
+            this.btnGit.Click += new System.EventHandler(this.btnGit_Click);
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.button2);
             this.panelMain.Controls.Add(this.button1);
             this.panelMain.Controls.Add(this.label1);
             this.panelMain.Controls.Add(this.btnGit);
@@ -191,7 +194,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(152, 12);
+            this.label3.Location = new System.Drawing.Point(233, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 25);
             this.label3.TabIndex = 5;
@@ -204,9 +207,9 @@
             this.label2.ForeColor = System.Drawing.Color.Orange;
             this.label2.Location = new System.Drawing.Point(16, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 29);
+            this.label2.Size = new System.Drawing.Size(211, 29);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Xcorr-Win";
+            this.label2.Text = "OP-SoundSwitch";
             // 
             // btnBackBind
             // 
@@ -224,7 +227,7 @@
             this.panelSettings.Controls.Add(this.label4);
             this.panelSettings.Controls.Add(this.label5);
             this.panelSettings.Controls.Add(this.btnBackSet);
-            this.panelSettings.Location = new System.Drawing.Point(1, 1);
+            this.panelSettings.Location = new System.Drawing.Point(0, 0);
             this.panelSettings.Name = "panelSettings";
             this.panelSettings.Size = new System.Drawing.Size(640, 320);
             this.panelSettings.TabIndex = 9;
@@ -245,11 +248,12 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(152, 12);
+            this.label4.Location = new System.Drawing.Point(226, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 25);
             this.label4.TabIndex = 5;
             this.label4.Text = "Settings";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -258,9 +262,9 @@
             this.label5.ForeColor = System.Drawing.Color.Orange;
             this.label5.Location = new System.Drawing.Point(16, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 29);
+            this.label5.Size = new System.Drawing.Size(211, 29);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Xcorr-Win";
+            this.label5.Text = "OP-SoundSwitch";
             // 
             // btnBackSet
             // 
@@ -274,13 +278,25 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(246, 222);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(12, 286);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 23);
+            this.button1.Size = new System.Drawing.Size(179, 23);
             this.button1.TabIndex = 5;
-            this.button1.Text = "test matcher script";
+            this.button1.Text = "Test Current Unprocessed";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(197, 286);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(116, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Test KeySending";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // HomeForm
             // 
@@ -289,8 +305,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(641, 321);
             this.Controls.Add(this.panelMain);
-            this.Controls.Add(this.panelBindings);
             this.Controls.Add(this.panelSettings);
+            this.Controls.Add(this.panelBindings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "HomeForm";
             this.Text = "HomeForm";
@@ -329,5 +345,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bindCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn path;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
