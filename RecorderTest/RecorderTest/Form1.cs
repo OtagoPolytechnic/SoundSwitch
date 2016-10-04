@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -133,10 +134,10 @@ namespace RecorderTest
             if (lvSource.SelectedItems.Count == 0) return;
 
             // Prompt user a save file dialog
-            SaveFileDialog save = new SaveFileDialog();
+            /*SaveFileDialog save = new SaveFileDialog();
             // Provide filter to ensure user choose the wave file extension
             save.Filter = "Wave File (*.wav)|*.wav;";
-            if (save.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
+            if (save.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;*/
 
             // Obtain device number from the index of the first selected item
             int deviceNumber = lvSource.SelectedItems[0].Index;
@@ -152,7 +153,7 @@ namespace RecorderTest
             sourceStream.DataAvailable += new EventHandler<NAudio.Wave.WaveInEventArgs>(sourceStream_DataAvailable);
             // Inititalise WaveWriter
             // Enter file location and make sure the format saved is the same as the source stream
-            waveWriter = new NAudio.Wave.WaveFileWriter(save.FileName, sourceStream.WaveFormat);
+            waveWriter = new NAudio.Wave.WaveFileWriter("aaa.wav", sourceStream.WaveFormat);
 
             sourceStream.StartRecording();
         }
@@ -160,7 +161,10 @@ namespace RecorderTest
         private void sourceStream_DataAvailable(object sender, NAudio.Wave.WaveInEventArgs e)
         {
             // Checks if wave writer exists 
-            if (waveWriter == null) return;
+            if (waveWriter == null)
+            {
+                waveWriter = new NAudio.Wave.WaveFileWriter("aaa.wav", sourceStream.WaveFormat);
+            }
 
             int seconds = (int)(waveWriter.Length / waveWriter.WaveFormat.AverageBytesPerSecond);
 
@@ -175,7 +179,7 @@ namespace RecorderTest
             //waveWriter.Flush();
 
             // Got it to record for 2 seconds
-            if (seconds < 2)
+            if (seconds < 1)
             {
                 // Write data to the waveWriter
                 // Data is a byte array 
@@ -189,6 +193,7 @@ namespace RecorderTest
             }
             else
             {
+                MessageBox.Show("Recording done!");
                 waveWriter.Dispose();
                 waveWriter = null;
             }
@@ -267,12 +272,11 @@ namespace RecorderTest
             sourceStream.DataAvailable += new EventHandler<NAudio.Wave.WaveInEventArgs>(source_DataAvailable);
             // Inititalise WaveWriter
             // Enter file location and make sure the format saved is the same as the source stream
-            waveWriter = new NAudio.Wave.WaveFileWriter("aaaa.wav", sourceStream.WaveFormat);
+            waveWriter = new NAudio.Wave.WaveFileWriter("aaa.wav", sourceStream.WaveFormat);
 
             sourceStream.StartRecording();
         }
 
-        private int count = 0;
         private bool recordedFlag = false;
 
         private void source_DataAvailable(object sender, NAudio.Wave.WaveInEventArgs e)
@@ -280,18 +284,16 @@ namespace RecorderTest
             // Checks if wave writer exists 
             if (waveWriter == null)
             {
-                Random rand = new Random();
-                int randNo = rand.Next(0, 100);
-                waveWriter = new NAudio.Wave.WaveFileWriter("aaa_" + randNo + ".wav", sourceStream.WaveFormat);
+                waveWriter = new NAudio.Wave.WaveFileWriter("aaa.wav", sourceStream.WaveFormat);
             }
 
             double rms = calculateDBinRMS(e);
 
-            string rmsFormatted = string.Format("{0:0.00}", rms);
+            string rmsFormatted = string.Format("{0:0.00}", rms); // Just formats the RMS value
 
-            int seconds = (int)(waveWriter.Length / waveWriter.WaveFormat.AverageBytesPerSecond);
+            int seconds = (int)(waveWriter.Length / waveWriter.WaveFormat.AverageBytesPerSecond); // Calculates the length of the WAV file
 
-            rbSoundLevel.AppendText(rmsFormatted + "\n");
+            rbSoundLevel.AppendText(rmsFormatted + "\n"); // Writes RMS to the rich text box
 
             if (recordedFlag == false)
             {
@@ -309,9 +311,20 @@ namespace RecorderTest
 
                     recordedFlag = true;
                 }
+
+                /*if (recordedFlag == true)
+                {
+                    MessageBox.Show("Record success!");
+                    waveWriter.Dispose();
+                    waveWriter = null;
+
+                    recordedFlag = false;
+                }*/
             }
-            else
+            
+            if (recordedFlag == true)
             {
+                Thread.Sleep(2000);
                 MessageBox.Show("Record success!");
                 waveWriter.Dispose();
                 waveWriter = null;
