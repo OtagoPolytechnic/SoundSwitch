@@ -272,7 +272,7 @@ namespace RecorderTest
             sourceStream.DataAvailable += new EventHandler<NAudio.Wave.WaveInEventArgs>(source_DataAvailable);
             // Inititalise WaveWriter
             // Enter file location and make sure the format saved is the same as the source stream
-            waveWriter = new NAudio.Wave.WaveFileWriter("aaa.wav", sourceStream.WaveFormat);
+            
 
             sourceStream.StartRecording();
         }
@@ -285,14 +285,13 @@ namespace RecorderTest
 
             string rmsFormatted = string.Format("{0:0.00}", rms); // Just formats the RMS value
 
-            int seconds = (int)(waveWriter.Length / waveWriter.WaveFormat.AverageBytesPerSecond); // Calculates the length of the WAV file
-
             rbSoundLevel.AppendText(rmsFormatted + "\n"); // Writes RMS to the rich text box
 
             if (recordedFlag == false)
             {
-                if (rms > 1200)
+                if (rms > 700)
                 {
+                    waveWriter = new NAudio.Wave.WaveFileWriter("aaa.wav", sourceStream.WaveFormat);
                     waveWriter.Write(e.Buffer, 0, e.BytesRecorded);
                     recordedFlag = true;
                 }
@@ -300,6 +299,8 @@ namespace RecorderTest
 
             if (recordedFlag == true)
             {
+                int seconds = (int)(waveWriter.Length / waveWriter.WaveFormat.AverageBytesPerSecond); // Calculates the length of the WAV file
+
                 if (seconds < 1)
                 {
                     // Write data to the waveWriter
@@ -316,15 +317,8 @@ namespace RecorderTest
                 {
                     MessageBox.Show("Recording done!");
                     waveWriter.Dispose();
-                    waveWriter = null;
 
                     recordedFlag = false;
-                }
-
-                // Checks if wave writer exists 
-                if (waveWriter == null)
-                {
-                    waveWriter = new NAudio.Wave.WaveFileWriter("aaa.wav", sourceStream.WaveFormat);
                 }
             }
         }
