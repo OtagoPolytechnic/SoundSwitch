@@ -281,12 +281,6 @@ namespace RecorderTest
 
         private void source_DataAvailable(object sender, NAudio.Wave.WaveInEventArgs e)
         {
-            // Checks if wave writer exists 
-            if (waveWriter == null)
-            {
-                waveWriter = new NAudio.Wave.WaveFileWriter("aaa.wav", sourceStream.WaveFormat);
-            }
-
             double rms = calculateDBinRMS(e);
 
             string rmsFormatted = string.Format("{0:0.00}", rms); // Just formats the RMS value
@@ -297,7 +291,16 @@ namespace RecorderTest
 
             if (recordedFlag == false)
             {
-                if (rms > 800)
+                if (rms > 1200)
+                {
+                    waveWriter.Write(e.Buffer, 0, e.BytesRecorded);
+                    recordedFlag = true;
+                }
+            }
+
+            if (recordedFlag == true)
+            {
+                if (seconds < 1)
                 {
                     // Write data to the waveWriter
                     // Data is a byte array 
@@ -308,28 +311,21 @@ namespace RecorderTest
                     // Ensure wave file is written by flushing the data out with each write
                     // Prevent RAM from being held
                     waveWriter.Flush();
-
-                    recordedFlag = true;
                 }
-
-                /*if (recordedFlag == true)
+                else
                 {
-                    MessageBox.Show("Record success!");
+                    MessageBox.Show("Recording done!");
                     waveWriter.Dispose();
                     waveWriter = null;
 
                     recordedFlag = false;
-                }*/
-            }
-            
-            if (recordedFlag == true)
-            {
-                Thread.Sleep(2000);
-                MessageBox.Show("Record success!");
-                waveWriter.Dispose();
-                waveWriter = null;
+                }
 
-                recordedFlag = false;
+                // Checks if wave writer exists 
+                if (waveWriter == null)
+                {
+                    waveWriter = new NAudio.Wave.WaveFileWriter("aaa.wav", sourceStream.WaveFormat);
+                }
             }
         }
     }
