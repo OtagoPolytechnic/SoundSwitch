@@ -13,47 +13,18 @@ namespace RecorderTest
 {
     public partial class Form1 : Form
     {
+        private Manager manager;
+
         public Form1()
         {
             InitializeComponent();
+
+            manager = new Manager();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            // Obtain a list of wave in devices   
-            // Capabilities such as the name of device and the channels it has
-            List<NAudio.Wave.WaveInCapabilities> sources = new List<NAudio.Wave.WaveInCapabilities>();
-
-            // Loop through the devices available and add it to the sources list
-            for (int i = 0; i < NAudio.Wave.WaveIn.DeviceCount; i++)
-            {
-                // Add to the sources list
-                sources.Add(NAudio.Wave.WaveIn.GetCapabilities(i));
-            }
-
-            // Clear the list view
-            lvSource.Items.Clear();
-
-            // Checks to see if there are any recording devices connected
-            if (sources.Count == 0)
-            {
-                MessageBox.Show("No wave in devices found!");
-            }
-            else
-            {
-                // Loop through the list of sources and add it to the list view
-                foreach (var source in sources)
-                {
-                    // Create an item with the product name of the source for the left most column
-                    ListViewItem item = new ListViewItem(source.ProductName);
-
-                    // Adds the channels as a subitem to the product name
-                    item.SubItems.Add(new ListViewItem.ListViewSubItem(item, source.Channels.ToString()));
-
-                    // Add the item to the list view
-                    lvSource.Items.Add(item);
-                }
-            }
+            manager.SetSourceListView(lvSource);
         }
 
         private NAudio.Wave.WaveIn sourceStream = null;
@@ -270,9 +241,6 @@ namespace RecorderTest
 
             // source stream will want a new event when there is data available  
             sourceStream.DataAvailable += new EventHandler<NAudio.Wave.WaveInEventArgs>(source_DataAvailable);
-            // Inititalise WaveWriter
-            // Enter file location and make sure the format saved is the same as the source stream
-            
 
             sourceStream.StartRecording();
         }
@@ -291,16 +259,24 @@ namespace RecorderTest
             {
                 if (rms > 700)
                 {
+                    // Inititalise WaveWriter
+                    // Enter file location and make sure the format saved is the same as the source stream
                     waveWriter = new NAudio.Wave.WaveFileWriter("aaa.wav", sourceStream.WaveFormat);
+
+                    // This writes the first byte of the sound
+                    // FIXES THE CLIPPING SOUND
                     waveWriter.Write(e.Buffer, 0, e.BytesRecorded);
+                    waveWriter.Flush();
+
                     recordedFlag = true;
                 }
             }
 
             if (recordedFlag == true)
             {
-                int seconds = (int)(waveWriter.Length / waveWriter.WaveFormat.AverageBytesPerSecond); // Calculates the length of the WAV file
+                int seconds = (int)(waveWriter.Length / waveWriter.WaveFormat.AverageBytesPerSecond); // Calculates the length(time) of the WAV file
 
+                // Writes to the waveWriter if the file time length is less than what is set
                 if (seconds < 1)
                 {
                     // Write data to the waveWriter
@@ -313,7 +289,7 @@ namespace RecorderTest
                     // Prevent RAM from being held
                     waveWriter.Flush();
                 }
-                else
+                else // Display the 
                 {
                     MessageBox.Show("Recording done!");
                     waveWriter.Dispose();
@@ -321,6 +297,11 @@ namespace RecorderTest
                     recordedFlag = false;
                 }
             }
+        }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            manager.StartRecording(lvSource, rbSoundLevel);
         }
     }
 }
