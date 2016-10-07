@@ -56,16 +56,20 @@ namespace RecorderTest
             return sources;
         }
 
+        // Sets up the wave In (source stream) properties
         public void SetUpSourceStream(int deviceNumber)
         {
             // Inititalise the source stream
             sourceStream = new NAudio.Wave.WaveIn();
+
             // Set the device number to the source stream
             sourceStream.DeviceNumber = deviceNumber;
+
             // Assign a wave format with the standard 44.1kHz and the device number's channel
             sourceStream.WaveFormat = new NAudio.Wave.WaveFormat(44100, NAudio.Wave.WaveIn.GetCapabilities(deviceNumber).Channels);
         }
 
+        // Calculates the 'RMS' of the sound
         public double CalculateRMS(NAudio.Wave.WaveInEventArgs e)
         {
             double sum = 0;
@@ -83,6 +87,7 @@ namespace RecorderTest
             return rms;
         }
 
+        // Formats the RMS value to 2 decimal places
         public string FormatRMSOutput(double rms)
         {
             string rmsFormatted = string.Format("{0:0.00}", rms);
@@ -90,6 +95,7 @@ namespace RecorderTest
             return rmsFormatted;
         }
 
+        // Writes jnto the wave file writer object
         public void WriteToWaveWriter(NAudio.Wave.WaveInEventArgs e)
         {
             // Write data to the waveWriter
@@ -103,6 +109,7 @@ namespace RecorderTest
             waveWriter.Flush();
         }
 
+        // Calculates the length of time of the wave file writer
         public int WaveWriterLengthOfTime()
         {
             int seconds = (int)(waveWriter.Length / waveWriter.WaveFormat.AverageBytesPerSecond);
@@ -110,12 +117,28 @@ namespace RecorderTest
             return seconds;
         }
 
+        // Starts the recording
         public void Record(EventHandler<NAudio.Wave.WaveInEventArgs> e)
         {
             // Source stream will want a new event when there is data available  
             sourceStream.DataAvailable += new EventHandler<NAudio.Wave.WaveInEventArgs>(e);
 
             sourceStream.StartRecording();
+        }
+
+        // Stops the source stream
+        public void StopSourceStream()
+        {
+            sourceStream.StopRecording();
+            sourceStream.Dispose();
+            sourceStream = null;
+        }
+
+        // Stops the wave writer
+        public void StopWaveWriter()
+        {
+            waveWriter.Dispose();
+            waveWriter = null;
         }
     }
 }

@@ -10,6 +10,7 @@ namespace RecorderTest
     public class RecInterface
     {
         //Methods
+        // Adds the sources to the List View
         public void WriteToSourceList(List<NAudio.Wave.WaveInCapabilities> sources, ListView lvSource)
         {
             // Clear the list view
@@ -37,6 +38,7 @@ namespace RecorderTest
             }
         }
 
+        // Checks if any source device has been selected
         public void CheckIfSourceSelected(ListView lvSource)
         {
             if (lvSource.SelectedItems.Count == 0)
@@ -45,6 +47,7 @@ namespace RecorderTest
             }
         }
 
+        // Obtain the index value of the selected source from the List View
         public int ObtainDeviceNumberFromList(ListView lvSource)
         {
             // Obtain device number from the index of the first selected item
@@ -53,9 +56,16 @@ namespace RecorderTest
             return deviceNumber;
         }
 
+        // Displays the RMS value ont othe Rich Text Box
         public void SetRMStoRichTextBox(string rmsFormatted, RichTextBox rbSoundLevel)
         {
             rbSoundLevel.AppendText(rmsFormatted + "\n");
+        }
+
+        public void DisplayLatestRMSInRichTextBox(RichTextBox rbSoundLevel)
+        {
+            rbSoundLevel.SelectionStart = rbSoundLevel.Text.Length;
+            rbSoundLevel.ScrollToCaret();
         }
     }
 }

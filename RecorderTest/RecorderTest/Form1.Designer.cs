@@ -33,14 +33,10 @@
             this.lvSource = new System.Windows.Forms.ListView();
             this.Device = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Channels = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnRecordEverything = new System.Windows.Forms.Button();
-            this.tbListen = new System.Windows.Forms.Button();
-            this.btnWave = new System.Windows.Forms.Button();
+            this.btnRecord = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
-            this.btnStart = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnTest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -60,13 +56,9 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.btnTest);
-            this.splitContainer1.Panel2.Controls.Add(this.btnRecordEverything);
-            this.splitContainer1.Panel2.Controls.Add(this.tbListen);
-            this.splitContainer1.Panel2.Controls.Add(this.btnWave);
+            this.splitContainer1.Panel2.Controls.Add(this.btnRecord);
             this.splitContainer1.Panel2.Controls.Add(this.btnExit);
             this.splitContainer1.Panel2.Controls.Add(this.btnStop);
-            this.splitContainer1.Panel2.Controls.Add(this.btnStart);
             this.splitContainer1.Panel2.Controls.Add(this.btnRefresh);
             this.splitContainer1.Size = new System.Drawing.Size(461, 322);
             this.splitContainer1.SplitterDistance = 287;
@@ -79,7 +71,7 @@
             this.rbSoundLevel.Size = new System.Drawing.Size(280, 199);
             this.rbSoundLevel.TabIndex = 1;
             this.rbSoundLevel.Text = "";
-            this.rbSoundLevel.TextChanged += new System.EventHandler(this.rbDecibel_TextChanged);
+            this.rbSoundLevel.TextChanged += new System.EventHandler(this.rbSoundLevel_TextChanged);
             // 
             // lvSource
             // 
@@ -105,35 +97,15 @@
             this.Channels.Text = "Channels";
             this.Channels.Width = 122;
             // 
-            // btnRecordEverything
+            // btnRecord
             // 
-            this.btnRecordEverything.Location = new System.Drawing.Point(2, 207);
-            this.btnRecordEverything.Name = "btnRecordEverything";
-            this.btnRecordEverything.Size = new System.Drawing.Size(161, 23);
-            this.btnRecordEverything.TabIndex = 6;
-            this.btnRecordEverything.Text = "Record Everything";
-            this.btnRecordEverything.UseVisualStyleBackColor = true;
-            this.btnRecordEverything.Click += new System.EventHandler(this.btnRecordEverything_Click);
-            // 
-            // tbListen
-            // 
-            this.tbListen.Location = new System.Drawing.Point(2, 178);
-            this.tbListen.Name = "tbListen";
-            this.tbListen.Size = new System.Drawing.Size(161, 23);
-            this.tbListen.TabIndex = 5;
-            this.tbListen.Text = "Listen";
-            this.tbListen.UseVisualStyleBackColor = true;
-            this.tbListen.Click += new System.EventHandler(this.tbListen_Click);
-            // 
-            // btnWave
-            // 
-            this.btnWave.Location = new System.Drawing.Point(2, 149);
-            this.btnWave.Name = "btnWave";
-            this.btnWave.Size = new System.Drawing.Size(161, 23);
-            this.btnWave.TabIndex = 4;
-            this.btnWave.Text = "To WAV";
-            this.btnWave.UseVisualStyleBackColor = true;
-            this.btnWave.Click += new System.EventHandler(this.btnWave_Click);
+            this.btnRecord.Location = new System.Drawing.Point(2, 94);
+            this.btnRecord.Name = "btnRecord";
+            this.btnRecord.Size = new System.Drawing.Size(161, 23);
+            this.btnRecord.TabIndex = 7;
+            this.btnRecord.Text = "Record";
+            this.btnRecord.UseVisualStyleBackColor = true;
+            this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
             // 
             // btnExit
             // 
@@ -147,7 +119,7 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(3, 120);
+            this.btnStop.Location = new System.Drawing.Point(3, 118);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(161, 23);
             this.btnStop.TabIndex = 2;
@@ -155,19 +127,9 @@
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
-            // btnStart
-            // 
-            this.btnStart.Location = new System.Drawing.Point(3, 94);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(161, 23);
-            this.btnStart.TabIndex = 1;
-            this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(2, 3);
+            this.btnRefresh.Location = new System.Drawing.Point(3, 3);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(161, 23);
             this.btnRefresh.TabIndex = 0;
@@ -175,16 +137,6 @@
             this.btnRefresh.Text = "Refresh Sources";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnTest
-            // 
-            this.btnTest.Location = new System.Drawing.Point(3, 236);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(161, 23);
-            this.btnTest.TabIndex = 7;
-            this.btnTest.Text = "Test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // Form1
             // 
@@ -210,13 +162,9 @@
         private System.Windows.Forms.ColumnHeader Channels;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnStop;
-        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnWave;
         private System.Windows.Forms.RichTextBox rbSoundLevel;
-        private System.Windows.Forms.Button tbListen;
-        private System.Windows.Forms.Button btnRecordEverything;
-        private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Button btnRecord;
     }
 }
 
