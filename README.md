@@ -6,7 +6,7 @@ and hardware, which this program functions in tandem with.
 This program was developed as a senior project for part of the Bachelor of
 Information Technology at Otago Polytechnic.
 
-## Why?
+## Purpose & Reason
 Accessibility software can be prohibitively expensive and still suffer from
 the downside of being slow to operate. This code offers an free, open-source, and quick
 alternative to costly voice recognition & macro software.
