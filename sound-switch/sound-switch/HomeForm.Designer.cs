@@ -34,6 +34,8 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnGit = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelBindings = new System.Windows.Forms.Panel();
             this.dgvBind = new System.Windows.Forms.DataGridView();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,12 +47,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBackBind = new System.Windows.Forms.Button();
             this.panelSettings = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBackSet = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lvSource = new System.Windows.Forms.ListView();
+            this.device = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.channels = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblCurrentDevice = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.lblThreshold = new System.Windows.Forms.Label();
+            this.btnSetValues = new System.Windows.Forms.Button();
+            this.lblRecordingSeconds = new System.Windows.Forms.Label();
+            this.tbDeviceName = new System.Windows.Forms.TextBox();
+            this.tbThreshold = new System.Windows.Forms.TextBox();
+            this.tbSeconds = new System.Windows.Forms.TextBox();
             this.panelMain.SuspendLayout();
             this.panelBindings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).BeginInit();
@@ -122,6 +132,28 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(640, 320);
             this.panelMain.TabIndex = 5;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(197, 286);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(116, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Test KeySending";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(12, 286);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Test Current Unprocessed";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelBindings
             // 
@@ -223,7 +255,15 @@
             // 
             // panelSettings
             // 
-            this.panelSettings.Controls.Add(this.label6);
+            this.panelSettings.Controls.Add(this.tbSeconds);
+            this.panelSettings.Controls.Add(this.tbThreshold);
+            this.panelSettings.Controls.Add(this.tbDeviceName);
+            this.panelSettings.Controls.Add(this.lblRecordingSeconds);
+            this.panelSettings.Controls.Add(this.btnSetValues);
+            this.panelSettings.Controls.Add(this.lblThreshold);
+            this.panelSettings.Controls.Add(this.button3);
+            this.panelSettings.Controls.Add(this.lblCurrentDevice);
+            this.panelSettings.Controls.Add(this.lvSource);
             this.panelSettings.Controls.Add(this.label4);
             this.panelSettings.Controls.Add(this.label5);
             this.panelSettings.Controls.Add(this.btnBackSet);
@@ -232,16 +272,6 @@
             this.panelSettings.Size = new System.Drawing.Size(640, 320);
             this.panelSettings.TabIndex = 9;
             this.panelSettings.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(269, 144);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 39);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "NYI";
             // 
             // label4
             // 
@@ -276,27 +306,95 @@
             this.btnBackSet.UseVisualStyleBackColor = true;
             this.btnBackSet.Click += new System.EventHandler(this.btnBackSet_Click);
             // 
-            // button1
+            // lvSource
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 286);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Test Current Unprocessed";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.lvSource.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.device,
+            this.channels});
+            this.lvSource.Location = new System.Drawing.Point(21, 45);
+            this.lvSource.MultiSelect = false;
+            this.lvSource.Name = "lvSource";
+            this.lvSource.Scrollable = false;
+            this.lvSource.Size = new System.Drawing.Size(243, 207);
+            this.lvSource.TabIndex = 7;
+            this.lvSource.UseCompatibleStateImageBehavior = false;
+            this.lvSource.View = System.Windows.Forms.View.Details;
             // 
-            // button2
+            // device
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(197, 286);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Test KeySending";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.device.Text = "Device";
+            this.device.Width = 175;
+            // 
+            // channels
+            // 
+            this.channels.Text = "Channels";
+            this.channels.Width = 182;
+            // 
+            // lblCurrentDevice
+            // 
+            this.lblCurrentDevice.AutoSize = true;
+            this.lblCurrentDevice.Location = new System.Drawing.Point(353, 54);
+            this.lblCurrentDevice.Name = "lblCurrentDevice";
+            this.lblCurrentDevice.Size = new System.Drawing.Size(81, 13);
+            this.lblCurrentDevice.TabIndex = 8;
+            this.lblCurrentDevice.Text = "Current Device:";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(356, 212);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(155, 40);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "Refresh Sources";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // lblThreshold
+            // 
+            this.lblThreshold.AutoSize = true;
+            this.lblThreshold.Location = new System.Drawing.Point(353, 107);
+            this.lblThreshold.Name = "lblThreshold";
+            this.lblThreshold.Size = new System.Drawing.Size(57, 13);
+            this.lblThreshold.TabIndex = 10;
+            this.lblThreshold.Text = "Threshold:";
+            // 
+            // btnSetValues
+            // 
+            this.btnSetValues.Location = new System.Drawing.Point(356, 258);
+            this.btnSetValues.Name = "btnSetValues";
+            this.btnSetValues.Size = new System.Drawing.Size(155, 40);
+            this.btnSetValues.TabIndex = 11;
+            this.btnSetValues.Text = "Set Values";
+            this.btnSetValues.UseVisualStyleBackColor = true;
+            // 
+            // lblRecordingSeconds
+            // 
+            this.lblRecordingSeconds.AutoSize = true;
+            this.lblRecordingSeconds.Location = new System.Drawing.Point(353, 156);
+            this.lblRecordingSeconds.Name = "lblRecordingSeconds";
+            this.lblRecordingSeconds.Size = new System.Drawing.Size(102, 13);
+            this.lblRecordingSeconds.TabIndex = 12;
+            this.lblRecordingSeconds.Text = "Recording seconds:";
+            // 
+            // tbDeviceName
+            // 
+            this.tbDeviceName.Location = new System.Drawing.Point(461, 51);
+            this.tbDeviceName.Name = "tbDeviceName";
+            this.tbDeviceName.Size = new System.Drawing.Size(142, 20);
+            this.tbDeviceName.TabIndex = 13;
+            // 
+            // tbThreshold
+            // 
+            this.tbThreshold.Location = new System.Drawing.Point(461, 104);
+            this.tbThreshold.Name = "tbThreshold";
+            this.tbThreshold.Size = new System.Drawing.Size(50, 20);
+            this.tbThreshold.TabIndex = 14;
+            // 
+            // tbSeconds
+            // 
+            this.tbSeconds.Location = new System.Drawing.Point(461, 153);
+            this.tbSeconds.Name = "tbSeconds";
+            this.tbSeconds.Size = new System.Drawing.Size(50, 20);
+            this.tbSeconds.TabIndex = 15;
             // 
             // HomeForm
             // 
@@ -304,8 +402,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(641, 321);
-            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelSettings);
+            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelBindings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "HomeForm";
@@ -339,12 +437,22 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnBackSet;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvBind;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn bindCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn path;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox tbSeconds;
+        private System.Windows.Forms.TextBox tbThreshold;
+        private System.Windows.Forms.TextBox tbDeviceName;
+        private System.Windows.Forms.Label lblRecordingSeconds;
+        private System.Windows.Forms.Button btnSetValues;
+        private System.Windows.Forms.Label lblThreshold;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblCurrentDevice;
+        private System.Windows.Forms.ListView lvSource;
+        private System.Windows.Forms.ColumnHeader device;
+        private System.Windows.Forms.ColumnHeader channels;
     }
 }
