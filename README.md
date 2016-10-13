@@ -20,13 +20,17 @@ To build this software on your computer, you will require the following:
 Once VS is installed, simply:
 * Clone this repository to a local directory
 * Open the .sln file inside either of these subdirectories:
-** a
-** b
+  * For modifying the *recording* code, open the .sln inside recorder-test directory.
+  * For modifying the *binding-related* code, open the .sln inside sound-switch directory.
+
+Additionally, we include a pre-compiled .exe for one of the functions provided by [scape-xcorrsound](https://github.com/openpreserve/scape-xcorrsound) in this repository.
+If you wish to compile your own [scape-xcorrsound](https://github.com/openpreserve/scape-xcorrsound) .exe, please visit their repo and follow their provided instructions.
+Note that their library does not natively support windows, and modifications to their source code are required to make it compile on windows.
 
 If you do not wish to alter the code or build it yourself, we have provided
 pre-built .exe files that work with windows. (link to releases section here)
 
 ## Built With
-* nAudio - Audio capture software (for use when saving recorded sounds).
-* scape-xcorrsound - Library that facilitated the generation of comparison values
+* [nAudio](https://github.com/naudio/NAudio) - Audio capture software (for use when saving recorded sounds).
+* [scape-xcorrsound](https://github.com/openpreserve/scape-xcorrsound) - Library that facilitated the generation of comparison values
 between .wav files.
