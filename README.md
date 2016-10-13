@@ -1,6 +1,4 @@
 # SoundSwitch
-
-## About
 This program is an accessibility tool, intended for those with diminished motor
 control - typically those users also rely on the usage of eye-tracking software
 and hardware, which this program functions in tandem with.
@@ -19,10 +17,16 @@ To build this software on your computer, you will require the following:
 * A valid installation of Visual Studio 2013 or greater.
 * A microphone. Higher quality microphones will yield more accurate results.
 
+Once VS is installed, simply:
+* Clone this repository to a local directory
+* Open the .sln file inside either of these subdirectories:
+** a
+** b
+
 If you do not wish to alter the code or build it yourself, we have provided
 pre-built .exe files that work with windows. (link to releases section here)
 
-# Built With
+## Built With
 * nAudio - Audio capture software (for use when saving recorded sounds).
 * scape-xcorrsound - Library that facilitated the generation of comparison values
 between .wav files.
