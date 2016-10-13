@@ -50,3 +50,5 @@ H:\My Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_swi
 H:\My Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.HomeForm.resources
 H:\My Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.Properties.Resources.resources
 H:\My Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound-switch.csproj.GenerateResource.Cache
+H:\My Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.dll
+H:\My Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.xml

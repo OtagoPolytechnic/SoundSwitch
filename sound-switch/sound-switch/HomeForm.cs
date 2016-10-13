@@ -18,6 +18,7 @@ namespace sound_switch
 
         //Instance of the binding manager
         BindingManager bm = new BindingManager();
+        RecorderManager rm = new RecorderManager();
 
         public HomeForm()
         {
@@ -129,6 +130,24 @@ namespace sound_switch
 
         private void label4_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            rm.SetSourceListView(lvSource);
+        }
+
+
+        private void lvSource_ItemActivate(object sender, EventArgs e)
+        {
+            ListView.SelectedIndexCollection sel = lvSource.SelectedIndices;
+
+            if (sel.Count == 1)
+            {
+                ListViewItem selItem = lvSource.Items[sel[0]];
+                tbDeviceName.Text = selItem.SubItems[0].Text;
+            }
 
         }
     }

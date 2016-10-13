@@ -47,20 +47,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBackBind = new System.Windows.Forms.Button();
             this.panelSettings = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnBackSet = new System.Windows.Forms.Button();
+            this.tbSeconds = new System.Windows.Forms.TextBox();
+            this.tbThreshold = new System.Windows.Forms.TextBox();
+            this.tbDeviceName = new System.Windows.Forms.TextBox();
+            this.lblRecordingSeconds = new System.Windows.Forms.Label();
+            this.btnSetValues = new System.Windows.Forms.Button();
+            this.lblThreshold = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.lblCurrentDevice = new System.Windows.Forms.Label();
             this.lvSource = new System.Windows.Forms.ListView();
             this.device = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.channels = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblCurrentDevice = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lblThreshold = new System.Windows.Forms.Label();
-            this.btnSetValues = new System.Windows.Forms.Button();
-            this.lblRecordingSeconds = new System.Windows.Forms.Label();
-            this.tbDeviceName = new System.Windows.Forms.TextBox();
-            this.tbThreshold = new System.Windows.Forms.TextBox();
-            this.tbSeconds = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnBackSet = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panelBindings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).BeginInit();
@@ -261,7 +261,7 @@
             this.panelSettings.Controls.Add(this.lblRecordingSeconds);
             this.panelSettings.Controls.Add(this.btnSetValues);
             this.panelSettings.Controls.Add(this.lblThreshold);
-            this.panelSettings.Controls.Add(this.button3);
+            this.panelSettings.Controls.Add(this.btnRefresh);
             this.panelSettings.Controls.Add(this.lblCurrentDevice);
             this.panelSettings.Controls.Add(this.lvSource);
             this.panelSettings.Controls.Add(this.label4);
@@ -272,6 +272,99 @@
             this.panelSettings.Size = new System.Drawing.Size(640, 320);
             this.panelSettings.TabIndex = 9;
             this.panelSettings.Visible = false;
+            // 
+            // tbSeconds
+            // 
+            this.tbSeconds.Location = new System.Drawing.Point(425, 153);
+            this.tbSeconds.Name = "tbSeconds";
+            this.tbSeconds.Size = new System.Drawing.Size(50, 20);
+            this.tbSeconds.TabIndex = 15;
+            // 
+            // tbThreshold
+            // 
+            this.tbThreshold.Location = new System.Drawing.Point(425, 104);
+            this.tbThreshold.Name = "tbThreshold";
+            this.tbThreshold.Size = new System.Drawing.Size(50, 20);
+            this.tbThreshold.TabIndex = 14;
+            // 
+            // tbDeviceName
+            // 
+            this.tbDeviceName.Enabled = false;
+            this.tbDeviceName.Location = new System.Drawing.Point(425, 51);
+            this.tbDeviceName.Name = "tbDeviceName";
+            this.tbDeviceName.Size = new System.Drawing.Size(199, 20);
+            this.tbDeviceName.TabIndex = 13;
+            // 
+            // lblRecordingSeconds
+            // 
+            this.lblRecordingSeconds.AutoSize = true;
+            this.lblRecordingSeconds.Location = new System.Drawing.Point(317, 156);
+            this.lblRecordingSeconds.Name = "lblRecordingSeconds";
+            this.lblRecordingSeconds.Size = new System.Drawing.Size(102, 13);
+            this.lblRecordingSeconds.TabIndex = 12;
+            this.lblRecordingSeconds.Text = "Recording seconds:";
+            // 
+            // btnSetValues
+            // 
+            this.btnSetValues.Location = new System.Drawing.Point(469, 258);
+            this.btnSetValues.Name = "btnSetValues";
+            this.btnSetValues.Size = new System.Drawing.Size(155, 40);
+            this.btnSetValues.TabIndex = 11;
+            this.btnSetValues.Text = "Set Values";
+            this.btnSetValues.UseVisualStyleBackColor = true;
+            // 
+            // lblThreshold
+            // 
+            this.lblThreshold.AutoSize = true;
+            this.lblThreshold.Location = new System.Drawing.Point(317, 107);
+            this.lblThreshold.Name = "lblThreshold";
+            this.lblThreshold.Size = new System.Drawing.Size(57, 13);
+            this.lblThreshold.TabIndex = 10;
+            this.lblThreshold.Text = "Threshold:";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(308, 258);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(155, 40);
+            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.Text = "Refresh Sources";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // lblCurrentDevice
+            // 
+            this.lblCurrentDevice.AutoSize = true;
+            this.lblCurrentDevice.Location = new System.Drawing.Point(317, 54);
+            this.lblCurrentDevice.Name = "lblCurrentDevice";
+            this.lblCurrentDevice.Size = new System.Drawing.Size(81, 13);
+            this.lblCurrentDevice.TabIndex = 8;
+            this.lblCurrentDevice.Text = "Current Device:";
+            // 
+            // lvSource
+            // 
+            this.lvSource.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.device,
+            this.channels});
+            this.lvSource.Location = new System.Drawing.Point(21, 45);
+            this.lvSource.MultiSelect = false;
+            this.lvSource.Name = "lvSource";
+            this.lvSource.Scrollable = false;
+            this.lvSource.Size = new System.Drawing.Size(243, 207);
+            this.lvSource.TabIndex = 7;
+            this.lvSource.UseCompatibleStateImageBehavior = false;
+            this.lvSource.View = System.Windows.Forms.View.Details;
+            this.lvSource.ItemActivate += new System.EventHandler(this.lvSource_ItemActivate);
+            // 
+            // device
+            // 
+            this.device.Text = "Device";
+            this.device.Width = 175;
+            // 
+            // channels
+            // 
+            this.channels.Text = "Channels";
+            this.channels.Width = 182;
             // 
             // label4
             // 
@@ -305,96 +398,6 @@
             this.btnBackSet.Text = "Back";
             this.btnBackSet.UseVisualStyleBackColor = true;
             this.btnBackSet.Click += new System.EventHandler(this.btnBackSet_Click);
-            // 
-            // lvSource
-            // 
-            this.lvSource.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.device,
-            this.channels});
-            this.lvSource.Location = new System.Drawing.Point(21, 45);
-            this.lvSource.MultiSelect = false;
-            this.lvSource.Name = "lvSource";
-            this.lvSource.Scrollable = false;
-            this.lvSource.Size = new System.Drawing.Size(243, 207);
-            this.lvSource.TabIndex = 7;
-            this.lvSource.UseCompatibleStateImageBehavior = false;
-            this.lvSource.View = System.Windows.Forms.View.Details;
-            // 
-            // device
-            // 
-            this.device.Text = "Device";
-            this.device.Width = 175;
-            // 
-            // channels
-            // 
-            this.channels.Text = "Channels";
-            this.channels.Width = 182;
-            // 
-            // lblCurrentDevice
-            // 
-            this.lblCurrentDevice.AutoSize = true;
-            this.lblCurrentDevice.Location = new System.Drawing.Point(353, 54);
-            this.lblCurrentDevice.Name = "lblCurrentDevice";
-            this.lblCurrentDevice.Size = new System.Drawing.Size(81, 13);
-            this.lblCurrentDevice.TabIndex = 8;
-            this.lblCurrentDevice.Text = "Current Device:";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(356, 212);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(155, 40);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Refresh Sources";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // lblThreshold
-            // 
-            this.lblThreshold.AutoSize = true;
-            this.lblThreshold.Location = new System.Drawing.Point(353, 107);
-            this.lblThreshold.Name = "lblThreshold";
-            this.lblThreshold.Size = new System.Drawing.Size(57, 13);
-            this.lblThreshold.TabIndex = 10;
-            this.lblThreshold.Text = "Threshold:";
-            // 
-            // btnSetValues
-            // 
-            this.btnSetValues.Location = new System.Drawing.Point(356, 258);
-            this.btnSetValues.Name = "btnSetValues";
-            this.btnSetValues.Size = new System.Drawing.Size(155, 40);
-            this.btnSetValues.TabIndex = 11;
-            this.btnSetValues.Text = "Set Values";
-            this.btnSetValues.UseVisualStyleBackColor = true;
-            // 
-            // lblRecordingSeconds
-            // 
-            this.lblRecordingSeconds.AutoSize = true;
-            this.lblRecordingSeconds.Location = new System.Drawing.Point(353, 156);
-            this.lblRecordingSeconds.Name = "lblRecordingSeconds";
-            this.lblRecordingSeconds.Size = new System.Drawing.Size(102, 13);
-            this.lblRecordingSeconds.TabIndex = 12;
-            this.lblRecordingSeconds.Text = "Recording seconds:";
-            // 
-            // tbDeviceName
-            // 
-            this.tbDeviceName.Location = new System.Drawing.Point(461, 51);
-            this.tbDeviceName.Name = "tbDeviceName";
-            this.tbDeviceName.Size = new System.Drawing.Size(142, 20);
-            this.tbDeviceName.TabIndex = 13;
-            // 
-            // tbThreshold
-            // 
-            this.tbThreshold.Location = new System.Drawing.Point(461, 104);
-            this.tbThreshold.Name = "tbThreshold";
-            this.tbThreshold.Size = new System.Drawing.Size(50, 20);
-            this.tbThreshold.TabIndex = 14;
-            // 
-            // tbSeconds
-            // 
-            this.tbSeconds.Location = new System.Drawing.Point(461, 153);
-            this.tbSeconds.Name = "tbSeconds";
-            this.tbSeconds.Size = new System.Drawing.Size(50, 20);
-            this.tbSeconds.TabIndex = 15;
             // 
             // HomeForm
             // 
@@ -449,7 +452,7 @@
         private System.Windows.Forms.Label lblRecordingSeconds;
         private System.Windows.Forms.Button btnSetValues;
         private System.Windows.Forms.Label lblThreshold;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label lblCurrentDevice;
         private System.Windows.Forms.ListView lvSource;
         private System.Windows.Forms.ColumnHeader device;
