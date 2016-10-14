@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace sound_switch
 {
@@ -138,6 +139,16 @@ namespace sound_switch
             rm.SetSourceListView(lvSource);
         }
 
+        private void btnSetValues_Click(object sender, EventArgs e)
+        {
+            // Convert text to int
+            int threshold = Int32.Parse(tbThreshold.Text);
+            int recSeconds = Int32.Parse(tbSeconds.Text);
+
+            // Set the values 
+            rm.SetValues(threshold, recSeconds);
+        }
+
 
         private void lvSource_ItemActivate(object sender, EventArgs e)
         {
@@ -145,9 +156,32 @@ namespace sound_switch
 
             if (sel.Count == 1)
             {
+                MessageBox.Show("Device Selected!");
                 ListViewItem selItem = lvSource.Items[sel[0]];
                 tbDeviceName.Text = selItem.SubItems[0].Text;
             }
+
+        }
+
+        // For textboxes regex in Settings form 
+        private void tbThreshold_Leave(object sender, EventArgs e)
+        {
+            string pattern = @"^[1-9]\d*$";
+
+            Regex reg = new Regex(pattern);
+
+            if (reg.IsMatch(tbThreshold.Text))
+            {
+                MessageBox.Show("OK");
+            }
+            else
+            {
+                MessageBox.Show("NO");
+            }
+        }
+
+        private void tbSeconds_Leave(object sender, EventArgs e)
+        {
 
         }
     }

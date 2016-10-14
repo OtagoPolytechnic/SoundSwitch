@@ -279,6 +279,7 @@
             this.tbSeconds.Name = "tbSeconds";
             this.tbSeconds.Size = new System.Drawing.Size(50, 20);
             this.tbSeconds.TabIndex = 15;
+            this.tbSeconds.Leave += new System.EventHandler(this.tbSeconds_Leave);
             // 
             // tbThreshold
             // 
@@ -286,6 +287,7 @@
             this.tbThreshold.Name = "tbThreshold";
             this.tbThreshold.Size = new System.Drawing.Size(50, 20);
             this.tbThreshold.TabIndex = 14;
+            this.tbThreshold.Leave += new System.EventHandler(this.tbThreshold_Leave);
             // 
             // tbDeviceName
             // 
@@ -312,6 +314,7 @@
             this.btnSetValues.TabIndex = 11;
             this.btnSetValues.Text = "Set Values";
             this.btnSetValues.UseVisualStyleBackColor = true;
+            this.btnSetValues.Click += new System.EventHandler(this.btnSetValues_Click);
             // 
             // lblThreshold
             // 
