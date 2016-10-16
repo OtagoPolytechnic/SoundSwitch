@@ -137,12 +137,6 @@ namespace sound_switch
             }
         }
 
-        // Set the threshold values
-        private void setThres(int threshold)
-        {
-            this.threshold = threshold;
-        }
-
         private void sourceRecording_DataAvailable(object sender, NAudio.Wave.WaveInEventArgs e, string filePathName)
         {
 
@@ -191,7 +185,6 @@ namespace sound_switch
                     // Inititalise WaveWriter
                     // Enter file location and make sure the format saved is the same as the source stream
                     rec.WaveWriter = new NAudio.Wave.WaveFileWriter(ProgramSettings.UnprocessedFileName, rec.SourceStream.WaveFormat);
-
 
                     // Set flag to true 
                     rec.RecordedFlag = true;
@@ -266,7 +259,7 @@ namespace sound_switch
                 // Set the values 
                 if (thresFlag == true)
                 {
-                    setThres(thresConv);
+                    threshold = thresConv;
                     MessageBox.Show("Values set!");
                 }
                 else

@@ -156,5 +156,11 @@ namespace sound_switch
         {
             rm.Stop();
         }
+
+        private void rtbSoundLevel_TextChanged(object sender, EventArgs e)
+        {
+            rtbSoundLevel.SelectionStart = rtbSoundLevel.Text.Length;
+            rtbSoundLevel.ScrollToCaret();
+        }
     }
 }

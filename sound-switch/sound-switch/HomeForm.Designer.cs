@@ -393,6 +393,7 @@
             this.rtbSoundLevel.Size = new System.Drawing.Size(301, 152);
             this.rtbSoundLevel.TabIndex = 7;
             this.rtbSoundLevel.Text = "";
+            this.rtbSoundLevel.TextChanged += new System.EventHandler(this.rtbSoundLevel_TextChanged);
             // 
             // label6
             // 
@@ -422,8 +423,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(641, 321);
-            this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.panelMain);
+            this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.panelBindings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "HomeForm";
