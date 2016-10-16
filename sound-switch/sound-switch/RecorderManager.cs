@@ -15,7 +15,6 @@ namespace sound_switch
         private int threshold;
         private int recSeconds;
         private bool thresFlag;
-        private bool secFlag;
 
         //Properties
         public bool ThresFlag
@@ -23,18 +22,12 @@ namespace sound_switch
             get { return thresFlag; }
             set { thresFlag = value; }
         }
-        public bool SecFlag
-        {
-            get { return secFlag; }
-            set { secFlag = value; }
-        }
 
         //Constructor
         public RecorderManager()
         {
             rec = new Recorder();
             threshold = 0;
-            recSeconds = 1;
         }
 
         //Methods
@@ -68,12 +61,22 @@ namespace sound_switch
         }
 
         // Checks if any source device has been selected
-        private void checkIfSourceSelected(ListView lvSource)
+        private bool checkIfSourceSelected(ListView lvSource)
         {
+            bool sourceFlag;
+
             if (lvSource.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Please select a wave in device!");
+
+                sourceFlag = false;
             }
+            else
+            {
+                sourceFlag = true;
+            }
+
+            return sourceFlag;
         }
 
         // Obtain the index value of the selected source from the List View
@@ -89,29 +92,33 @@ namespace sound_switch
         public void StartListening(ListView lvSource, RichTextBox rtbSoundLevel)
         {
             // Checks if any source has been selected
-            checkIfSourceSelected(lvSource);
+            if (checkIfSourceSelected(lvSource) == true)
+            {
+                // Saves the source's number
+                int deviceNumber = obtainDeviceNumberFromList(lvSource);
 
-            // Saves the source's number
-            int deviceNumber = obtainDeviceNumberFromList(lvSource);
+                // Sets up the source stream with that source device
+                rec.SetUpSourceStream(deviceNumber);
 
-            // Sets up the source stream with that source device
-            rec.SetUpSourceStream(deviceNumber);
-
-            // Starts recording
-            rec.Record((sender, e) => sourceListening_DataAvailable(sender, e, rtbSoundLevel));
+                // Starts recording
+                rec.Record((sender, e) => sourceListening_DataAvailable(sender, e, rtbSoundLevel));
+            }
         }
 
-        public void StartRecording(ListView lvSource)
+        public void StartRecording(ListView lvSource, string filePathName)
         {
             // Checks if any source has been selected
-            checkIfSourceSelected(lvSource);
+            if (checkIfSourceSelected(lvSource) == true)
+            {
+                // Saves the source's number
+                int deviceNumber = obtainDeviceNumberFromList(lvSource);
 
-            // Saves the source's number
-            int deviceNumber = obtainDeviceNumberFromList(lvSource);
+                // Sets up the source stream with that source device
+                rec.SetUpSourceStream(deviceNumber);
 
-            // Sets up the source stream with that source device
-            rec.SetUpSourceStream(deviceNumber);
-
+                // Starts recording
+                rec.Record((sender, e) => sourceRecording_DataAvailable(sender, e, filePathName));
+            }
         }
 
         // Kills all recording process
@@ -130,11 +137,39 @@ namespace sound_switch
             }
         }
 
-        // Set the threshold and recording seconds values
-        private void setValues(int threshold, int recSeconds)
+        // Set the threshold values
+        private void setThres(int threshold)
         {
             this.threshold = threshold;
-            this.recSeconds = recSeconds;
+        }
+
+        private void sourceRecording_DataAvailable(object sender, NAudio.Wave.WaveInEventArgs e, string filePathName)
+        {
+
+            // Inititalise WaveWriter
+            // Enter file location and make sure the format saved is the same as the source stream
+
+            // TODO: @declan just change the first arguement to your file path & filename FROM your binding
+            rec.WaveWriter = new NAudio.Wave.WaveFileWriter(filePathName, rec.SourceStream.WaveFormat);
+
+            // Obtain the length of time in the wave file writer
+            int seconds = rec.WaveWriterLengthOfTime();
+
+            // If it is less than 1 second, then write data to the wave file writer
+            if (seconds < recSeconds)
+            {
+                rec.WriteToWaveWriter(e);
+            }
+            else // Display message box and dispose ofthe wave file writer
+            {
+                MessageBox.Show("Rec done!");
+
+                rec.WaveWriter.Dispose();
+
+                // Set flag to false
+                rec.RecordedFlag = false;
+            }
+
         }
 
         private void sourceListening_DataAvailable(object sender, NAudio.Wave.WaveInEventArgs e, RichTextBox rtbSoundLevel)
@@ -157,8 +192,6 @@ namespace sound_switch
                     // Enter file location and make sure the format saved is the same as the source stream
                     rec.WaveWriter = new NAudio.Wave.WaveFileWriter(ProgramSettings.UnprocessedFileName, rec.SourceStream.WaveFormat);
 
-                    // Write the first byte of the sound when triggered
-                    rec.WriteToWaveWriter(e);
 
                     // Set flag to true 
                     rec.RecordedFlag = true;
@@ -172,7 +205,7 @@ namespace sound_switch
                 int seconds = rec.WaveWriterLengthOfTime();
 
                 // If it is less than 1 second, then write data to the wave file writer
-                if (seconds < recSeconds)
+                if (seconds < 2)
                 {
                     rec.WriteToWaveWriter(e);
                 }
@@ -223,18 +256,17 @@ namespace sound_switch
             return regexFlag;
         }
 
-        public void SetValues(TextBox tbThreshold, TextBox tbSeconds)
+        public void SetValues(TextBox tbThreshold)
         {
             // Convert text to int
             try
             {
                 int thresConv = Int32.Parse(tbThreshold.Text);
-                int secConv = Int32.Parse(tbSeconds.Text);
 
                 // Set the values 
-                if (thresFlag == true && secFlag == true)
+                if (thresFlag == true)
                 {
-                    setValues(threshold, recSeconds);
+                    setThres(thresConv);
                     MessageBox.Show("Values set!");
                 }
                 else
@@ -244,7 +276,7 @@ namespace sound_switch
             }
             catch
             {
-                MessageBox.Show("Please do not leave fields empty");
+                MessageBox.Show("Please do not leave field empty");
             }
         }
     }

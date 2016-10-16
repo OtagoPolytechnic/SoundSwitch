@@ -47,10 +47,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBackBind = new System.Windows.Forms.Button();
             this.panelSettings = new System.Windows.Forms.Panel();
-            this.tbSeconds = new System.Windows.Forms.TextBox();
             this.tbThreshold = new System.Windows.Forms.TextBox();
             this.tbDeviceName = new System.Windows.Forms.TextBox();
-            this.lblRecordingSeconds = new System.Windows.Forms.Label();
             this.btnSetValues = new System.Windows.Forms.Button();
             this.lblThreshold = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -61,6 +59,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBackSet = new System.Windows.Forms.Button();
+            this.rtbSoundLevel = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnStop = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panelBindings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).BeginInit();
@@ -72,7 +73,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Orange;
-            this.label1.Location = new System.Drawing.Point(40, 54);
+            this.label1.Location = new System.Drawing.Point(12, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(211, 29);
             this.label1.TabIndex = 0;
@@ -80,10 +81,10 @@
             // 
             // btnToggleListen
             // 
-            this.btnToggleListen.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnToggleListen.Location = new System.Drawing.Point(58, 86);
+            this.btnToggleListen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToggleListen.Location = new System.Drawing.Point(12, 240);
             this.btnToggleListen.Name = "btnToggleListen";
-            this.btnToggleListen.Size = new System.Drawing.Size(169, 145);
+            this.btnToggleListen.Size = new System.Drawing.Size(145, 40);
             this.btnToggleListen.TabIndex = 1;
             this.btnToggleListen.Text = "Start Listening";
             this.btnToggleListen.UseVisualStyleBackColor = true;
@@ -91,7 +92,7 @@
             // 
             // btnBindings
             // 
-            this.btnBindings.Location = new System.Drawing.Point(380, 64);
+            this.btnBindings.Location = new System.Drawing.Point(380, 82);
             this.btnBindings.Name = "btnBindings";
             this.btnBindings.Size = new System.Drawing.Size(155, 40);
             this.btnBindings.TabIndex = 2;
@@ -111,7 +112,7 @@
             // 
             // btnGit
             // 
-            this.btnGit.Location = new System.Drawing.Point(380, 222);
+            this.btnGit.Location = new System.Drawing.Point(380, 203);
             this.btnGit.Name = "btnGit";
             this.btnGit.Size = new System.Drawing.Size(155, 40);
             this.btnGit.TabIndex = 4;
@@ -121,6 +122,9 @@
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.btnStop);
+            this.panelMain.Controls.Add(this.label6);
+            this.panelMain.Controls.Add(this.rtbSoundLevel);
             this.panelMain.Controls.Add(this.button2);
             this.panelMain.Controls.Add(this.button1);
             this.panelMain.Controls.Add(this.label1);
@@ -255,10 +259,8 @@
             // 
             // panelSettings
             // 
-            this.panelSettings.Controls.Add(this.tbSeconds);
             this.panelSettings.Controls.Add(this.tbThreshold);
             this.panelSettings.Controls.Add(this.tbDeviceName);
-            this.panelSettings.Controls.Add(this.lblRecordingSeconds);
             this.panelSettings.Controls.Add(this.btnSetValues);
             this.panelSettings.Controls.Add(this.lblThreshold);
             this.panelSettings.Controls.Add(this.btnRefresh);
@@ -272,14 +274,6 @@
             this.panelSettings.Size = new System.Drawing.Size(640, 320);
             this.panelSettings.TabIndex = 9;
             this.panelSettings.Visible = false;
-            // 
-            // tbSeconds
-            // 
-            this.tbSeconds.Location = new System.Drawing.Point(425, 153);
-            this.tbSeconds.Name = "tbSeconds";
-            this.tbSeconds.Size = new System.Drawing.Size(50, 20);
-            this.tbSeconds.TabIndex = 15;
-            this.tbSeconds.Leave += new System.EventHandler(this.tbSeconds_Leave);
             // 
             // tbThreshold
             // 
@@ -297,22 +291,13 @@
             this.tbDeviceName.Size = new System.Drawing.Size(199, 20);
             this.tbDeviceName.TabIndex = 13;
             // 
-            // lblRecordingSeconds
-            // 
-            this.lblRecordingSeconds.AutoSize = true;
-            this.lblRecordingSeconds.Location = new System.Drawing.Point(317, 156);
-            this.lblRecordingSeconds.Name = "lblRecordingSeconds";
-            this.lblRecordingSeconds.Size = new System.Drawing.Size(102, 13);
-            this.lblRecordingSeconds.TabIndex = 12;
-            this.lblRecordingSeconds.Text = "Recording seconds:";
-            // 
             // btnSetValues
             // 
             this.btnSetValues.Location = new System.Drawing.Point(469, 258);
             this.btnSetValues.Name = "btnSetValues";
             this.btnSetValues.Size = new System.Drawing.Size(155, 40);
             this.btnSetValues.TabIndex = 11;
-            this.btnSetValues.Text = "Set Values";
+            this.btnSetValues.Text = "Set Threshold";
             this.btnSetValues.UseVisualStyleBackColor = true;
             this.btnSetValues.Click += new System.EventHandler(this.btnSetValues_Click);
             // 
@@ -401,6 +386,36 @@
             this.btnBackSet.UseVisualStyleBackColor = true;
             this.btnBackSet.Click += new System.EventHandler(this.btnBackSet_Click);
             // 
+            // rtbSoundLevel
+            // 
+            this.rtbSoundLevel.Location = new System.Drawing.Point(12, 82);
+            this.rtbSoundLevel.Name = "rtbSoundLevel";
+            this.rtbSoundLevel.Size = new System.Drawing.Size(301, 152);
+            this.rtbSoundLevel.TabIndex = 7;
+            this.rtbSoundLevel.Text = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label6.Location = new System.Drawing.Point(13, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(175, 19);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Microphone RMS value:";
+            // 
+            // btnStop
+            // 
+            this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStop.Location = new System.Drawing.Point(168, 240);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(145, 40);
+            this.btnStop.TabIndex = 9;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,10 +463,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn path;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox tbSeconds;
         private System.Windows.Forms.TextBox tbThreshold;
         private System.Windows.Forms.TextBox tbDeviceName;
-        private System.Windows.Forms.Label lblRecordingSeconds;
         private System.Windows.Forms.Button btnSetValues;
         private System.Windows.Forms.Label lblThreshold;
         private System.Windows.Forms.Button btnRefresh;
@@ -459,5 +472,8 @@
         private System.Windows.Forms.ListView lvSource;
         private System.Windows.Forms.ColumnHeader device;
         private System.Windows.Forms.ColumnHeader channels;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RichTextBox rtbSoundLevel;
+        private System.Windows.Forms.Button btnStop;
     }
 }

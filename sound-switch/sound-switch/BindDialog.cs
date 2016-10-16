@@ -14,15 +14,21 @@ namespace sound_switch
 {
     public partial class BindDialog : Form
     {
-        public BindDialog()
+        private RecorderManager rm;
+        private ListView lvSource;
+
+        public BindDialog(object lv)
         {
             InitializeComponent();
+
+            lvSource = (ListView)lv;
 
             btnSubmit.DialogResult = DialogResult.OK;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            /*
             //Creator an executor instance so we can run the polling script
             Executor ex = new Executor();
 
@@ -35,7 +41,11 @@ namespace sound_switch
             //Wait 2s before enabling submit button.
             Thread.Sleep(2000);
 
-            btnSubmit.Enabled = true;
+            btnSubmit.Enabled = true;*/
+
+            rm = new RecorderManager();
+
+            rm.StartRecording(lvSource, "aaaa.wav");
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
