@@ -56,7 +56,7 @@ namespace sound_switch
 
         private void btnToggleListen_Click(object sender, EventArgs e)
         {
-            Executor ex = new Executor();
+            /*Executor ex = new Executor();
             ex.runPollingScript();
 
             //Change button text depending on activation.
@@ -69,7 +69,9 @@ namespace sound_switch
             {
                 btnToggleListen.Text = "Stop Listening";
                 enabledFlag = true;
-            }
+            }*/
+
+            rm.StartListening(lvSource, rtbSoundLevel);
         }
 
         private void btnNewBind_Click(object sender, EventArgs e)
@@ -79,7 +81,7 @@ namespace sound_switch
             string bBindTemp = "";
 
             //Open dialog prompts for the new binding
-            BindDialog dialog = new BindDialog();
+            BindDialog dialog = new BindDialog(lvSource);
 
             //Open the dialogue and wait a resolution flag
             if (dialog.ShowDialog(this) == DialogResult.OK)
@@ -136,7 +138,7 @@ namespace sound_switch
 
         private void btnSetValues_Click(object sender, EventArgs e)
         {
-            
+            rm.SetValues(tbThreshold);
         }
 
 
@@ -150,9 +152,9 @@ namespace sound_switch
             rm.ThresFlag = rm.CheckRegex(tbThreshold);
         }
 
-        private void tbSeconds_Leave(object sender, EventArgs e)
+        private void btnStop_Click(object sender, EventArgs e)
         {
-            rm.SecFlag = rm.CheckRegex(tbSeconds);
+            rm.Stop();
         }
     }
 }
