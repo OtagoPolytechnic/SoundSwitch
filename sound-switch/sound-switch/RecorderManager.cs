@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,6 +14,20 @@ namespace sound_switch
         private Recorder rec;
         private int threshold;
         private int recSeconds;
+        private bool thresFlag;
+        private bool secFlag;
+
+        //Properties
+        public bool ThresFlag
+        {
+            get { return thresFlag; }
+            set { thresFlag = value; }
+        }
+        public bool SecFlag
+        {
+            get { return secFlag; }
+            set { secFlag = value; }
+        }
 
         //Constructor
         public RecorderManager()
@@ -70,8 +85,8 @@ namespace sound_switch
             return deviceNumber;
         }
 
-        // Starts the listening and recording 
-        public void StartRecording(ListView lvSource, RichTextBox rtbSoundLevel)
+        // Starts the listening and records when a sound exceeds threshold
+        public void StartListening(ListView lvSource, RichTextBox rtbSoundLevel)
         {
             // Checks if any source has been selected
             checkIfSourceSelected(lvSource);
@@ -83,7 +98,20 @@ namespace sound_switch
             rec.SetUpSourceStream(deviceNumber);
 
             // Starts recording
-            rec.Record((sender, e) => source_DataAvailable(sender, e, rtbSoundLevel));
+            rec.Record((sender, e) => sourceListening_DataAvailable(sender, e, rtbSoundLevel));
+        }
+
+        public void StartRecording(ListView lvSource)
+        {
+            // Checks if any source has been selected
+            checkIfSourceSelected(lvSource);
+
+            // Saves the source's number
+            int deviceNumber = obtainDeviceNumberFromList(lvSource);
+
+            // Sets up the source stream with that source device
+            rec.SetUpSourceStream(deviceNumber);
+
         }
 
         // Kills all recording process
@@ -103,13 +131,13 @@ namespace sound_switch
         }
 
         // Set the threshold and recording seconds values
-        public void SetValues(int threshold, int recSeconds)
+        private void setValues(int threshold, int recSeconds)
         {
             this.threshold = threshold;
             this.recSeconds = recSeconds;
         }
 
-        private void source_DataAvailable(object sender, NAudio.Wave.WaveInEventArgs e, RichTextBox rtbSoundLevel)
+        private void sourceListening_DataAvailable(object sender, NAudio.Wave.WaveInEventArgs e, RichTextBox rtbSoundLevel)
         {
             // Obtain RMS value
             double rms = rec.CalculateRMS(e);
@@ -157,6 +185,66 @@ namespace sound_switch
                     // Set flag to false
                     rec.RecordedFlag = false;
                 }
+            }
+        }
+
+        public string DisplaySelectedDeviceName(ListView lvSource)
+        {
+            ListView.SelectedIndexCollection sel = lvSource.SelectedIndices;
+            string deviceName = "";
+
+            if (sel.Count == 1)
+            {
+                MessageBox.Show("Device Selected!");
+                ListViewItem selItem = lvSource.Items[sel[0]];
+                deviceName = selItem.SubItems[0].Text;
+            }
+
+            return deviceName;
+        }
+
+        public bool CheckRegex(TextBox tb)
+        {
+            string pattern = @"^[1-9]\d*$";
+
+            bool regexFlag;
+
+            Regex reg = new Regex(pattern);
+
+            if (reg.IsMatch(tb.Text))
+            {
+                regexFlag = true;
+            }
+            else
+            {
+                regexFlag = false;
+            }
+
+            return regexFlag;
+        }
+
+        public void SetValues(TextBox tbThreshold, TextBox tbSeconds)
+        {
+            // Convert text to int
+            try
+            {
+                int thresConv = Int32.Parse(tbThreshold.Text);
+                int secConv = Int32.Parse(tbSeconds.Text);
+
+                // Set the values 
+                if (thresFlag == true && secFlag == true)
+                {
+                    setValues(threshold, recSeconds);
+                    MessageBox.Show("Values set!");
+                }
+                else
+                {
+                    MessageBox.Show("Please enter positive numeric values!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Please do not leave fields empty");
             }
         }
     }

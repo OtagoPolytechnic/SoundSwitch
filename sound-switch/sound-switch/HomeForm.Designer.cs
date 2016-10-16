@@ -362,7 +362,7 @@
             // device
             // 
             this.device.Text = "Device";
-            this.device.Width = 175;
+            this.device.Width = 188;
             // 
             // channels
             // 
@@ -379,7 +379,6 @@
             this.label4.Size = new System.Drawing.Size(87, 25);
             this.label4.TabIndex = 5;
             this.label4.Text = "Settings";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 

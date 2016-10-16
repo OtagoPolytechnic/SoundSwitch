@@ -129,11 +129,6 @@ namespace sound_switch
             SendKeys.Send("^(a)");
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             rm.SetSourceListView(lvSource);
@@ -141,48 +136,23 @@ namespace sound_switch
 
         private void btnSetValues_Click(object sender, EventArgs e)
         {
-            // Convert text to int
-            int threshold = Int32.Parse(tbThreshold.Text);
-            int recSeconds = Int32.Parse(tbSeconds.Text);
-
-            // Set the values 
-            rm.SetValues(threshold, recSeconds);
+            
         }
 
 
         private void lvSource_ItemActivate(object sender, EventArgs e)
         {
-            ListView.SelectedIndexCollection sel = lvSource.SelectedIndices;
-
-            if (sel.Count == 1)
-            {
-                MessageBox.Show("Device Selected!");
-                ListViewItem selItem = lvSource.Items[sel[0]];
-                tbDeviceName.Text = selItem.SubItems[0].Text;
-            }
-
+            tbDeviceName.Text = rm.DisplaySelectedDeviceName(lvSource);
         }
 
-        // For textboxes regex in Settings form 
         private void tbThreshold_Leave(object sender, EventArgs e)
         {
-            string pattern = @"^[1-9]\d*$";
-
-            Regex reg = new Regex(pattern);
-
-            if (reg.IsMatch(tbThreshold.Text))
-            {
-                MessageBox.Show("OK");
-            }
-            else
-            {
-                MessageBox.Show("NO");
-            }
+            rm.ThresFlag = rm.CheckRegex(tbThreshold);
         }
 
         private void tbSeconds_Leave(object sender, EventArgs e)
         {
-
+            rm.SecFlag = rm.CheckRegex(tbSeconds);
         }
     }
 }

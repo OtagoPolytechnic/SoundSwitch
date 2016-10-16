@@ -52,3 +52,15 @@ H:\My Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_swi
 H:\My Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound-switch.csproj.GenerateResource.Cache
 H:\My Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.dll
 H:\My Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.xml
+C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\sound-switch.exe.config
+C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound-switch.exe
+C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound-switch.pdb
+C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound-switch.csprojResolveAssemblyReference.cache
+C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.BindDialog.resources
+C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.HomeForm.resources
+C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.Properties.Resources.resources
+C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound-switch.csproj.GenerateResource.Cache
+C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\sound-switch.exe
+C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\sound-switch.pdb
+C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.dll
+C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.xml
