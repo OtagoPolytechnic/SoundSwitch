@@ -81,7 +81,7 @@ namespace sound_switch
             string bBindTemp = "";
 
             //Open dialog prompts for the new binding
-            BindDialog dialog = new BindDialog(lvSource);
+            BindDialog dialog = new BindDialog(lvSource, bm);
 
             //Open the dialogue and wait a resolution flag
             if (dialog.ShowDialog(this) == DialogResult.OK)
