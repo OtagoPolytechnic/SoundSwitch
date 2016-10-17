@@ -47,5 +47,11 @@ namespace sound_switch
                 MessageBox.Show("Unprocessed wav not found, maybe you didn't record a sound first?");
             }
         }
+
+        //Method to return the full file path of a bind name. Used by recorder.
+        public string returnFullpath()
+        {
+            return pathToWav + ".wav";
+        }
     }
 }

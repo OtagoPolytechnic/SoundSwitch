@@ -66,6 +66,7 @@
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Submit Binding";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnRecord
             // 

@@ -64,3 +64,5 @@ C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\s
 C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\sound-switch.pdb
 C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.dll
 C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.xml
+H:\Github\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.dll
+H:\Github\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.xml

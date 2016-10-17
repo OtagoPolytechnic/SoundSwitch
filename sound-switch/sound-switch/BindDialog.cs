@@ -45,12 +45,17 @@ namespace sound_switch
 
             rm = new RecorderManager();
 
-            rm.StartRecording(lvSource, "aaaa.wav");
+            rm.StartRecording(lvSource, "unprocessed_.wav");
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://msdn.microsoft.com/en-us/library/system.windows.forms.sendkeys.send(v=vs.110).aspx");
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

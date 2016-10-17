@@ -34,6 +34,9 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnGit = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.rtbSoundLevel = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panelBindings = new System.Windows.Forms.Panel();
@@ -59,9 +62,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBackSet = new System.Windows.Forms.Button();
-            this.rtbSoundLevel = new System.Windows.Forms.RichTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnStop = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panelBindings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).BeginInit();
@@ -136,6 +136,37 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(640, 320);
             this.panelMain.TabIndex = 5;
+            // 
+            // btnStop
+            // 
+            this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStop.Location = new System.Drawing.Point(168, 240);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(145, 40);
+            this.btnStop.TabIndex = 9;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label6.Location = new System.Drawing.Point(13, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(175, 19);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Microphone RMS value:";
+            // 
+            // rtbSoundLevel
+            // 
+            this.rtbSoundLevel.Location = new System.Drawing.Point(12, 82);
+            this.rtbSoundLevel.Name = "rtbSoundLevel";
+            this.rtbSoundLevel.Size = new System.Drawing.Size(301, 152);
+            this.rtbSoundLevel.TabIndex = 7;
+            this.rtbSoundLevel.Text = "";
+            this.rtbSoundLevel.TextChanged += new System.EventHandler(this.rtbSoundLevel_TextChanged);
             // 
             // button2
             // 
@@ -385,37 +416,6 @@
             this.btnBackSet.Text = "Back";
             this.btnBackSet.UseVisualStyleBackColor = true;
             this.btnBackSet.Click += new System.EventHandler(this.btnBackSet_Click);
-            // 
-            // rtbSoundLevel
-            // 
-            this.rtbSoundLevel.Location = new System.Drawing.Point(12, 82);
-            this.rtbSoundLevel.Name = "rtbSoundLevel";
-            this.rtbSoundLevel.Size = new System.Drawing.Size(301, 152);
-            this.rtbSoundLevel.TabIndex = 7;
-            this.rtbSoundLevel.Text = "";
-            this.rtbSoundLevel.TextChanged += new System.EventHandler(this.rtbSoundLevel_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(13, 59);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(175, 19);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Microphone RMS value:";
-            // 
-            // btnStop
-            // 
-            this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStop.Location = new System.Drawing.Point(168, 240);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(145, 40);
-            this.btnStop.TabIndex = 9;
-            this.btnStop.Text = "Stop";
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // HomeForm
             // 

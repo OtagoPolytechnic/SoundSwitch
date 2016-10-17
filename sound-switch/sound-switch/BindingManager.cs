@@ -11,7 +11,7 @@ namespace sound_switch
     class BindingManager
     {
         //Binding manager holds a list of bindings which are created by the user at runtime.
-        List<Binding> bindings = new List<Binding>();
+        public List<Binding> bindings = new List<Binding>();
 
         public BindingManager()
         {
