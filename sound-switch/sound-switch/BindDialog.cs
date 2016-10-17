@@ -15,13 +15,15 @@ namespace sound_switch
     public partial class BindDialog : Form
     {
         private RecorderManager rm;
+        private BindingManager bm;
         private ListView lvSource;
 
-        public BindDialog(object lv)
+        public BindDialog(object lv, BindingManager bm)
         {
             InitializeComponent();
 
             rm = new RecorderManager();
+            this.bm = bm;
 
             lvSource = (ListView)lv;
 
@@ -46,6 +48,7 @@ namespace sound_switch
             btnSubmit.Enabled = true;*/
 
             rm.StartRecording(lvSource);
+            btnSubmit.Enabled = true;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -55,7 +58,6 @@ namespace sound_switch
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void btnStopRecord_Click(object sender, EventArgs e)
