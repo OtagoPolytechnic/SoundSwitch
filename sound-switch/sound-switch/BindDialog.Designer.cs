@@ -37,7 +37,6 @@
             this.txtBindCode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.btnStopRecord = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,17 +60,16 @@
             // btnSubmit
             // 
             this.btnSubmit.Enabled = false;
-            this.btnSubmit.Location = new System.Drawing.Point(12, 279);
+            this.btnSubmit.Location = new System.Drawing.Point(12, 192);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(226, 56);
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Submit Binding";
             this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnRecord
             // 
-            this.btnRecord.Location = new System.Drawing.Point(12, 174);
+            this.btnRecord.Location = new System.Drawing.Point(12, 110);
             this.btnRecord.Name = "btnRecord";
             this.btnRecord.Size = new System.Drawing.Size(226, 23);
             this.btnRecord.TabIndex = 3;
@@ -83,7 +81,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 158);
+            this.label2.Location = new System.Drawing.Point(12, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(228, 13);
             this.label2.TabIndex = 4;
@@ -93,7 +91,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 263);
+            this.label3.Location = new System.Drawing.Point(12, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(231, 13);
             this.label3.TabIndex = 5;
@@ -128,22 +126,11 @@
             this.linkLabel1.Text = "Help with this";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // btnStopRecord
-            // 
-            this.btnStopRecord.Location = new System.Drawing.Point(12, 203);
-            this.btnStopRecord.Name = "btnStopRecord";
-            this.btnStopRecord.Size = new System.Drawing.Size(226, 23);
-            this.btnStopRecord.TabIndex = 9;
-            this.btnStopRecord.Text = "Stop Recording";
-            this.btnStopRecord.UseVisualStyleBackColor = true;
-            this.btnStopRecord.Click += new System.EventHandler(this.btnStopRecord_Click);
-            // 
             // BindDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(252, 347);
-            this.Controls.Add(this.btnStopRecord);
+            this.ClientSize = new System.Drawing.Size(252, 259);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.txtBindCode);
             this.Controls.Add(this.label4);
@@ -171,6 +158,5 @@
         public System.Windows.Forms.TextBox txtBindCode;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button btnStopRecord;
     }
 }

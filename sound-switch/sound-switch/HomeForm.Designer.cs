@@ -37,7 +37,6 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.rtbSoundLevel = new System.Windows.Forms.RichTextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panelBindings = new System.Windows.Forms.Panel();
             this.dgvBind = new System.Windows.Forms.DataGridView();
@@ -82,7 +81,7 @@
             // btnToggleListen
             // 
             this.btnToggleListen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnToggleListen.Location = new System.Drawing.Point(12, 240);
+            this.btnToggleListen.Location = new System.Drawing.Point(24, 203);
             this.btnToggleListen.Name = "btnToggleListen";
             this.btnToggleListen.Size = new System.Drawing.Size(145, 40);
             this.btnToggleListen.TabIndex = 1;
@@ -92,7 +91,7 @@
             // 
             // btnBindings
             // 
-            this.btnBindings.Location = new System.Drawing.Point(380, 82);
+            this.btnBindings.Location = new System.Drawing.Point(425, 82);
             this.btnBindings.Name = "btnBindings";
             this.btnBindings.Size = new System.Drawing.Size(155, 40);
             this.btnBindings.TabIndex = 2;
@@ -102,7 +101,7 @@
             // 
             // btnSettings
             // 
-            this.btnSettings.Location = new System.Drawing.Point(380, 142);
+            this.btnSettings.Location = new System.Drawing.Point(425, 142);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(155, 40);
             this.btnSettings.TabIndex = 3;
@@ -112,7 +111,7 @@
             // 
             // btnGit
             // 
-            this.btnGit.Location = new System.Drawing.Point(380, 203);
+            this.btnGit.Location = new System.Drawing.Point(425, 203);
             this.btnGit.Name = "btnGit";
             this.btnGit.Size = new System.Drawing.Size(155, 40);
             this.btnGit.TabIndex = 4;
@@ -125,7 +124,6 @@
             this.panelMain.Controls.Add(this.btnStop);
             this.panelMain.Controls.Add(this.label6);
             this.panelMain.Controls.Add(this.rtbSoundLevel);
-            this.panelMain.Controls.Add(this.button2);
             this.panelMain.Controls.Add(this.button1);
             this.panelMain.Controls.Add(this.label1);
             this.panelMain.Controls.Add(this.btnGit);
@@ -140,7 +138,7 @@
             // btnStop
             // 
             this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStop.Location = new System.Drawing.Point(168, 240);
+            this.btnStop.Location = new System.Drawing.Point(180, 203);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(145, 40);
             this.btnStop.TabIndex = 9;
@@ -153,7 +151,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(13, 59);
+            this.label6.Location = new System.Drawing.Point(25, 59);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(175, 19);
             this.label6.TabIndex = 8;
@@ -161,32 +159,21 @@
             // 
             // rtbSoundLevel
             // 
-            this.rtbSoundLevel.Location = new System.Drawing.Point(12, 82);
+            this.rtbSoundLevel.Location = new System.Drawing.Point(24, 82);
             this.rtbSoundLevel.Name = "rtbSoundLevel";
-            this.rtbSoundLevel.Size = new System.Drawing.Size(301, 152);
+            this.rtbSoundLevel.Size = new System.Drawing.Size(301, 115);
             this.rtbSoundLevel.TabIndex = 7;
             this.rtbSoundLevel.Text = "";
             this.rtbSoundLevel.TextChanged += new System.EventHandler(this.rtbSoundLevel_TextChanged);
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(197, 286);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Test KeySending";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 286);
+            this.button1.Location = new System.Drawing.Point(24, 286);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 23);
+            this.button1.Size = new System.Drawing.Size(301, 23);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Test Current Unprocessed";
+            this.button1.Text = "Test Current Unprocessed.wav";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -312,6 +299,7 @@
             this.tbThreshold.Name = "tbThreshold";
             this.tbThreshold.Size = new System.Drawing.Size(50, 20);
             this.tbThreshold.TabIndex = 14;
+            this.tbThreshold.Text = "1000";
             this.tbThreshold.Leave += new System.EventHandler(this.tbThreshold_Leave);
             // 
             // tbDeviceName
@@ -463,7 +451,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bindCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn path;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox tbThreshold;
         private System.Windows.Forms.TextBox tbDeviceName;
         private System.Windows.Forms.Button btnSetValues;

@@ -81,7 +81,7 @@ namespace sound_switch
             string bBindTemp = "";
 
             //Open dialog prompts for the new binding
-            BindDialog dialog = new BindDialog(lvSource, bm);
+            BindDialog dialog = new BindDialog(lvSource);
 
             //Open the dialogue and wait a resolution flag
             if (dialog.ShowDialog(this) == DialogResult.OK)
@@ -123,12 +123,6 @@ namespace sound_switch
         private void btnGit_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/OtagoPolytechnic/SoundSwitch");
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //DEBUG, testing sendkeys method, this one simply hits the windows key.
-            SendKeys.Send("^(a)");
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
