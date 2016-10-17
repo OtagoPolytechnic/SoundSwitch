@@ -15,54 +15,32 @@ namespace sound_switch
     public partial class BindDialog : Form
     {
         private RecorderManager rm;
-        private BindingManager bm;
         private ListView lvSource;
 
-        public BindDialog(object lv, BindingManager bm)
+        public BindDialog(object lv)
         {
             InitializeComponent();
 
+            //Init a recordermanager instance and fetch the device source list.
             rm = new RecorderManager();
-            this.bm = bm;
-
             lvSource = (ListView)lv;
 
+            //Set the submit button to return control to the previous form when we've made a binding.
             btnSubmit.DialogResult = DialogResult.OK;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*
-            //Creator an executor instance so we can run the polling script
-            Executor ex = new Executor();
-
-            //Run the polling script once
-            ex.runPollingScript();
-
-            //TODO: Seperate python script to record as soon as the button is hit rather than when sound is heard.
-            //Just modify what we already have and make it a seperate script @leonardsim
-
-            //Wait 2s before enabling submit button.
-            Thread.Sleep(2000);
-
-            btnSubmit.Enabled = true;*/
-
+            //Instruct the recordmanager to begin recording at its specified quality.
             rm.StartRecording(lvSource);
+
+            //Allow the user to submit after at least something has been recorded.
             btnSubmit.Enabled = true;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://msdn.microsoft.com/en-us/library/system.windows.forms.sendkeys.send(v=vs.110).aspx");
-        }
-
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnStopRecord_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
