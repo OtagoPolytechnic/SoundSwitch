@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace sound_switch
 {
-    class BindingManager
+    public class BindingManager
     {
         //Binding manager holds a list of bindings which are created by the user at runtime.
         public List<Binding> bindings = new List<Binding>();
