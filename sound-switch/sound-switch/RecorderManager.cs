@@ -105,7 +105,7 @@ namespace sound_switch
             }
         }
 
-        public void StartRecording(ListView lvSource, string filePathName)
+        public void StartRecording(ListView lvSource)
         {
             // Checks if any source has been selected
             if (checkIfSourceSelected(lvSource) == true)
@@ -116,8 +116,12 @@ namespace sound_switch
                 // Sets up the source stream with that source device
                 rec.SetUpSourceStream(deviceNumber);
 
+                // Inititalise WaveWriter
+                // Enter file location and make sure the format saved is the same as the source stream
+                rec.WaveWriter = new NAudio.Wave.WaveFileWriter(ProgramSettings.UnprocessedFileName, rec.SourceStream.WaveFormat);
+
                 // Starts recording
-                rec.Record((sender, e) => sourceRecording_DataAvailable(sender, e, filePathName));
+                rec.Record((sender, e) => sourceRecording_DataAvailable(sender, e));
             }
         }
 
@@ -137,20 +141,13 @@ namespace sound_switch
             }
         }
 
-        private void sourceRecording_DataAvailable(object sender, NAudio.Wave.WaveInEventArgs e, string filePathName)
+        private void sourceRecording_DataAvailable(object sender, NAudio.Wave.WaveInEventArgs e)
         {
-
-            // Inititalise WaveWriter
-            // Enter file location and make sure the format saved is the same as the source stream
-
-            // TODO: @declan just change the first arguement to your file path & filename FROM your binding
-            rec.WaveWriter = new NAudio.Wave.WaveFileWriter(filePathName, rec.SourceStream.WaveFormat);
-
             // Obtain the length of time in the wave file writer
             int seconds = rec.WaveWriterLengthOfTime();
 
             // If it is less than 1 second, then write data to the wave file writer
-            if (seconds < recSeconds)
+            if (seconds < 2)
             {
                 rec.WriteToWaveWriter(e);
             }
@@ -160,10 +157,9 @@ namespace sound_switch
 
                 rec.WaveWriter.Dispose();
 
-                // Set flag to false
-                rec.RecordedFlag = false;
+                rec.SourceStream.StopRecording();
             }
-
+            
         }
 
         private void sourceListening_DataAvailable(object sender, NAudio.Wave.WaveInEventArgs e, RichTextBox rtbSoundLevel)

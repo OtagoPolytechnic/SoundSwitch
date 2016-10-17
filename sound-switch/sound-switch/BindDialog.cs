@@ -21,6 +21,8 @@ namespace sound_switch
         {
             InitializeComponent();
 
+            rm = new RecorderManager();
+
             lvSource = (ListView)lv;
 
             btnSubmit.DialogResult = DialogResult.OK;
@@ -43,9 +45,7 @@ namespace sound_switch
 
             btnSubmit.Enabled = true;*/
 
-            rm = new RecorderManager();
-
-            rm.StartRecording(lvSource, "unprocessed_.wav");
+            rm.StartRecording(lvSource);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -56,6 +56,11 @@ namespace sound_switch
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnStopRecord_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
