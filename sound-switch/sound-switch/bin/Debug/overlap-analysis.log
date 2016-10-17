@@ -3177,3 +3177,751 @@ Subchunk2Size: 9576536
  --- INFORMATIONAL ---
 run finished at: Tue Oct 18 11:46:56 2016
 
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:48:27 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E‚
+ChunkSize: 8527960
+Format: 
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E‚
+Subchunk1Size: 8527960
+AudioFormat: 0
+NumChannels: 0
+SampleRate: 0
+ByteRate: 3238002881
+BlockAlign: 37334
+BitsPerSample: 0
+Subchunk2ID: ¸E‚
+Subchunk2Size: 8527960
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E‚
+ChunkSize: 8527960
+Format: 
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E‚
+Subchunk1Size: 8527960
+AudioFormat: 0
+NumChannels: 0
+SampleRate: 0
+ByteRate: 3154116796
+BlockAlign: 37334
+BitsPerSample: 0
+Subchunk2ID: ¸E‚
+Subchunk2Size: 8527960
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 18 11:48:28 2016
+
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:48:28 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E:
+ChunkSize: 3809368
+Format: 
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E:
+Subchunk1Size: 3809368
+AudioFormat: 0
+NumChannels: 0
+SampleRate: 0
+ByteRate: 3254780098
+BlockAlign: 33389
+BitsPerSample: 0
+Subchunk2ID: ¸E:
+Subchunk2Size: 3809368
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E:
+ChunkSize: 3809368
+Format: 06êv(ý(
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E:
+Subchunk1Size: 3809368
+AudioFormat: 13872
+NumChannels: 30442
+SampleRate: 0
+ByteRate: 3170894013
+BlockAlign: 33389
+BitsPerSample: 0
+Subchunk2ID: ¸E:
+Subchunk2Size: 3809368
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 18 11:48:30 2016
+
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:48:30 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E;
+ChunkSize: 3874904
+Format: 
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E;
+Subchunk1Size: 3874904
+AudioFormat: 0
+NumChannels: 0
+SampleRate: 0
+ByteRate: 3254780098
+BlockAlign: 61057
+BitsPerSample: 0
+Subchunk2ID: ¸E;
+Subchunk2Size: 3874904
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E;
+ChunkSize: 3874904
+Format: 06êv(ý(
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E;
+Subchunk1Size: 3874904
+AudioFormat: 13872
+NumChannels: 30442
+SampleRate: 0
+ByteRate: 3170894013
+BlockAlign: 61057
+BitsPerSample: 0
+Subchunk2ID: ¸E;
+Subchunk2Size: 3874904
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 18 11:48:31 2016
+
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:50:34 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E6
+ChunkSize: 3547224
+Format: 
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E6
+Subchunk1Size: 3547224
+AudioFormat: 0
+NumChannels: 0
+SampleRate: 0
+ByteRate: 3238002881
+BlockAlign: 60959
+BitsPerSample: 0
+Subchunk2ID: ¸E6
+Subchunk2Size: 3547224
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E6
+ChunkSize: 3547224
+Format: 
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E6
+Subchunk1Size: 3547224
+AudioFormat: 0
+NumChannels: 0
+SampleRate: 0
+ByteRate: 3154116796
+BlockAlign: 60959
+BitsPerSample: 0
+Subchunk2ID: ¸E6
+Subchunk2Size: 3547224
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 18 11:50:35 2016
+
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:50:35 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E‹
+ChunkSize: 9117784
+Format: 
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E‹
+Subchunk1Size: 9117784
+AudioFormat: 0
+NumChannels: 0
+SampleRate: 0
+ByteRate: 3254780098
+BlockAlign: 59295
+BitsPerSample: 0
+Subchunk2ID: ¸E‹
+Subchunk2Size: 9117784
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E‹
+ChunkSize: 9117784
+Format: 06êv(ý(
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E‹
+Subchunk1Size: 9117784
+AudioFormat: 13872
+NumChannels: 30442
+SampleRate: 0
+ByteRate: 3170894013
+BlockAlign: 59295
+BitsPerSample: 0
+Subchunk2ID: ¸E‹
+Subchunk2Size: 9117784
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 18 11:50:37 2016
+
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:50:37 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E˜
+ChunkSize: 9969752
+Format: 
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E˜
+Subchunk1Size: 9969752
+AudioFormat: 0
+NumChannels: 0
+SampleRate: 0
+ByteRate: 3254780098
+BlockAlign: 27395
+BitsPerSample: 0
+Subchunk2ID: ¸E˜
+Subchunk2Size: 9969752
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E˜
+ChunkSize: 9969752
+Format: 06êv(ý(
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E˜
+Subchunk1Size: 9969752
+AudioFormat: 13872
+NumChannels: 30442
+SampleRate: 0
+ByteRate: 3170894013
+BlockAlign: 27395
+BitsPerSample: 0
+Subchunk2ID: ¸E˜
+Subchunk2Size: 9969752
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 18 11:50:39 2016
+
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:53:38 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E…
+ChunkSize: 8724568
+Format: 
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E…
+Subchunk1Size: 8724568
+AudioFormat: 0
+NumChannels: 0
+SampleRate: 0
+ByteRate: 3238002881
+BlockAlign: 52537
+BitsPerSample: 0
+Subchunk2ID: ¸E…
+Subchunk2Size: 8724568
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E…
+ChunkSize: 8724568
+Format: 
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E…
+Subchunk1Size: 8724568
+AudioFormat: 0
+NumChannels: 0
+SampleRate: 0
+ByteRate: 3154116796
+BlockAlign: 52537
+BitsPerSample: 0
+Subchunk2ID: ¸E…
+Subchunk2Size: 8724568
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 18 11:53:39 2016
+
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:53:52 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E¦
+ChunkSize: 10887256
+Format: 
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E¦
+Subchunk1Size: 10887256
+AudioFormat: 0
+NumChannels: 0
+SampleRate: 0
+ByteRate: 3254780098
+BlockAlign: 59260
+BitsPerSample: 0
+Subchunk2ID: ¸E¦
+Subchunk2Size: 10887256
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E¦
+ChunkSize: 10887256
+Format: 06êv(ý(
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E¦
+Subchunk1Size: 10887256
+AudioFormat: 13872
+NumChannels: 30442
+SampleRate: 0
+ByteRate: 3170894013
+BlockAlign: 59260
+BitsPerSample: 0
+Subchunk2ID: ¸E¦
+Subchunk2Size: 10887256
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 18 11:53:53 2016
+
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:54:09 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E
+ChunkSize: 8331352
+Format: 
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E
+Subchunk1Size: 8331352
+AudioFormat: 0
+NumChannels: 0
+SampleRate: 0
+ByteRate: 3254780098
+BlockAlign: 32016
+BitsPerSample: 0
+Subchunk2ID: ¸E
+Subchunk2Size: 8331352
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E
+ChunkSize: 8331352
+Format: 06êv(ý(
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E
+Subchunk1Size: 8331352
+AudioFormat: 13872
+NumChannels: 30442
+SampleRate: 0
+ByteRate: 3170894013
+BlockAlign: 32016
+BitsPerSample: 0
+Subchunk2ID: ¸E
+Subchunk2Size: 8331352
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 18 11:54:10 2016
+
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:55:28 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: RIFFFb
+ChunkSize: 352838
+Format: WAVERIFFFb
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: fmt 
+Subchunk1Size: 18
+AudioFormat: 1
+NumChannels: 2
+SampleRate: 44100
+ByteRate: 176400
+BlockAlign: 4
+BitsPerSample: 16
+Subchunk2ID: 
+Subchunk2Size: 1646289268
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: RIFFFb
+ChunkSize: 352838
+Format: WAVE(ý(
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: fmt 
+Subchunk1Size: 18
+AudioFormat: 1
+NumChannels: 2
+SampleRate: 44100
+ByteRate: 176400
+BlockAlign: 4
+BitsPerSample: 16
+Subchunk2ID: 
+Subchunk2Size: 1646289268
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 18 11:55:28 2016
+
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:55:35 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: RIFFFb
+ChunkSize: 352838
+Format: WAVERIFFFb
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: fmt 
+Subchunk1Size: 18
+AudioFormat: 1
+NumChannels: 2
+SampleRate: 44100
+ByteRate: 176400
+BlockAlign: 4
+BitsPerSample: 16
+Subchunk2ID: 
+Subchunk2Size: 1646289268
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: RIFFFb
+ChunkSize: 352838
+Format: WAVE(ý(
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: fmt 
+Subchunk1Size: 18
+AudioFormat: 1
+NumChannels: 2
+SampleRate: 44100
+ByteRate: 176400
+BlockAlign: 4
+BitsPerSample: 16
+Subchunk2ID: 
+Subchunk2Size: 1646289268
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 18 11:55:36 2016
+
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:56:03 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: RIFFFb
+ChunkSize: 352838
+Format: WAVERIFFFb
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: fmt 
+Subchunk1Size: 18
+AudioFormat: 1
+NumChannels: 2
+SampleRate: 44100
+ByteRate: 176400
+BlockAlign: 4
+BitsPerSample: 16
+Subchunk2ID: 
+Subchunk2Size: 1646289268
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: RIFFFb
+ChunkSize: 352838
+Format: WAVE(ý(
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: fmt 
+Subchunk1Size: 18
+AudioFormat: 1
+NumChannels: 2
+SampleRate: 44100
+ByteRate: 176400
+BlockAlign: 4
+BitsPerSample: 16
+Subchunk2ID: 
+Subchunk2Size: 1646289268
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 18 11:56:03 2016
+
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:56:07 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: RIFFFb
+ChunkSize: 352838
+Format: WAVE¸E?
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: fmt 
+Subchunk1Size: 18
+AudioFormat: 1
+NumChannels: 2
+SampleRate: 44100
+ByteRate: 176400
+BlockAlign: 4
+BitsPerSample: 16
+Subchunk2ID: 
+Subchunk2Size: 1646289268
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸E?
+ChunkSize: 4137048
+Format: (ý(
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸E?
+Subchunk1Size: 4137048
+AudioFormat: 769
+NumChannels: 769
+SampleRate: 50397953
+ByteRate: 2013266040
+BlockAlign: 25303
+BitsPerSample: 0
+Subchunk2ID: ¸E?
+Subchunk2Size: 4137048
+----------------------- wav subchunk end -----------------------
+
+ --- FATAL ---
+Sample rates differ, exiting.
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:56:51 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: RIFFFb
+ChunkSize: 352838
+Format: WAVERIFFFb
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: fmt 
+Subchunk1Size: 18
+AudioFormat: 1
+NumChannels: 2
+SampleRate: 44100
+ByteRate: 176400
+BlockAlign: 4
+BitsPerSample: 16
+Subchunk2ID: 
+Subchunk2Size: 1646289268
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: RIFFFb
+ChunkSize: 352838
+Format: WAVE(ý(
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: fmt 
+Subchunk1Size: 18
+AudioFormat: 1
+NumChannels: 2
+SampleRate: 44100
+ByteRate: 176400
+BlockAlign: 4
+BitsPerSample: 16
+Subchunk2ID: 
+Subchunk2Size: 1646289268
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+run finished at: Tue Oct 18 11:56:52 2016
+
+
+ --- INFORMATIONAL ---
+run started at: Tue Oct 18 11:56:52 2016
+
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: RIFFFb
+ChunkSize: 352838
+Format: WAVE¸EQ
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: fmt 
+Subchunk1Size: 18
+AudioFormat: 1
+NumChannels: 2
+SampleRate: 44100
+ByteRate: 176400
+BlockAlign: 4
+BitsPerSample: 16
+Subchunk2ID: 
+Subchunk2Size: 1646289268
+----------------------- wav subchunk end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav header start -----------------------
+ChunkID: ¸EQ
+ChunkSize: 5316696
+Format: (ý(
+----------------------- wav header end -----------------------
+
+ --- INFORMATIONAL ---
+----------------------- wav subchunk start -----------------------
+Subchunk1ID: ¸EQ
+Subchunk1Size: 5316696
+AudioFormat: 769
+NumChannels: 769
+SampleRate: 50397953
+ByteRate: 2013266040
+BlockAlign: 42341
+BitsPerSample: 0
+Subchunk2ID: ¸EQ
+Subchunk2Size: 5316696
+----------------------- wav subchunk end -----------------------
+
+ --- FATAL ---
+Sample rates differ, exiting.

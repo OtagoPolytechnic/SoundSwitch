@@ -14,9 +14,6 @@ namespace sound_switch
 {
     public partial class HomeForm : Form
     {
-        //Flag for changing contents on the form.
-        bool enabledFlag;
-
         //Instance of the binding manager
         BindingManager bm = new BindingManager();
         RecorderManager rm = new RecorderManager();
@@ -24,7 +21,6 @@ namespace sound_switch
         public HomeForm()
         {
             InitializeComponent();
-            enabledFlag = false;
         }
 
         private void btnBackBind_Click(object sender, EventArgs e)
@@ -56,21 +52,7 @@ namespace sound_switch
 
         private void btnToggleListen_Click(object sender, EventArgs e)
         {
-            /*Executor ex = new Executor();
-            ex.runPollingScript();
-
-            //Change button text depending on activation.
-            if (enabledFlag)
-            {
-                btnToggleListen.Text = "Start Listening";
-                enabledFlag = false;
-            }
-            else
-            {
-                btnToggleListen.Text = "Stop Listening";
-                enabledFlag = true;
-            }*/
-
+            //Instruct rm to begin polling mic data
             rm.StartListening(lvSource, rtbSoundLevel);
         }
 
@@ -134,7 +116,6 @@ namespace sound_switch
         {
             rm.SetValues(tbThreshold);
         }
-
 
         private void lvSource_ItemActivate(object sender, EventArgs e)
         {

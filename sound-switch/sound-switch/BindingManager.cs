@@ -88,22 +88,22 @@ namespace sound_switch
             Executor executor = new Executor();
 
             //String array that holds the script run results
-            double[] compareResults = new double[bindings.Count];
+            object[] compareResults = new object[bindings.Count];
 
             //Loop over each stored binding and execute the compare script on each of them.
             for (int i = 0; i < bindings.Count; i++)
             {
                 //Execute the overlap analysis script, the output of this script creates a single-line txt file containing the scalar match value.
-                string commandToExecute = pathToScript + " \" " + pathToUnprocessed + "\" \" " + bindings[i].pathToWav + ".wav \" > " + outputFile;
+                string commandToExecute = pathToScript + " " + pathToUnprocessed + " " + bindings[i].pathToWav + ".wav > " + outputFile;
                 executor.ExecuteCommand(commandToExecute);
 
                 //Read the first & only line of that file, converting it to a double and saving it into the results array.
-                compareResults[i] = Convert.ToDouble(File.ReadLines(ProgramSettings.MatcherResult).First());
+                compareResults[i] = File.ReadLines(ProgramSettings.MatcherResult).First();
             }
 
             //Find the index which holds the highest value in the array
             //BUG: It is possible (although very unlikely) for matches to generate the exact same match value, this could cause the wrong binding to be returned.
-            int bestMatchValue = Convert.ToInt32(compareResults.Max());
+            double bestMatchValue = (double)compareResults.Max();
             int bestMatchIndex = Array.IndexOf(compareResults, bestMatchValue);
 
             return bindings[bestMatchIndex];
