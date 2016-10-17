@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace sound_switch
 {
-    class Binding
+    public class Binding
     {
         //Descriptive name of the sound binding.
         public string bindTarget;
@@ -31,20 +31,32 @@ namespace sound_switch
             //Check that we have an unprocessed file to work with
             if (File.Exists(ProgramSettings.UnprocessedFileName))
             {
-                //Check if the binding we're trying to make already has a file.
-                if (File.Exists(pathToWav + ".wav"))
+                if (!suppressWarns)
                 {
-                    MessageBox.Show("Binding could not be created, a binding with the same name already exists.");
+                    //Check if the binding we're trying to make already has a file.
+                    if (File.Exists(pathToWav + ".wav"))
+                    {
+                        MessageBox.Show("Binding could not be created, a binding with the same name already exists.");
+                    }
+                    else
+                    {
+                        //Bind file successfully made
+                        File.Move(ProgramSettings.UnprocessedFileName, pathToWav + ".wav");
+                    }
                 }
                 else
                 {
-                    //Bind file successfully made
-                    File.Move(ProgramSettings.UnprocessedFileName, pathToWav + ".wav");
+                    //Check if the binding we're trying to make already has a file.
+                    if (File.Exists(pathToWav + ".wav"))
+                    {
+                        //Do not show overwrite error, thats why we have suppresswarn as an if gate.
+                    }
+                    else
+                    {
+                        //Bind file successfully made
+                        File.Move(ProgramSettings.UnprocessedFileName, pathToWav + ".wav");
+                    }
                 }
-            }
-            else if(!suppressWarns)
-            {
-                MessageBox.Show("Unprocessed wav not found, maybe you didn't record a sound first?");
             }
         }
 
