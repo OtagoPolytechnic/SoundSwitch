@@ -26,7 +26,6 @@ C:\Users\Decura\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug
 C:\Users\Decura\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\sound-switch.pdb
 C:\Users\Decura\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound-switch.csprojResolveAssemblyReference.cache
 C:\Users\Decura\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.BindDialog.resources
-C:\Users\Decura\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.DebugForm.resources
 C:\Users\Decura\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.HomeForm.resources
 C:\Users\Decura\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound_switch.Properties.Resources.resources
 C:\Users\Decura\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\obj\Debug\sound-switch.csproj.GenerateResource.Cache
@@ -66,3 +65,5 @@ C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\N
 C:\Users\Asus\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.xml
 H:\Github\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.dll
 H:\Github\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.xml
+C:\Users\Decura\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.dll
+C:\Users\Decura\Documents\GitHub\SoundSwitch\sound-switch\sound-switch\bin\Debug\NAudio.xml

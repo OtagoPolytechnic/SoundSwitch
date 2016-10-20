@@ -73,6 +73,8 @@ namespace sound_switch
         }
 
         //Method to compare the unprocessed.wav file against the current set of stored bindings
+        //!! This method is currently very inefficient, if alterations are made in the future, I
+        //recommend optimising this one first.
         public Binding compareUnprocessed()
         {
             //Path to the unprocessed wav file
