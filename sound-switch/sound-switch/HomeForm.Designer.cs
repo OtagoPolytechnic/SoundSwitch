@@ -411,8 +411,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(641, 321);
-            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelSettings);
+            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelBindings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "HomeForm";

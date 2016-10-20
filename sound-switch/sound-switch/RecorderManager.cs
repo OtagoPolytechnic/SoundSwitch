@@ -247,15 +247,16 @@ namespace sound_switch
 
         public void SetValues(TextBox tbThreshold)
         {
+            //get threshold value from tb
+            int tbVal = Convert.ToInt32(tbThreshold.Text);
+
             // Convert text to int
             try
             {
-                int thresConv = Int32.Parse(tbThreshold.Text);
-
                 // Set the values 
-                if (thresFlag == true)
+                if (CheckRegex(tbThreshold))
                 {
-                    threshold = thresConv;
+                    threshold = tbVal;
                     MessageBox.Show("Values set!");
                 }
                 else
