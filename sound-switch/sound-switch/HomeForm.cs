@@ -42,6 +42,9 @@ namespace sound_switch
         {
             panelSettings.Show();
             panelMain.Hide();
+
+            //Autopop source list on tab change
+            rm.SetSourceListView(lvSource);
         }
 
         private void btnBackSet_Click(object sender, EventArgs e)
