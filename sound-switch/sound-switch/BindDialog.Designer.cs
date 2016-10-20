@@ -55,7 +55,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(226, 20);
             this.txtDescription.TabIndex = 1;
-            this.txtDescription.Text = "HighlightAll";
+            this.txtDescription.Text = "CloseAll";
             // 
             // btnSubmit
             // 
@@ -103,7 +103,7 @@
             this.txtBindCode.Name = "txtBindCode";
             this.txtBindCode.Size = new System.Drawing.Size(220, 20);
             this.txtBindCode.TabIndex = 7;
-            this.txtBindCode.Text = "^(a)";
+            this.txtBindCode.Text = "%({F4})";
             // 
             // label4
             // 

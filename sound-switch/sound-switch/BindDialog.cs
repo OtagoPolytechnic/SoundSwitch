@@ -12,6 +12,9 @@ using System.Diagnostics;
 
 namespace sound_switch
 {
+    //!! Warning !!
+    //Binding setup currently doesn't allow the use of a Carat (^) due to filename restrictions.
+    //Means that any Ctrl+X bind cant work. ;(
     public partial class BindDialog : Form
     {
         private RecorderManager rm;

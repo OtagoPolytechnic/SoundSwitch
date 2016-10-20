@@ -90,7 +90,7 @@ namespace sound_switch
             Executor executor = new Executor();
 
             //String array that holds the script run results
-            object[] compareResults = new object[bindings.Count];
+            double[] compareResults = new double[bindings.Count];
 
             //Loop over each stored binding and execute the compare script on each of them.
             for (int i = 0; i < bindings.Count; i++)
@@ -100,12 +100,12 @@ namespace sound_switch
                 executor.ExecuteCommand(commandToExecute);
 
                 //Read the first & only line of that file, converting it to a double and saving it into the results array.
-                compareResults[i] = File.ReadLines(ProgramSettings.MatcherResult).First();
+                compareResults[i] = Convert.ToDouble(File.ReadLines(ProgramSettings.MatcherResult).First());
             }
 
             //Find the index which holds the highest value in the array
             //BUG: It is possible (although very unlikely) for matches to generate the exact same match value, this could cause the wrong binding to be returned.
-            double bestMatchValue = (double)compareResults.Max();
+            double bestMatchValue = Convert.ToDouble(compareResults.Max());
             int bestMatchIndex = Array.IndexOf(compareResults, bestMatchValue);
 
             return bindings[bestMatchIndex];
