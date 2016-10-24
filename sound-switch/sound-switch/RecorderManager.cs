@@ -211,7 +211,7 @@ namespace sound_switch
                     // Set flag to false
                     rec.RecordedFlag = false;
 
-                    //!!!!!!!!!!!!!!!!!!!!!!!!!
+                    //Alert our recorder manager that we have a file ready for sending.
                     readyForProcessing = true;
                 }
             }

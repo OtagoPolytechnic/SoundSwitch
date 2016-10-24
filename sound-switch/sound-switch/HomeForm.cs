@@ -144,12 +144,20 @@ namespace sound_switch
             rtbSoundLevel.ScrollToCaret();
         }
 
+        //This timer runs inline with the 'start listening' button.
         private void timer1_Tick(object sender, EventArgs e)
         {
+            //Every timer tick, we check if our recorder manager needs us to process & send a binding.
             if (rm.readyForProcessing)
             {
+                //Set the processor back to false.
                 rm.readyForProcessing = false;
-                MessageBox.Show("eat my piss");
+
+                //Find our best-match binding.
+                Binding toExecute = bm.compareUnprocessed();
+
+                //Send the retrieved bindings code to the currently focused form.
+                SendKeys.Send(toExecute.bindCode);
             }
         }
     }
