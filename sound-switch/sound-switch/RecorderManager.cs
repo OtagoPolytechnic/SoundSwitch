@@ -13,7 +13,6 @@ namespace sound_switch
         //Attributes
         private Recorder rec;
         private int threshold;
-        private int recSeconds;
         private bool thresFlag;
 
         //Flag for ur mum
@@ -157,7 +156,7 @@ namespace sound_switch
             }
             else // Display message box and dispose ofthe wave file writer
             {
-                MessageBox.Show("Rec done!");
+                MessageBox.Show("Binding sucessfully recorded.");
 
                 rec.WaveWriter.Dispose();
 

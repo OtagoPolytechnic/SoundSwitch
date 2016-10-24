@@ -87,7 +87,7 @@ namespace sound_switch
             }
             else
             {
-                MessageBox.Show("Binding not created, dialog was exited prematurely.");
+                //Reaching here flushes the half-finished binding.
             }
         }
 
@@ -102,6 +102,7 @@ namespace sound_switch
 
         private void btnGit_Click(object sender, EventArgs e)
         {
+            //Open new tab to our git page.
             Process.Start("https://github.com/OtagoPolytechnic/SoundSwitch");
         }
 
