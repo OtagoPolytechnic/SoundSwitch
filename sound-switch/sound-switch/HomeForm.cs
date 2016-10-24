@@ -22,8 +22,9 @@ namespace sound_switch
         {
             InitializeComponent();
 
-            notifyIcon2.Icon = new Icon("TrayIcon.ico");
-            notifyIcon2.Visible = true;
+            notifyIcon.Icon = new Icon("TrayIcon.ico");
+            notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
+            notifyIcon.Visible = false;
         }
 
         private void btnBackBind_Click(object sender, EventArgs e)
@@ -169,13 +170,22 @@ namespace sound_switch
         {
             if (WindowState == FormWindowState.Minimized)
             {
+                notifyIcon.Visible = true;
                 this.Hide();
+                notifyIcon.ShowBalloonTip(1000, "Sound Switch", "Now running in background. Double-click here to reopen.", ToolTipIcon.Info);
             }
         }
 
         private void notifyIcon2_DoubleClick(object sender, EventArgs e)
         {
             this.Show();
+            this.Activate();
+        }
+
+        private void HomeForm_Activated(object sender, EventArgs e)
+        {
+            notifyIcon.Visible = false;
+            this.WindowState = FormWindowState.Normal;
         }
     }
 }

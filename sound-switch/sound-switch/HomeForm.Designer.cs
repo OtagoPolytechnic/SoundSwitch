@@ -63,7 +63,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnBackSet = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.panelMain.SuspendLayout();
             this.panelBindings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).BeginInit();
@@ -411,11 +411,11 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // notifyIcon2
+            // notifyIcon
             // 
-            this.notifyIcon2.Text = "notifyIcon2";
-            this.notifyIcon2.Visible = true;
-            this.notifyIcon2.DoubleClick += new System.EventHandler(this.notifyIcon2_DoubleClick);
+            this.notifyIcon.Text = "Sound Switch";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.DoubleClick += new System.EventHandler(this.notifyIcon2_DoubleClick);
             // 
             // HomeForm
             // 
@@ -429,6 +429,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "HomeForm";
             this.Text = "HomeForm";
+            this.Activated += new System.EventHandler(this.HomeForm_Activated);
             this.Resize += new System.EventHandler(this.HomeForm_Resize);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
@@ -477,6 +478,6 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NotifyIcon notifyIcon2;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
