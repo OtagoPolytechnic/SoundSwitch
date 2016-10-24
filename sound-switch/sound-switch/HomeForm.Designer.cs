@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.btnToggleListen = new System.Windows.Forms.Button();
             this.btnBindings = new System.Windows.Forms.Button();
@@ -61,6 +62,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBackSet = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelMain.SuspendLayout();
             this.panelBindings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).BeginInit();
@@ -405,14 +407,18 @@
             this.btnBackSet.UseVisualStyleBackColor = true;
             this.btnBackSet.Click += new System.EventHandler(this.btnBackSet_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(641, 321);
-            this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.panelMain);
+            this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.panelBindings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "HomeForm";
@@ -463,5 +469,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox rtbSoundLevel;
         private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Timer timer1;
     }
 }

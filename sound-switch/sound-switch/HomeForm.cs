@@ -57,6 +57,9 @@ namespace sound_switch
         {
             //Instruct rm to begin polling mic data
             rm.StartListening(lvSource, rtbSoundLevel);
+
+            timer1.Enabled = true;
+                
         }
 
         private void btnNewBind_Click(object sender, EventArgs e)
@@ -139,6 +142,15 @@ namespace sound_switch
         {
             rtbSoundLevel.SelectionStart = rtbSoundLevel.Text.Length;
             rtbSoundLevel.ScrollToCaret();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (rm.readyForProcessing)
+            {
+                rm.readyForProcessing = false;
+                MessageBox.Show("eat my piss");
+            }
         }
     }
 }

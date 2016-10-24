@@ -16,6 +16,9 @@ namespace sound_switch
         private int recSeconds;
         private bool thresFlag;
 
+        //Flag for ur mum
+        public bool readyForProcessing;
+
         //Properties
         public bool ThresFlag
         {
@@ -27,6 +30,7 @@ namespace sound_switch
         public RecorderManager()
         {
             rec = new Recorder();
+            readyForProcessing = false;
             threshold = 0;
         }
 
@@ -200,12 +204,15 @@ namespace sound_switch
                 }
                 else // Display message box and dispose ofthe wave file writer
                 {
-                    MessageBox.Show("Rec done!");
+                    //MessageBox.Show("Rec done!");
 
                     rec.WaveWriter.Dispose();
 
                     // Set flag to false
                     rec.RecordedFlag = false;
+
+                    //!!!!!!!!!!!!!!!!!!!!!!!!!
+                    readyForProcessing = true;
                 }
             }
         }
