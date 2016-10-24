@@ -133,6 +133,9 @@ namespace sound_switch
         private void btnStop_Click(object sender, EventArgs e)
         {
             rm.Stop();
+
+            // Disable timer
+            timer1.Enabled = false;
         }
 
         private void rtbSoundLevel_TextChanged(object sender, EventArgs e)

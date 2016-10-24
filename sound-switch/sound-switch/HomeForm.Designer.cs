@@ -62,6 +62,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnBackSet = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label7 = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.panelBindings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).BeginInit();
@@ -266,6 +267,7 @@
             // 
             // panelSettings
             // 
+            this.panelSettings.Controls.Add(this.label7);
             this.panelSettings.Controls.Add(this.tbThreshold);
             this.panelSettings.Controls.Add(this.tbDeviceName);
             this.panelSettings.Controls.Add(this.btnSetValues);
@@ -346,7 +348,7 @@
             this.lvSource.MultiSelect = false;
             this.lvSource.Name = "lvSource";
             this.lvSource.Scrollable = false;
-            this.lvSource.Size = new System.Drawing.Size(243, 207);
+            this.lvSource.Size = new System.Drawing.Size(243, 172);
             this.lvSource.TabIndex = 7;
             this.lvSource.UseCompatibleStateImageBehavior = false;
             this.lvSource.View = System.Windows.Forms.View.Details;
@@ -397,6 +399,16 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(21, 229);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(253, 16);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "*Double click on device to select it*";
             // 
             // HomeForm
             // 
@@ -456,5 +468,6 @@
         private System.Windows.Forms.RichTextBox rtbSoundLevel;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label7;
     }
 }
