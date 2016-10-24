@@ -100,14 +100,6 @@ namespace sound_switch
             bm.update(dgvBind);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {  
-            //DEBUG, check the current unprocessed wav against the current bindings.
-            Binding outputDebug = bm.compareUnprocessed();
-
-            MessageBox.Show(outputDebug.bindCode + " was found as the best match.");
-        }
-
         private void btnGit_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/OtagoPolytechnic/SoundSwitch");
@@ -115,7 +107,11 @@ namespace sound_switch
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            //Fetch device list
             rm.SetSourceListView(lvSource);
+
+            //Clear currently selected device
+            tbDeviceName.Text = "";
         }
 
         private void btnSetValues_Click(object sender, EventArgs e)
