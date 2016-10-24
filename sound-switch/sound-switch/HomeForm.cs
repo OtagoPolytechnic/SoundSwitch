@@ -21,6 +21,9 @@ namespace sound_switch
         public HomeForm()
         {
             InitializeComponent();
+
+            notifyIcon2.Icon = new Icon("TrayIcon.ico");
+            notifyIcon2.Visible = true;
         }
 
         private void btnBackBind_Click(object sender, EventArgs e)
@@ -159,6 +162,20 @@ namespace sound_switch
                 //Send the retrieved bindings code to the currently focused form.
                 SendKeys.Send(toExecute.bindCode);
             }
+        }
+
+        //Event handler attached to the form that will send application to tray when minimised.
+        private void HomeForm_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();
+            }
+        }
+
+        private void notifyIcon2_DoubleClick(object sender, EventArgs e)
+        {
+            this.Show();
         }
     }
 }
