@@ -25,6 +25,9 @@ namespace sound_switch
             notifyIcon.Icon = new Icon("TrayIcon.ico");
             notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
             notifyIcon.Visible = false;
+
+            //Load an initial device list into the settings page.
+            rm.SetSourceListView(lvSource);
         }
 
         private void btnBackBind_Click(object sender, EventArgs e)
@@ -46,9 +49,6 @@ namespace sound_switch
         {
             panelSettings.Show();
             panelMain.Hide();
-
-            //Autopop source list on tab change
-            rm.SetSourceListView(lvSource);
         }
 
         private void btnBackSet_Click(object sender, EventArgs e)
@@ -84,8 +84,13 @@ namespace sound_switch
 
                 //Build the binding instance and add it to the binding list in the manager.
                 Binding newBinding = new Binding(bNameTemp, bBindTemp, false);
-                bm.addBinding(newBinding);
 
+                //Make sure the binding we just created didn't get flagged as incomplete, etc.
+                if (!newBinding.invalidBinding)
+                {
+                    bm.addBinding(newBinding);
+                }
+                
                 //Update the binding display
                 bm.update(dgvBind);
             }
