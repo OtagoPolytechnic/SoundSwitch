@@ -19,6 +19,9 @@ namespace sound_switch
         //Location of this bindings sound file.
         public string pathToWav;
 
+        //Bool to check if this binding has a flaw and needs to be properly removed from listings.
+        public bool invalidBinding = false;
+
         //Ctor
         public Binding(string bindTarget, string bindCode, bool suppressWarns)
         {
@@ -37,6 +40,7 @@ namespace sound_switch
                     if (File.Exists(pathToWav + ".wav"))
                     {
                         MessageBox.Show("Binding could not be created, a binding with the same name already exists.");
+                        invalidBinding = true;
                     }
                     else
                     {
