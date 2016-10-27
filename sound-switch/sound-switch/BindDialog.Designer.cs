@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -37,6 +38,8 @@
             this.txtBindCode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.pbar = new System.Windows.Forms.ProgressBar();
+            this.progTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -60,6 +63,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Enabled = false;
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.Location = new System.Drawing.Point(12, 192);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(226, 56);
@@ -73,7 +77,7 @@
             this.btnRecord.Name = "btnRecord";
             this.btnRecord.Size = new System.Drawing.Size(226, 23);
             this.btnRecord.TabIndex = 3;
-            this.btnRecord.Text = "Record Binding Trigger";
+            this.btnRecord.Text = "Start Recording";
             this.btnRecord.UseVisualStyleBackColor = true;
             this.btnRecord.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -126,11 +130,24 @@
             this.linkLabel1.Text = "Help with this";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // pbar
+            // 
+            this.pbar.Location = new System.Drawing.Point(12, 139);
+            this.pbar.Maximum = 1000;
+            this.pbar.Name = "pbar";
+            this.pbar.Size = new System.Drawing.Size(226, 23);
+            this.pbar.TabIndex = 9;
+            // 
+            // progTimer
+            // 
+            this.progTimer.Tick += new System.EventHandler(this.progTimer_Tick);
+            // 
             // BindDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(252, 259);
+            this.Controls.Add(this.pbar);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.txtBindCode);
             this.Controls.Add(this.label4);
@@ -158,5 +175,7 @@
         public System.Windows.Forms.TextBox txtBindCode;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ProgressBar pbar;
+        private System.Windows.Forms.Timer progTimer;
     }
 }
