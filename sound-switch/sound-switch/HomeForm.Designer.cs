@@ -64,10 +64,13 @@
             this.btnBackSet = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panelMain.SuspendLayout();
             this.panelBindings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).BeginInit();
             this.panelSettings.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -118,7 +121,7 @@
             this.btnGit.Name = "btnGit";
             this.btnGit.Size = new System.Drawing.Size(155, 40);
             this.btnGit.TabIndex = 4;
-            this.btnGit.Text = "Github";
+            this.btnGit.Text = "GitHub + Help";
             this.btnGit.UseVisualStyleBackColor = true;
             this.btnGit.Click += new System.EventHandler(this.btnGit_Click);
             // 
@@ -155,9 +158,9 @@
             this.label6.ForeColor = System.Drawing.Color.SteelBlue;
             this.label6.Location = new System.Drawing.Point(25, 59);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(175, 19);
+            this.label6.Size = new System.Drawing.Size(214, 19);
             this.label6.TabIndex = 8;
-            this.label6.Text = "Microphone RMS value:";
+            this.label6.Text = "Current Microphone Volume:";
             // 
             // rtbSoundLevel
             // 
@@ -268,13 +271,10 @@
             // 
             // panelSettings
             // 
+            this.panelSettings.Controls.Add(this.groupBox1);
             this.panelSettings.Controls.Add(this.label7);
-            this.panelSettings.Controls.Add(this.tbThreshold);
-            this.panelSettings.Controls.Add(this.tbDeviceName);
             this.panelSettings.Controls.Add(this.btnSetValues);
-            this.panelSettings.Controls.Add(this.lblThreshold);
             this.panelSettings.Controls.Add(this.btnRefresh);
-            this.panelSettings.Controls.Add(this.lblCurrentDevice);
             this.panelSettings.Controls.Add(this.lvSource);
             this.panelSettings.Controls.Add(this.label4);
             this.panelSettings.Controls.Add(this.label5);
@@ -297,9 +297,9 @@
             // 
             // tbThreshold
             // 
-            this.tbThreshold.Location = new System.Drawing.Point(425, 104);
+            this.tbThreshold.Location = new System.Drawing.Point(107, 75);
             this.tbThreshold.Name = "tbThreshold";
-            this.tbThreshold.Size = new System.Drawing.Size(50, 20);
+            this.tbThreshold.Size = new System.Drawing.Size(180, 20);
             this.tbThreshold.TabIndex = 14;
             this.tbThreshold.Text = "1000";
             this.tbThreshold.Leave += new System.EventHandler(this.tbThreshold_Leave);
@@ -307,9 +307,9 @@
             // tbDeviceName
             // 
             this.tbDeviceName.Enabled = false;
-            this.tbDeviceName.Location = new System.Drawing.Point(425, 51);
+            this.tbDeviceName.Location = new System.Drawing.Point(107, 29);
             this.tbDeviceName.Name = "tbDeviceName";
-            this.tbDeviceName.Size = new System.Drawing.Size(199, 20);
+            this.tbDeviceName.Size = new System.Drawing.Size(180, 20);
             this.tbDeviceName.TabIndex = 13;
             // 
             // btnSetValues
@@ -325,11 +325,11 @@
             // lblThreshold
             // 
             this.lblThreshold.AutoSize = true;
-            this.lblThreshold.Location = new System.Drawing.Point(317, 107);
+            this.lblThreshold.Location = new System.Drawing.Point(10, 82);
             this.lblThreshold.Name = "lblThreshold";
-            this.lblThreshold.Size = new System.Drawing.Size(57, 13);
+            this.lblThreshold.Size = new System.Drawing.Size(85, 13);
             this.lblThreshold.TabIndex = 10;
-            this.lblThreshold.Text = "Threshold:";
+            this.lblThreshold.Text = "Detection Level:";
             // 
             // btnRefresh
             // 
@@ -344,7 +344,7 @@
             // lblCurrentDevice
             // 
             this.lblCurrentDevice.AutoSize = true;
-            this.lblCurrentDevice.Location = new System.Drawing.Point(317, 54);
+            this.lblCurrentDevice.Location = new System.Drawing.Point(10, 32);
             this.lblCurrentDevice.Name = "lblCurrentDevice";
             this.lblCurrentDevice.Size = new System.Drawing.Size(81, 13);
             this.lblCurrentDevice.TabIndex = 8;
@@ -417,6 +417,31 @@
             this.notifyIcon.Visible = true;
             this.notifyIcon.DoubleClick += new System.EventHandler(this.notifyIcon2_DoubleClick);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(10, 111);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(250, 39);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Detection level is a representation of \r\nhow loud your command must be in order f" +
+    "or it to be\r\ndetected.\r\n";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblCurrentDevice);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.lblThreshold);
+            this.groupBox1.Controls.Add(this.tbDeviceName);
+            this.groupBox1.Controls.Add(this.tbThreshold);
+            this.groupBox1.Location = new System.Drawing.Point(331, 45);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(293, 172);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Detection Setting";
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,11 +449,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(641, 321);
             this.Controls.Add(this.panelMain);
-            this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.panelBindings);
+            this.Controls.Add(this.panelSettings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "HomeForm";
-            this.Text = "HomeForm";
+            this.Text = "Sound Switch";
             this.Activated += new System.EventHandler(this.HomeForm_Activated);
             this.Resize += new System.EventHandler(this.HomeForm_Resize);
             this.panelMain.ResumeLayout(false);
@@ -438,6 +463,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).EndInit();
             this.panelSettings.ResumeLayout(false);
             this.panelSettings.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -479,5 +506,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
