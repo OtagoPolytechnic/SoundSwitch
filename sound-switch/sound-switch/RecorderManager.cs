@@ -150,13 +150,13 @@ namespace sound_switch
             int seconds = rec.WaveWriterLengthOfTime();
 
             // If it is less than 1 second, then write data to the wave file writer
-            if (seconds < 2)
+            if (seconds < 1)
             {
                 rec.WriteToWaveWriter(e);
             }
             else // Display message box and dispose ofthe wave file writer
             {
-                MessageBox.Show("Binding sucessfully recorded.");
+                //MessageBox.Show("Binding sucessfully recorded.");
 
                 rec.WaveWriter.Dispose();
 
@@ -197,7 +197,7 @@ namespace sound_switch
                 int seconds = rec.WaveWriterLengthOfTime();
 
                 // If it is less than 1 second, then write data to the wave file writer
-                if (seconds < 2)
+                if (seconds < 1)
                 {
                     rec.WriteToWaveWriter(e);
                 }
