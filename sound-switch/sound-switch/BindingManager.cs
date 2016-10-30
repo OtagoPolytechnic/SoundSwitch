@@ -96,11 +96,11 @@ namespace sound_switch
             for (int i = 0; i < bindings.Count; i++)
             {
                 //Execute the overlap analysis script, the output of this script creates a single-line txt file containing the scalar match value.
-                string commandToExecute = pathToScript + " " + bindings[i].pathToWav + ".wav " + pathToUnprocessed + " > " + outputFile;
-                executor.ExecuteCommand(commandToExecute);
+                string commandToExecute = pathToScript + " " + bindings[i].pathToWav + ".wav " + pathToUnprocessed;
+                
 
                 //Read the first & only line of that file, converting it to a double and saving it into the results array.
-                string fromFile = File.ReadLines(ProgramSettings.MatcherResult).First();
+                string fromFile = executor.ExecuteCommand(commandToExecute);
                 compareResults[i] = Convert.ToDouble(File.ReadLines(ProgramSettings.MatcherResult).First());
             }
 
