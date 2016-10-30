@@ -62,6 +62,6 @@ and click **Begin Listening**. Your microphone is now waiting for a verbal comma
 When it detects a binding, it will execute that bindings associated action **on the currently focused window, including the SoundSwitch itself.**
 
 ## Built With
-* [nAudio](https://github.com/naudio/NAudio) - Audio capture software (for use when saving recorded sounds).
+* [nAudio](https://github.com/naudio/NAudio) - An open source .NET audio and MIDI library, containing dozens of useful audio related classes (for use when saving recorded sounds).
 * [scape-xcorrsound](https://github.com/openpreserve/scape-xcorrsound) - Library that facilitates the generation of comparison values
 between .wav files. We are using a modified version of this library to make it compatible with Windows.

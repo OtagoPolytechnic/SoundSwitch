@@ -133,7 +133,7 @@
             // pbar
             // 
             this.pbar.Location = new System.Drawing.Point(12, 139);
-            this.pbar.Maximum = 1000;
+            this.pbar.Maximum = 10;
             this.pbar.Name = "pbar";
             this.pbar.Size = new System.Drawing.Size(226, 23);
             this.pbar.TabIndex = 9;

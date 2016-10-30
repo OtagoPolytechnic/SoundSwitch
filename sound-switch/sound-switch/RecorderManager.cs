@@ -64,14 +64,12 @@ namespace sound_switch
         }
 
         // Checks if any source device has been selected
-        private bool checkIfSourceSelected(ListView lvSource)
+        public bool CheckIfSourceSelected(ListView lvSource)
         {
             bool sourceFlag;
 
             if (lvSource.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Please select a wave in device!");
-
                 sourceFlag = false;
             }
             else
@@ -95,7 +93,7 @@ namespace sound_switch
         public void StartListening(ListView lvSource, RichTextBox rtbSoundLevel)
         {
             // Checks if any source has been selected
-            if (checkIfSourceSelected(lvSource) == true)
+            if (CheckIfSourceSelected(lvSource) == true)
             {
                 // Saves the source's number
                 int deviceNumber = obtainDeviceNumberFromList(lvSource);
@@ -106,12 +104,16 @@ namespace sound_switch
                 // Starts recording
                 rec.Record((sender, e) => sourceListening_DataAvailable(sender, e, rtbSoundLevel));
             }
+            else
+            {
+                MessageBox.Show("Please select a wave in device!");
+            }
         }
 
         public void StartRecording(ListView lvSource)
         {
             // Checks if any source has been selected
-            if (checkIfSourceSelected(lvSource) == true)
+            if (CheckIfSourceSelected(lvSource) == true)
             {
                 // Saves the source's number
                 int deviceNumber = obtainDeviceNumberFromList(lvSource);
@@ -125,6 +127,10 @@ namespace sound_switch
 
                 // Starts recording
                 rec.Record((sender, e) => sourceRecording_DataAvailable(sender, e));
+            }
+            else
+            {
+                MessageBox.Show("Please select a wave in device!");
             }
         }
 
