@@ -83,9 +83,6 @@ namespace sound_switch
             //Name of the xcorr library script we want to execute
             string pathToScript = ProgramSettings.MatcherExecutable;
 
-            //Name of the file we want to output our results to.
-            string outputFile = ProgramSettings.MatcherResult;
-
             //Create an executor instance to pass commands to the cmd prompt
             Executor executor = new Executor();
 
@@ -95,13 +92,11 @@ namespace sound_switch
             //Loop over each stored binding and execute the compare script on each of them.
             for (int i = 0; i < bindings.Count; i++)
             {
-                //Execute the overlap analysis script, the output of this script creates a single-line txt file containing the scalar match value.
+                //Build the command we wish to send to the overlap-analysis executable.
                 string commandToExecute = pathToScript + " " + bindings[i].pathToWav + ".wav " + pathToUnprocessed;
                 
-
-                //Read the first & only line of that file, converting it to a double and saving it into the results array.
-                string fromFile = executor.ExecuteCommand(commandToExecute);
-                compareResults[i] = Convert.ToDouble(File.ReadLines(ProgramSettings.MatcherResult).First());
+                //Pass the command to the executor instance, and retrieve the result as a double (for comparison).
+                compareResults[i] = Convert.ToDouble(executor.ExecuteCommand(commandToExecute));
             }
 
             //Find the index which holds the highest value in the array
