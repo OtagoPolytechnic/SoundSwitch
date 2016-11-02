@@ -60,10 +60,15 @@ namespace sound_switch
         private void btnToggleListen_Click(object sender, EventArgs e)
         {
             //Instruct rm to begin polling mic data
-            rm.StartListening(lvSource, rtbSoundLevel);
-
-            timer1.Enabled = true;
-                
+            if (bm.bindings.Count != 0)
+            {
+                rm.StartListening(lvSource, rtbSoundLevel);
+                timer1.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Please setup at least one binding before you turn on SoundSwitch.");
+            }
         }
 
         private void btnNewBind_Click(object sender, EventArgs e)
@@ -165,8 +170,15 @@ namespace sound_switch
                 //Find our best-match binding.
                 Binding toExecute = bm.compareUnprocessed();
 
-                //Send the retrieved bindings code to the currently focused form.
-                SendKeys.Send(toExecute.bindCode);
+                if (toExecute != null)
+                {
+                    //Send the retrieved bindings code to the currently focused form.
+                    SendKeys.Send(toExecute.bindCode);
+                }
+                else
+                {
+                    //no readings were of acceptable quality to be executed.
+                }
             }
         }
 

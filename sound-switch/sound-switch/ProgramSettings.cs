@@ -16,5 +16,8 @@ namespace sound_switch
 
         //Value that holds the sampling length and recording length.
         public const int sampleLength = 1;
+
+        //Minimum quality required for a binding to be considered good enough to execute.
+        public const double quality = 0.15;
     }
 }

@@ -104,7 +104,14 @@ namespace sound_switch
             double bestMatchValue = Convert.ToDouble(compareResults.Max());
             int bestMatchIndex = Array.IndexOf(compareResults, bestMatchValue);
 
-            return bindings[bestMatchIndex];
+            if (bestMatchValue < ProgramSettings.quality)
+            {
+                return null;
+            }
+            else
+            {
+                return bindings[bestMatchIndex];
+            }
         }
 
         public void removeBindingAtIndex(int index)
