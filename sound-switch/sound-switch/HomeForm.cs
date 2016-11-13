@@ -69,6 +69,9 @@ namespace sound_switch
             {
                 MessageBox.Show("Please setup at least one binding before you turn on SoundSwitch.");
             }
+
+            btnToggleListen.Enabled = false;
+            btnStop.Enabled = true;
         }
 
         private void btnNewBind_Click(object sender, EventArgs e)
@@ -150,6 +153,9 @@ namespace sound_switch
 
             // Disable timer
             timer1.Enabled = false;
+
+            btnToggleListen.Enabled = true;
+            btnStop.Enabled = false;
         }
 
         private void rtbSoundLevel_TextChanged(object sender, EventArgs e)

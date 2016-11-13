@@ -49,13 +49,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBackBind = new System.Windows.Forms.Button();
             this.panelSettings = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbThreshold = new System.Windows.Forms.TextBox();
-            this.tbDeviceName = new System.Windows.Forms.TextBox();
-            this.btnSetValues = new System.Windows.Forms.Button();
-            this.lblThreshold = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCurrentDevice = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblThreshold = new System.Windows.Forms.Label();
+            this.tbDeviceName = new System.Windows.Forms.TextBox();
+            this.tbThreshold = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnSetValues = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.lvSource = new System.Windows.Forms.ListView();
             this.device = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.channels = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -64,8 +66,6 @@
             this.btnBackSet = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panelMain.SuspendLayout();
             this.panelBindings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBind)).BeginInit();
@@ -142,6 +142,7 @@
             // 
             // btnStop
             // 
+            this.btnStop.Enabled = false;
             this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStop.Location = new System.Drawing.Point(180, 203);
             this.btnStop.Name = "btnStop";
@@ -285,15 +286,56 @@
             this.panelSettings.TabIndex = 9;
             this.panelSettings.Visible = false;
             // 
-            // label7
+            // groupBox1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(21, 229);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(253, 16);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "*Double click on device to select it*";
+            this.groupBox1.Controls.Add(this.lblCurrentDevice);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.lblThreshold);
+            this.groupBox1.Controls.Add(this.tbDeviceName);
+            this.groupBox1.Controls.Add(this.tbThreshold);
+            this.groupBox1.Location = new System.Drawing.Point(331, 45);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(293, 172);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Detection Setting";
+            // 
+            // lblCurrentDevice
+            // 
+            this.lblCurrentDevice.AutoSize = true;
+            this.lblCurrentDevice.Location = new System.Drawing.Point(10, 32);
+            this.lblCurrentDevice.Name = "lblCurrentDevice";
+            this.lblCurrentDevice.Size = new System.Drawing.Size(81, 13);
+            this.lblCurrentDevice.TabIndex = 8;
+            this.lblCurrentDevice.Text = "Current Device:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(10, 111);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(250, 39);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Detection level is a representation of \r\nhow loud your command must be in order f" +
+    "or it to be\r\ndetected.\r\n";
+            // 
+            // lblThreshold
+            // 
+            this.lblThreshold.AutoSize = true;
+            this.lblThreshold.Location = new System.Drawing.Point(10, 82);
+            this.lblThreshold.Name = "lblThreshold";
+            this.lblThreshold.Size = new System.Drawing.Size(85, 13);
+            this.lblThreshold.TabIndex = 10;
+            this.lblThreshold.Text = "Detection Level:";
+            // 
+            // tbDeviceName
+            // 
+            this.tbDeviceName.Enabled = false;
+            this.tbDeviceName.Location = new System.Drawing.Point(107, 29);
+            this.tbDeviceName.Name = "tbDeviceName";
+            this.tbDeviceName.Size = new System.Drawing.Size(180, 20);
+            this.tbDeviceName.TabIndex = 13;
             // 
             // tbThreshold
             // 
@@ -304,13 +346,15 @@
             this.tbThreshold.Text = "1000";
             this.tbThreshold.Leave += new System.EventHandler(this.tbThreshold_Leave);
             // 
-            // tbDeviceName
+            // label7
             // 
-            this.tbDeviceName.Enabled = false;
-            this.tbDeviceName.Location = new System.Drawing.Point(107, 29);
-            this.tbDeviceName.Name = "tbDeviceName";
-            this.tbDeviceName.Size = new System.Drawing.Size(180, 20);
-            this.tbDeviceName.TabIndex = 13;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(21, 229);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(253, 16);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "*Double click on device to select it*";
             // 
             // btnSetValues
             // 
@@ -322,15 +366,6 @@
             this.btnSetValues.UseVisualStyleBackColor = true;
             this.btnSetValues.Click += new System.EventHandler(this.btnSetValues_Click);
             // 
-            // lblThreshold
-            // 
-            this.lblThreshold.AutoSize = true;
-            this.lblThreshold.Location = new System.Drawing.Point(10, 82);
-            this.lblThreshold.Name = "lblThreshold";
-            this.lblThreshold.Size = new System.Drawing.Size(85, 13);
-            this.lblThreshold.TabIndex = 10;
-            this.lblThreshold.Text = "Detection Level:";
-            // 
             // btnRefresh
             // 
             this.btnRefresh.Location = new System.Drawing.Point(308, 258);
@@ -340,15 +375,6 @@
             this.btnRefresh.Text = "Refresh Sources";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // lblCurrentDevice
-            // 
-            this.lblCurrentDevice.AutoSize = true;
-            this.lblCurrentDevice.Location = new System.Drawing.Point(10, 32);
-            this.lblCurrentDevice.Name = "lblCurrentDevice";
-            this.lblCurrentDevice.Size = new System.Drawing.Size(81, 13);
-            this.lblCurrentDevice.TabIndex = 8;
-            this.lblCurrentDevice.Text = "Current Device:";
             // 
             // lvSource
             // 
@@ -416,31 +442,6 @@
             this.notifyIcon.Text = "Sound Switch";
             this.notifyIcon.Visible = true;
             this.notifyIcon.DoubleClick += new System.EventHandler(this.notifyIcon2_DoubleClick);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(10, 111);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(250, 39);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Detection level is a representation of \r\nhow loud your command must be in order f" +
-    "or it to be\r\ndetected.\r\n";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lblCurrentDevice);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.lblThreshold);
-            this.groupBox1.Controls.Add(this.tbDeviceName);
-            this.groupBox1.Controls.Add(this.tbThreshold);
-            this.groupBox1.Location = new System.Drawing.Point(331, 45);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(293, 172);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Detection Setting";
             // 
             // HomeForm
             // 
