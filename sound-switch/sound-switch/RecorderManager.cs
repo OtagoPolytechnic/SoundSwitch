@@ -268,7 +268,7 @@ namespace sound_switch
                 if (CheckRegex(tbThreshold))
                 {
                     threshold = tbVal;
-                    MessageBox.Show("Values set!");
+                    MessageBox.Show("Threshold set to " + tbVal + ".");
                 }
                 else
                 {

@@ -50,7 +50,6 @@ namespace sound_switch
             {
                 MessageBox.Show("Please ensure your microphone is properly setup before creating or altering bindings.");
             }
-            
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -67,19 +66,24 @@ namespace sound_switch
 
         private void btnToggleListen_Click(object sender, EventArgs e)
         {
-            //Instruct rm to begin polling mic data
-            if (bm.bindings.Count != 0)
+            //Ensure we have at least 1 binding and a valid mic input before we enable listening.
+            if (bm.bindings.Count != 0 && rm.CheckIfSourceSelected(lvSource))
             {
                 rm.StartListening(lvSource, rtbSoundLevel);
                 timer1.Enabled = true;
+
+                //Turn start off, turn stop on.
+                btnToggleListen.Enabled = false;
+                btnStop.Enabled = true;
+
+                //Disable settings and bindings while listening is active.
+                btnBindings.Enabled = false;
+                btnSettings.Enabled = false;
             }
             else
             {
-                MessageBox.Show("Please setup at least one binding before you turn on SoundSwitch.");
+                MessageBox.Show("Before starting SoundSwitch, you require a properly configured microphone and at least one binding active.");
             }
-
-            btnToggleListen.Enabled = false;
-            btnStop.Enabled = true;
         }
 
         private void btnNewBind_Click(object sender, EventArgs e)
@@ -148,6 +152,7 @@ namespace sound_switch
         private void lvSource_ItemActivate(object sender, EventArgs e)
         {
             tbDeviceName.Text = rm.DisplaySelectedDeviceName(lvSource);
+            rm.SetValues(tbThreshold);
         }
 
         private void tbThreshold_Leave(object sender, EventArgs e)
@@ -162,8 +167,13 @@ namespace sound_switch
             // Disable timer
             timer1.Enabled = false;
 
+            //Disable self, enable start button.
             btnToggleListen.Enabled = true;
             btnStop.Enabled = false;
+
+            //Enable settings and bindings since listening is stopped.
+            btnBindings.Enabled = true;
+            btnSettings.Enabled = true;
         }
 
         private void rtbSoundLevel_TextChanged(object sender, EventArgs e)
