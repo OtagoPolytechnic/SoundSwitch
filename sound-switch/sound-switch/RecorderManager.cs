@@ -229,7 +229,6 @@ namespace sound_switch
 
             if (sel.Count == 1)
             {
-                MessageBox.Show("Device Selected!");
                 ListViewItem selItem = lvSource.Items[sel[0]];
                 deviceName = selItem.SubItems[0].Text;
             }
@@ -278,7 +277,7 @@ namespace sound_switch
             }
             catch
             {
-                MessageBox.Show("Please do not leave field empty");
+                MessageBox.Show("You have not entered a threshold value.");
             }
         }
     }

@@ -133,13 +133,15 @@
             // pbar
             // 
             this.pbar.Location = new System.Drawing.Point(12, 139);
-            this.pbar.Maximum = 10;
             this.pbar.Name = "pbar";
             this.pbar.Size = new System.Drawing.Size(226, 23);
+            this.pbar.Step = 1;
+            this.pbar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.pbar.TabIndex = 9;
             // 
             // progTimer
             // 
+            this.progTimer.Interval = 1;
             this.progTimer.Tick += new System.EventHandler(this.progTimer_Tick);
             // 
             // BindDialog

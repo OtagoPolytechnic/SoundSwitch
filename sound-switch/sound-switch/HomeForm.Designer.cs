@@ -343,7 +343,7 @@
             this.tbThreshold.Name = "tbThreshold";
             this.tbThreshold.Size = new System.Drawing.Size(180, 20);
             this.tbThreshold.TabIndex = 14;
-            this.tbThreshold.Text = "1000";
+            this.tbThreshold.Text = "600";
             this.tbThreshold.Leave += new System.EventHandler(this.tbThreshold_Leave);
             // 
             // label7
@@ -390,6 +390,7 @@
             this.lvSource.UseCompatibleStateImageBehavior = false;
             this.lvSource.View = System.Windows.Forms.View.Details;
             this.lvSource.ItemActivate += new System.EventHandler(this.lvSource_ItemActivate);
+            this.lvSource.SelectedIndexChanged += new System.EventHandler(this.lvSource_SelectedIndexChanged);
             // 
             // device
             // 
@@ -450,8 +451,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(641, 321);
             this.Controls.Add(this.panelMain);
-            this.Controls.Add(this.panelBindings);
             this.Controls.Add(this.panelSettings);
+            this.Controls.Add(this.panelBindings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "HomeForm";
             this.Text = "Sound Switch";

@@ -30,51 +30,30 @@ namespace sound_switch
 
             //Set the submit button to return control to the previous form when we've made a binding.
             btnSubmit.DialogResult = DialogResult.OK;
+
+            //Add a tick event to the timer to control the visual display of progress.
+            progTimer.Tick += new EventHandler(progbar_Tick);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (rm.CheckIfSourceSelected(lvSource) == true)
-            {
-                //reset pbar
-                pbar.Value = 0;
+            //Reset pbar to default state.
+            pbar.Value = 0;
+            pbar.Maximum = ProgramSettings.sampleLength * 100;
 
-                progTimer.Enabled = true;
+            //Enable timer and start it ticking
+            progTimer.Enabled = true;
+            progTimer.Start();
 
-                progTimer.Start();
-
-                progTimer.Tick += new EventHandler(progbar_Tick);
-
-                //Instruct the recordmanager to begin recording at its specified quality.
-                rm.StartRecording(lvSource);
-            }
-            else
-            {
-                MessageBox.Show("Please select a wave in device!");
-            }
-
-            //Cycle an anim to give a progress metric to the user.
-            /*if (rm.CheckIfSourceSelected(lvSource) == true)
-            {
-                while (pbar.Value != pbar.Maximum)
-                {
-                    pbar.Increment(1);
-                    Thread.Sleep(1);
-                }
-
-                //Allow the user to submit after at least something has been recorded.
-                btnSubmit.Enabled = true;
-
-                //Feedback to let user know their recording has been saved.
-                MessageBox.Show("Binding trigger saved. To re-record for this binding, just click record again.");
-            }*/
+            //Instruct the recordmanager to begin recording at its specified quality.
+            rm.StartRecording(lvSource);
         }
 
         private void progbar_Tick(object sender, EventArgs e)
         {
-            if (pbar.Value != pbar.Maximum)
+            if (pbar.Value < pbar.Maximum)
             {
-                pbar.Value++;
+                pbar.PerformStep();
                 pbar.Refresh();
             }
             else // PROBLEM: If the user clicks record again, it will launch the messagebox twice
@@ -82,7 +61,7 @@ namespace sound_switch
                 progTimer.Stop();
                 progTimer.Enabled = false;
 
-                //Allow the user to submit after at least something has been recorded.
+                //Allow the user to submit after at something valid has been recorded.
                 btnSubmit.Enabled = true;
 
                 //Feedback to let user know their recording has been saved.

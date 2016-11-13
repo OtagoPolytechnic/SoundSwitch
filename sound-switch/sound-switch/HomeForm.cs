@@ -38,11 +38,19 @@ namespace sound_switch
 
         private void btnBindings_Click(object sender, EventArgs e)
         {
-            panelBindings.Show();
-            panelMain.Hide();
+            if (rm.CheckIfSourceSelected(lvSource))
+            {
+                panelBindings.Show();
+                panelMain.Hide();
 
-            //Update the display on the datagridview that holds the binding information.
-            bm.update(dgvBind);
+                //Update the display on the datagridview that holds the binding information.
+                bm.update(dgvBind);
+            }
+            else
+            {
+                MessageBox.Show("Please ensure your microphone is properly setup before creating or altering bindings.");
+            }
+            
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -209,6 +217,11 @@ namespace sound_switch
         {
             notifyIcon.Visible = false;
             this.WindowState = FormWindowState.Normal;
+        }
+
+        private void lvSource_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
