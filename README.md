@@ -24,9 +24,7 @@ To build & execute this software on your computer, you will require the followin
 
 Once Visual Studio is installed:
 * Clone this repository to a local directory.
-* Inside the repository, there are two folders. **sound-switch**, and **recorder-test**.
-  * For modifying the *recording* code, open the .sln inside recorder-test directory.
-  * For modifying the *binding-related* code, open the .sln inside sound-switch directory.
+* Inside the repository folder, open the **sound-switch** directly, and the .sln file contained inside.
 
 Additionally, we include a pre-compiled .exe for one of the functions provided by [scape-xcorrsound](https://github.com/openpreserve/scape-xcorrsound) in this repository.
 If you wish to compile your own [scape-xcorrsound](https://github.com/openpreserve/scape-xcorrsound) library (and executables), please visit their repo and follow their provided instructions.
