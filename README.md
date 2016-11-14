@@ -17,10 +17,22 @@ awkward usage when multi-key inputs are required, or the issue of eye-strain,
 particularly when performing a similar task many times (such as highlighting or saving text.)
 
 ## Installation
-To build & execute this software on your computer, you will require the following:
+
+### Requirements
+* A microphone. Higher quality microphones will yield more accurate results.
+* A little bit of patience - finding the sweet spot for your microphones sensitivity may take some trial and error.
+
+### For Users
+For people simply wanting to user the software, without wanting to modify the underlying code,
+we encourage you to head to our [releases page](https://github.com/OtagoPolytechnic/SoundSwitch/releases) and simply download the executable for the most recent version.
+
+### For Developers
+To build SoundSwitch on your computer for editing, you will require the following:
 
 * A valid installation of Visual Studio 2013 or greater.
-* A microphone. Higher quality microphones will yield more accurate results.
+* A recent installation of MinGW is recommended if changes to recorder libraries or matching libraries are desired.
+*MinGW is not directly required, but is recommended due to some currently funky things going on with the [scape-xcorrsound](https://github.com/openpreserve/scape-xcorrsound) library that may cause issues.
+MinGW tends to alleviate those issues.*
 
 Once Visual Studio is installed:
 * Clone this repository to a local directory.
