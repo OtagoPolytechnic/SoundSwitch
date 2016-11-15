@@ -78,11 +78,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Orange;
-            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Location = new System.Drawing.Point(16, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 29);
+            this.label1.Size = new System.Drawing.Size(165, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "OP-SoundSwitch";
+            this.label1.Text = "SoundSwitch";
             // 
             // btnToggleListen
             // 
@@ -157,7 +157,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(25, 59);
+            this.label6.Location = new System.Drawing.Point(20, 59);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(214, 19);
             this.label6.TabIndex = 8;
@@ -243,7 +243,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(233, 13);
+            this.label3.Location = new System.Drawing.Point(202, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 25);
             this.label3.TabIndex = 5;
@@ -256,9 +256,9 @@
             this.label2.ForeColor = System.Drawing.Color.Orange;
             this.label2.Location = new System.Drawing.Point(16, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(211, 29);
+            this.label2.Size = new System.Drawing.Size(165, 29);
             this.label2.TabIndex = 0;
-            this.label2.Text = "OP-SoundSwitch";
+            this.label2.Text = "SoundSwitch";
             // 
             // btnBackBind
             // 
@@ -407,7 +407,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(226, 14);
+            this.label4.Location = new System.Drawing.Point(187, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 25);
             this.label4.TabIndex = 5;
@@ -420,9 +420,9 @@
             this.label5.ForeColor = System.Drawing.Color.Orange;
             this.label5.Location = new System.Drawing.Point(16, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(211, 29);
+            this.label5.Size = new System.Drawing.Size(165, 29);
             this.label5.TabIndex = 0;
-            this.label5.Text = "OP-SoundSwitch";
+            this.label5.Text = "SoundSwitch";
             // 
             // btnBackSet
             // 
@@ -451,11 +451,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(641, 321);
             this.Controls.Add(this.panelMain);
-            this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.panelBindings);
+            this.Controls.Add(this.panelSettings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "HomeForm";
-            this.Text = "Sound Switch";
+            this.Text = "SoundSwitch";
             this.Activated += new System.EventHandler(this.HomeForm_Activated);
             this.Resize += new System.EventHandler(this.HomeForm_Resize);
             this.panelMain.ResumeLayout(false);
