@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sound-switch", "sound-switch\sound-switch.csproj", "{D986CB2F-0826-4119-B8F5-56BA3F458081}"
-EndProject
-Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "SoundSwitchSetup", "SoundSwitchSetup\SoundSwitchSetup.isproj", "{851BEADA-875D-45B1-BEEA-9614508CE4EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,16 +24,6 @@ Global
 		{D986CB2F-0826-4119-B8F5-56BA3F458081}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D986CB2F-0826-4119-B8F5-56BA3F458081}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{D986CB2F-0826-4119-B8F5-56BA3F458081}.SingleImage|Any CPU.Build.0 = Release|Any CPU
-		{851BEADA-875D-45B1-BEEA-9614508CE4EE}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
-		{851BEADA-875D-45B1-BEEA-9614508CE4EE}.CD_ROM|Any CPU.Build.0 = CD_ROM
-		{851BEADA-875D-45B1-BEEA-9614508CE4EE}.Debug|Any CPU.ActiveCfg = DVD-5
-		{851BEADA-875D-45B1-BEEA-9614508CE4EE}.Debug|Any CPU.Build.0 = DVD-5
-		{851BEADA-875D-45B1-BEEA-9614508CE4EE}.DVD-5|Any CPU.ActiveCfg = DVD-5
-		{851BEADA-875D-45B1-BEEA-9614508CE4EE}.DVD-5|Any CPU.Build.0 = DVD-5
-		{851BEADA-875D-45B1-BEEA-9614508CE4EE}.Release|Any CPU.ActiveCfg = SingleImage
-		{851BEADA-875D-45B1-BEEA-9614508CE4EE}.Release|Any CPU.Build.0 = SingleImage
-		{851BEADA-875D-45B1-BEEA-9614508CE4EE}.SingleImage|Any CPU.ActiveCfg = SingleImage
-		{851BEADA-875D-45B1-BEEA-9614508CE4EE}.SingleImage|Any CPU.Build.0 = SingleImage
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
