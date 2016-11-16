@@ -24,15 +24,12 @@ particularly when performing a similar task many times (such as highlighting or 
 
 ### For Users
 For people simply wanting to user the software, without wanting to modify the underlying code,
-we encourage you to head to our [releases page](https://github.com/OtagoPolytechnic/SoundSwitch/releases) and simply download the executable for the most recent version.
+we encourage you to head to our [releases page](https://github.com/OtagoPolytechnic/SoundSwitch/releases) and download our installer of the most recent version.
 
 ### For Developers
-To build SoundSwitch on your computer for editing, you will require the following:
+To build SoundSwitch on your computer for editing, you will additionally require:
 
 * A valid installation of Visual Studio 2013 or greater.
-* A recent installation of MinGW is recommended if changes to recorder libraries or matching libraries are desired.
-*MinGW is not directly required, but is recommended due to some currently funky things going on with the [scape-xcorrsound](https://github.com/openpreserve/scape-xcorrsound) library that may cause issues.
-MinGW tends to alleviate those issues.*
 
 Once Visual Studio is installed:
 * Clone this repository to a local directory.
@@ -50,7 +47,7 @@ and some trial-and-error may be required before you right the correct detection 
   * If your recording device is present in the source list, simply double click it to set it as your current input.
     * If it is not, ensure that your recording device is properly plugged in, and click **refresh sources**.
   * Set your **detection level**. Detection level is a measure of how loud you must speak for your microphone to register commands.
-  *(Note: From our testing, we found a detection level of ~500 to be adequate. Higher than this may lead to voice strain due to having to speak quite loudly to trigger a command.)*
+  *(Note: Detection level will vary depending on your microphone setup, you may require some trial-and-error to reach a good value, we recommend 600.)*
 
 * Once your settings have been configured, you will need to create a **binding**. A binding is a sound file that contains a short (~1 second) sound bite
 that you record, a key-command and a name are attached to this sound file.
